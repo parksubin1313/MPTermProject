@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     //안녕 나는 임혜균이야!
+    //Hi MPTermProject
 
     private FirebaseAuth mAuth = null;
     private static final int RC_SIGN_IN = 9001;
