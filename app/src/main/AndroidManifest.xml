@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TermProject">
         <activity
-            android:name=".MainActivity"
+            android:name=".testZxing"
             android:exported="true" />
         <activity
             android:name=".ListRF"
@@ -26,12 +26,10 @@
             android:name=".signup"
             android:exported="true" />
         <activity
-            android:name=".testZxing"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.TermProject.NoActionBar"
-            android:screenOrientation="fullSensor"
-            tools:replace="screenOrientation">
+            android:theme="@style/Theme.TermProject.NoActionBar">
             <!-- 세로로 코드 -->
 
             <intent-filter>
@@ -40,6 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GroceryListActivity"></activity>
+        <activity android:name=".AddFoodActivity" android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert"></activity>
     </application>
 
 </manifest>

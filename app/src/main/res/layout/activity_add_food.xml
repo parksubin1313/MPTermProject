@@ -2,68 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".AddFoodActivity"
     android:layout_gravity="center">
-        <!--냉장, 냉동 버튼-->
-        <RadioGroup
-            android:id="@+id/frigeWay"
+    <!--냉장, 냉동 버튼-->
+    <RadioGroup
+        android:id="@+id/frigeWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp">
+        <RadioButton
+            android:id="@+id/frigeWay_cool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:padding="10dp">
-            <RadioButton
-                android:id="@+id/frigeWay_cool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/frigeWay_cool"/>
-            <RadioButton
-                android:id="@+id/frigeWay_freeze"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/frigeWay_freeze"/>
-            <RadioButton
-                android:id="@+id/frigeWay_etc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/frigeWay_etc"/>
-        </RadioGroup>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_gravity="center"
-    android:padding="10dp">
+            android:text="@string/frigeWay_cool"/>
+        <RadioButton
+            android:id="@+id/frigeWay_freeze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frigeWay_freeze"/>
+    </RadioGroup>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/foodName"/>
-         <EditText
-           android:id="@+id/foodName"
-           android:layout_width="120dp"
-           android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/foodName"/>
+            <EditText
+                android:id="@+id/foodName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/memo"/>
-        <EditText
-            android:id="@+id/memo"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/memo"/>
+            <EditText
+                android:id="@+id/memo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -80,13 +75,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/exDate"/>
-
-            <DatePicker
-                android:id="@+id/exDate"
-                android:layout_width="149dp"
-                android:layout_height="64dp"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/expiryDate"
+                    android:layout_width="120dp"
+                    android:layout_height="65dp"
+                    android:onClick="mOnClick_DatePick"/>
+                <Button
+                    android:id="@+id/dateBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="65dp"
+                    android:onClick="mOnClick_DatePick"
+                    android:text="변경"/>
+            </LinearLayout>
+            <!--
+                        <DatePicker
+                            android:id="@+id/exDate"
+                            android:layout_width="149dp"
+                            android:layout_height="64dp"
+                            android:calendarViewShown="false"
+                            android:datePickerMode="calendar" />-->
         </LinearLayout>
 
         <LinearLayout
@@ -104,18 +115,23 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/minus"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
+                    android:onClick="mOnMinus"
                     android:text="-" />
                 <TextView
+                    android:id="@+id/foodNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"/>
                 <Button
+                    android:id="@+id/plus"
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
+                    android:onClick="mOnPlus"
                     android:text="+" />
             </LinearLayout>
         </LinearLayout>
@@ -138,12 +154,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submit"
+            android:onClick="mOnSubmit"
             android:layout_marginRight="10dp"/>
         <Button
             android:id="@+id/cancelBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
+            android:onClick="mOnClose"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
