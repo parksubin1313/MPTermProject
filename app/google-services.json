@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "228425322719",
+    "firebase_url": "https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "mobile-programming-91257",
     "storage_bucket": "mobile-programming-91257.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:228425322719:android:d58e291f7a183ca3b5d96a",
+        "mobilesdk_app_id": "1:228425322719:android:4ae18775a71d406eb5d96a",
         "android_client_info": {
           "package_name": "com.example.termproject"
         }

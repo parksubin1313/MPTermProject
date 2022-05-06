@@ -23,6 +23,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     //안녕 나는 임혜균이야!
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth = null;
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
+    public static String access;
 
     //Email Login
     //define view objects
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     Button bntSingin;
     Button bntFindpw;
     ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if(task.isSuccessful()) {
+                            access=email;
                             Toast.makeText(getApplicationContext(), "로그인 성공",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, ListRF.class);
                             startActivity(intent);

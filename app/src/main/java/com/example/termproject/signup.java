@@ -21,12 +21,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signup extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextEmail, editTextPassword, editTextNickname;
     ImageView buttonSignup;
     private AlertDialog dialog;
+
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    private DatabaseReference mReference = mDatabase.getReference();
 
     ProgressDialog progressDialog;
     //define firebase object
@@ -38,6 +44,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+
 
         //initializig firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -55,6 +63,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
         //initializing views
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextNickname = (EditText) findViewById(R.id.editTextNickname);
 
         buttonSignup = (ImageView) findViewById(R.id.signup);
         progressDialog = new ProgressDialog(this);
@@ -87,9 +96,20 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+                            String uid = user != null ? user.getUid() : null;
+                            String nickname = editTextNickname.getText().toString();
+
+                            if(uid != null){
+                                userData userInfo = new userData();
+                                userInfo.setUid(uid);
+                                userInfo.setNickname(nickname);
+                                mReference.child("/USER/").child(nickname).push().setValue(uid);
+
                             Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }
                         }
                         else {
                             //에러발생시
@@ -106,7 +126,6 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
             //TODO
             registerUser();
         }
-
     }
 
     /*
