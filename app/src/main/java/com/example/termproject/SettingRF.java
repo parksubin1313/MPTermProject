@@ -1,6 +1,5 @@
 package com.example.termproject;
 
-
 import static com.example.termproject.MainActivity.access;
 
 import androidx.annotation.NonNull;

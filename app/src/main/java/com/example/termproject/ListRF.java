@@ -177,6 +177,16 @@ public class ListRF extends AppCompatActivity {
             }
         });
 
+        Button listBtn = findViewById(R.id.listBtn);
+        listBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GroceryListActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
     }
 
     // Data storage and modification method

@@ -47,33 +47,6 @@
         </EditText>
     </FrameLayout>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/editTextName"
-        >
-
-        <RadioButton
-            android:layout_weight="1"
-            android:text="냉장"
-            android:id="@+id/rg_btn1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
-            />
-
-        <RadioButton
-            android:layout_weight="1"
-            android:text="냉동"
-            android:id="@+id/rg_btn2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            />
-    </RadioGroup>
-
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
@@ -84,7 +57,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
