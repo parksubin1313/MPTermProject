@@ -132,6 +132,15 @@ public class AddFoodActivity extends AppCompatActivity {
         finish();
     }
 
+    //바코드 버튼 클릭
+    public void mOnBarcode(View v){
+
+        Toast.makeText(getApplicationContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), testZxing.class);
+
+        startActivity(intent);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //바깥 레이어 클릭 시 안닫히게
