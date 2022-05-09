@@ -177,6 +177,7 @@ public class ListRF extends AppCompatActivity {
             }
         });
 
+        /*장보기 리스트 버튼*/
         Button listBtn = findViewById(R.id.listBtn);
         listBtn.setOnClickListener(new View.OnClickListener() {
             @Override

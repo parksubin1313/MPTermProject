@@ -84,20 +84,8 @@
                     android:layout_width="120dp"
                     android:layout_height="65dp"
                     android:onClick="mOnClick_DatePick"/>
-                <Button
-                    android:id="@+id/dateBtn"
-                    android:layout_width="50dp"
-                    android:layout_height="65dp"
-                    android:onClick="mOnClick_DatePick"
-                    android:text="변경"/>
             </LinearLayout>
-            <!--
-                        <DatePicker
-                            android:id="@+id/exDate"
-                            android:layout_width="149dp"
-                            android:layout_height="64dp"
-                            android:calendarViewShown="false"
-                            android:datePickerMode="calendar" />-->
+
         </LinearLayout>
 
         <LinearLayout
@@ -142,6 +130,7 @@
         android:layout_height="wrap_content"
         android:text="@string/barcode"
         android:layout_gravity="center"
+        android:onClick="mOnBarcode"
         />
     <LinearLayout
         android:layout_width="wrap_content"
