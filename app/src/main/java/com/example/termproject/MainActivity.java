@@ -26,6 +26,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth = null;
@@ -85,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
         //ActionBar actionBar = getSupportActionBar();
         //actionBar.hide();
+
+        parseXML();
     }
 
     private void userLogin(){
@@ -118,5 +128,66 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    //open api 가져올 때 사용할 parseXML, precessParsing, printFood
+    //api 정보는 foods arraylist 에 있음 (Type : Food)
+    private void parseXML(){
+        XmlPullParserFactory parserFactory;
+        try {
+            parserFactory = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = parserFactory.newPullParser();
+            InputStream is = getAssets().open("data.xml");
+            //InputStream is = getAssets().open("dataP.xml");
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+            parser.setInput(is, null);
+            precessParsing(parser);
+
+        } catch (XmlPullParserException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void precessParsing(XmlPullParser parser) throws IOException, XmlPullParserException {
+        ArrayList<Food> foods = new ArrayList<>();
+        //ArrayList<Player> players = new ArrayList<Player>();
+        int eventType = parser.getEventType();
+        Food currentFood = null;
+        //Player currentPlayer = null;
+
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            String eltName = null;
+
+            switch (eventType) {
+                case XmlPullParser.START_TAG:
+                    eltName = parser.getName();
+
+                    if ("row".equals(eltName)) {
+                        currentFood = new Food();
+                        foods.add(currentFood);
+                    } else if (currentFood != null) {
+                        if("PRDLST_NM".equals(eltName)){
+                            currentFood.PRDLST_NM = parser.nextText();
+                            //Log.d(TAG, "prdlst: " + currentFood.PRDLST_NM);
+                        }
+                        if ("BAR_CD".equals(eltName)) {
+                            currentFood.BAR_CD = parser.nextText();
+                            //Log.d(TAG, "barcode: " + currentFood.BAR_CD);
+                        }
+                    }
+                    break;
+            }
+            eventType = parser.next();
+        }
+        printFood(foods);
+    }
+    public void printFood(ArrayList<Food> foods){
+        StringBuilder builder = new StringBuilder();
+
+        for(Food fd : foods){
+            builder.append(fd.PRDLST_NM).append("\n").append(fd.BAR_CD).append("\n\n");
+        }
+        //txt로 출력할 때
+        //txt.setText(builder.toString());
     }
 }
