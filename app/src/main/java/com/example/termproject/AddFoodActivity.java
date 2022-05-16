@@ -1,34 +1,67 @@
 package com.example.termproject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.termproject.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class AddFoodActivity extends AppCompatActivity {
+
+    final int FRIDGEWAYCOOL = 0;
+    final int FRIDGEWAYFREEZE = 1;
+
     private RadioGroup frigeWay;
     private RadioButton frigeWay_cool, frigeWay_freeze;
     private EditText foodName, memo;
     //TODO: private 유통기한
     private TextView foodNum, expiryDate;
     private int count = 1;
+    private int f_Way = -1;
+    private int resId = -1;
+
+
+
+    String uid;
+    /*Firebase*/
+    DatabaseReference reference;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    private DatabaseReference mReference = mDatabase.getReference();
+    private DatabaseReference myRef;
 
     /*ListView*/
-    //FoodAdapter adapter;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<FoodItem> foodItemArrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +73,9 @@ public class AddFoodActivity extends AppCompatActivity {
         //데이터 가져오기
         //Intent intent = getIntent();
         //String data = intent.getStringExtra("data");
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+        uid = user != null ? user.getUid() : null;
+
 
         //라디오 그룹 설정
         frigeWay = (RadioGroup) findViewById(R.id.frigeWay);
@@ -48,10 +84,10 @@ public class AddFoodActivity extends AppCompatActivity {
         frigeWay_freeze = (RadioButton) findViewById(R.id.frigeWay_freeze);
 
         /*식품명*/
-        //TODO: 식품명
+        foodName = (EditText) findViewById(R.id.foodName);
 
         /*메모 작성*/
-        //TODO: 메모 작성
+        memo = (EditText) findViewById(R.id.memo);
 
         /*유통기한-디폴트 값으로 오늘 날짜 설정*/
         expiryDate = findViewById(R.id.expiryDate);
@@ -63,6 +99,7 @@ public class AddFoodActivity extends AppCompatActivity {
         foodNum.setText(count + "");
         //count = Integer.parseInt(foodNum.getText().toString());
 
+
     }
 
 
@@ -71,9 +108,11 @@ public class AddFoodActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             if(i == R.id.frigeWay_cool){
+                f_Way = FRIDGEWAYCOOL;
                 Toast.makeText(getApplicationContext(), "냉장 라디오버튼", Toast.LENGTH_SHORT).show();
             }
             else if(i == R.id.frigeWay_freeze){
+                f_Way = FRIDGEWAYFREEZE;
                 Toast.makeText(getApplicationContext(), "냉동 라디오버튼", Toast.LENGTH_SHORT).show();
             }
         }
@@ -112,8 +151,31 @@ public class AddFoodActivity extends AppCompatActivity {
 
     //확인 버튼 클릭
     public void mOnSubmit(View v){
+        if(foodName.getText().toString().length() == 0 || f_Way == -1){
+            Toast.makeText(getApplicationContext(), "식품명 또는 보관방법이 입력되지 않았습니다.", Toast.LENGTH_SHORT).show();
+        }
+
+        FoodItem foodItem = new FoodItem();
+        foodItem.setFoodName(foodName.getText().toString());
+        foodItem.setDueDate(expiryDate.getText().toString());
+        foodItem.setQuantity(count);
+        foodItem.setStorageWay(f_Way);
+        if(memo.getText().toString().length() != 0){
+            foodItem.setMemo(memo.getText().toString());
+        }
+
+        //TODO: 이미지 추가 기능
+        if(resId != -1){
+            foodItem.setResId(resId);
+        }
+
 
         Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
+
+
+
+
+
         //데이터 전달하기
         //Intent intent = new Intent();
         //TODO: 리스트에 반영되게 저장
@@ -155,4 +217,5 @@ public class AddFoodActivity extends AppCompatActivity {
         //안드로이드 백버튼 막기
         return;
     }
+
 }

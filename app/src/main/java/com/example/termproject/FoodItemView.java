@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 public class FoodItemView extends LinearLayout {
+    int storageWay;
     ImageView foodImg;
     TextView foodName, dueDate, quantity;
 

@@ -19,6 +19,10 @@ public class FoodItem {
         this.resId = resId;
     }
 
+    public FoodItem() {
+
+    }
+
     public int getStorageWay() {
         return storageWay;
     }

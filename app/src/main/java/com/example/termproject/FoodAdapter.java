@@ -1,44 +1,90 @@
 package com.example.termproject;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class FoodAdapter extends BaseAdapter {
-    ArrayList<FoodItem> items = new ArrayList<FoodItem>();
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
+    ArrayList<FoodItem> foodItemArrayList = new ArrayList<FoodItem>();
 
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
-    @Override
-    public int getCount() {
-        return items.size();
-    }
+        public TextView foodName;
+        public TextView dueDate;
+        public TextView quantity;
+        public ImageView foodImg;
 
-    public void addItem(FoodItem item){
-        items.add(item);
+        View rootView;
 
-    }
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
 
-    @Override
-    public Object getItem(int i) {
-        return items.get(i);
-    }
+//        storageWay = itemView.findViewById(R.id.s)
+            foodName = itemView.findViewById(R.id.foodName);
+            dueDate = itemView.findViewById(R.id.dueDate);
+            quantity = itemView.findViewById(R.id.quantity);
+            foodImg = itemView.findViewById(R.id.foodImg);
+            rootView = itemView;
 
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
-        //뷰 객체 재사용
-        FoodItemView view = null;
-        if(convertView == null){
-            view = new FoodItemView(convertView.getContext());
-        }else{
-            view = (FoodItemView) convertView;
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String strText = foodName.getText().toString();
+                    Toast.makeText(foodName.getContext(), strText, Toast.LENGTH_SHORT).show();
+                }
+            });
         }
-        return null;
+
+/*        void onBind(FoodItem data){
+            foodName.setText(data.getFoodName());
+        }*/
     }
+
+    public FoodAdapter(ArrayList<FoodItem> myDataSet, Context context){
+        foodItemArrayList = myDataSet;
+    }
+
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.food_item, parent, false);
+        ViewHolder vh = new ViewHolder(v);
+
+        return vh;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        FoodItem foodItem = foodItemArrayList.get(position);
+
+        holder.foodName.setText(foodItem.getFoodName());
+        holder.dueDate.setText(foodItem.getDueDate());
+        holder.quantity.setText(foodItem.getQuantity());
+        holder.foodImg.setImageResource(foodItem.getResId());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return foodItemArrayList == null ? 0 : foodItemArrayList.size();
+    }
+
+    public void addChat(FoodItem foodItem){
+        foodItemArrayList.add(foodItem);
+        notifyItemInserted(foodItemArrayList.size()-1);
+    }
+
 }
