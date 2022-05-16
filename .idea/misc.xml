@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.17401215805471124" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.11277173913043478" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chat_item.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chatbot.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.264" />
@@ -13,7 +17,7 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_signup.xml" value="0.12" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test.xml" value="0.178125" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.1125" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.264" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.176" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.24427083333333333" />
