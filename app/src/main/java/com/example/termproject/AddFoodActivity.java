@@ -1,5 +1,7 @@
 package com.example.termproject;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,12 +30,22 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AddFoodActivity extends AppCompatActivity {
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReference;
+    private DatabaseReference mReference2;
+    private ChildEventListener mChild;
 
     final int FRIDGEWAYCOOL = 0;
     final int FRIDGEWAYFREEZE = 1;
@@ -47,35 +59,12 @@ public class AddFoodActivity extends AppCompatActivity {
     private int f_Way = -1;
     private int resId = -1;
 
-
-
-    String uid;
-    /*Firebase*/
-    DatabaseReference reference;
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    private DatabaseReference mReference = mDatabase.getReference();
-    private DatabaseReference myRef;
-
-    /*ListView*/
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<FoodItem> foodItemArrayList;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //타이틀 바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add_food);
-
-        //데이터 가져오기
-        //Intent intent = getIntent();
-        //String data = intent.getStringExtra("data");
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-        uid = user != null ? user.getUid() : null;
-
 
         //라디오 그룹 설정
         frigeWay = (RadioGroup) findViewById(R.id.frigeWay);
@@ -151,39 +140,40 @@ public class AddFoodActivity extends AppCompatActivity {
 
     //확인 버튼 클릭
     public void mOnSubmit(View v){
-        if(foodName.getText().toString().length() == 0 || f_Way == -1){
-            Toast.makeText(getApplicationContext(), "식품명 또는 보관방법이 입력되지 않았습니다.", Toast.LENGTH_SHORT).show();
-        }
+        //식품명 보관방법 입력되지 않았을 때
+//        if(foodName.getText().toString().length() == 0 || f_Way == -1){
+//            Toast.makeText(getApplicationContext(), "식품명 또는 보관방법이 입력되지 않았습니다.", Toast.LENGTH_SHORT).show();
+//        }
+        //채영 추가
+//        else{
+            //Food 입력받은 값 변수에 저장하기
+            FoodItem foodItem = new FoodItem();
+            foodItem.setDueDate(expiryDate.getText().toString());
+            foodItem.setQuantity(count);
+            foodItem.setFoodName(foodName.getText().toString());
+            foodItem.setStorageWay(f_Way);
 
-        FoodItem foodItem = new FoodItem();
-        foodItem.setFoodName(foodName.getText().toString());
-        foodItem.setDueDate(expiryDate.getText().toString());
-        foodItem.setQuantity(count);
-        foodItem.setStorageWay(f_Way);
-        if(memo.getText().toString().length() != 0){
-            foodItem.setMemo(memo.getText().toString());
-        }
+            String fName = foodItem.foodName;
 
-        //TODO: 이미지 추가 기능
-        if(resId != -1){
-            foodItem.setResId(resId);
-        }
+            //입력받은 값 db에 올리기
+            databaseReference.child("/RF1/").child(fName).push().setValue(foodName);
+
+            //TODO: 이미지 추가 기능
+            if(resId != -1){
+                foodItem.setResId(resId);
+            }
 
         mReference.child(uid).child("//").push().setValue(foodItem);
 
+            if(memo.getText().toString().length() != 0){
+                foodItem.setMemo(memo.getText().toString());
+                //mReference.child(uid).child("RFList").child(name).push().setValue(memo);
+            }
+
+
+//        }
 
         Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
-
-
-
-
-
-        //데이터 전달하기
-        //Intent intent = new Intent();
-        //TODO: 리스트에 반영되게 저장
-
-        //adapter = new FoodAdapter();
-        //adapter.addItem(new FoodItem(0, "양파", "2022-12-01", 3, "", R.mipmap.ic_launcher_round));
 
         //엑티비티 팝업 닫기
         finish();
