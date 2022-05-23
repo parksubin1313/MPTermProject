@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,8 +32,16 @@ public class RFAdapter extends RecyclerView.Adapter<RFAdapter.MyViewHolder> {
             name = itemView.findViewById(R.id.title);
             rootView = itemView;
 
-            itemView.setClickable(true);
-            itemView.setEnabled(true);
+/*            itemView.setClickable(true);
+            itemView.setEnabled(true);*/
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String strText = name.getText().toString();
+                    Toast.makeText(name.getContext(), strText, Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

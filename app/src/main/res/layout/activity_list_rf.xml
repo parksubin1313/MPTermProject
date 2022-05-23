@@ -61,15 +61,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setting" />
 
+    <!--채팅을 위한 임의로 버튼 연결해놨으니-->
+    <!--TODO: 채팅 연결 하면 이 버튼 지우기.-->
+    <Button
+        android:id="@+id/chattingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="채팅"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/listBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/groceryList"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="287dp"
-        tools:layout_editor_absoluteY="4dp"/>
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

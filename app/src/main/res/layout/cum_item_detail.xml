@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--TODO:커뮤니티상품보기(최선UI.ppt 5패이지 참고)-->
+
+    <!--채팅을 들어가기 위한 버튼-->
+    <!--위치 그냥 대충 한거니깐 배치하는사람이 ignore없애고 배치해줘!-->
+    <Button
+        android:id="@+id/chatBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="채팅하기"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

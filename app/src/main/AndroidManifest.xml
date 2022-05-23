@@ -46,6 +46,8 @@
         <activity
             android:name=".AddFoodActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+
+        <activity android:name=".ChatActivity" />
     </application>
 
 </manifest>

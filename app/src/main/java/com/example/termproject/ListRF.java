@@ -188,6 +188,16 @@ public class ListRF extends AppCompatActivity {
             }
         });
 
+        /*채팅 버튼. TODO:채팅 실행 확인을 위해 임의로 채팅버튼을 추가한 거라 채팅 구현 시 지우기*/
+        Button chattingBtn = findViewById(R.id.chattingBtn);
+        chattingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     // Data storage and modification method
