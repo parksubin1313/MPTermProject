@@ -28,4 +28,8 @@
     <string name="cancel">취소</string>
     <string name="barcode">바코드 인식</string>
     <string name="memo">메모작성</string>
+    <string name="title_activity_bottom_navigation">BottomNavigation</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">List</string>
+    <string name="title_notifications">Community</string>
 </resources>

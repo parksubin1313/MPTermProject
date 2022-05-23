@@ -29,6 +29,9 @@
             android:name=".signup"
             android:exported="true" />
         <activity
+            android:name=".BottomNavigation"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -47,7 +50,7 @@
             android:name=".AddFoodActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
 
-        <activity android:name=".comunity.ChatActivity" />
+        <activity android:name="ChatActivity" />
     </application>
 
 </manifest>

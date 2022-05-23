@@ -122,7 +122,10 @@ public class MainActivity extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             access=email;
                             Toast.makeText(getApplicationContext(), "로그인 성공",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, ListRF.class);
+//                            Intent intent = new Intent(MainActivity.this, ListRF.class);
+//                            여기 내가 잠시 바꿈!!! - 최선 -
+//                            bottom navigation 확인해보려고!!!!
+                            Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
                             startActivity(intent);
                             finish();
                         }
