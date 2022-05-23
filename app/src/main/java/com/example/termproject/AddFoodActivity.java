@@ -79,6 +79,7 @@ public class AddFoodActivity extends AppCompatActivity {
 
         //라디오 그룹 설정
         frigeWay = (RadioGroup) findViewById(R.id.frigeWay);
+        frigeWay.setOnCheckedChangeListener(radioGroupClickListener);
         //라디오 버튼 설정
         frigeWay_cool = (RadioButton) findViewById(R.id.frigeWay_cool);
         frigeWay_freeze = (RadioButton) findViewById(R.id.frigeWay_freeze);
@@ -104,7 +105,7 @@ public class AddFoodActivity extends AppCompatActivity {
 
 
     /*라디오 버튼 클릭 리스너*/
-    RadioGroup.OnCheckedChangeListener radioGroupButtonChangeListener = new RadioGroup.OnCheckedChangeListener() {
+    RadioGroup.OnCheckedChangeListener radioGroupClickListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             if(i == R.id.frigeWay_cool){
@@ -153,40 +154,28 @@ public class AddFoodActivity extends AppCompatActivity {
     public void mOnSubmit(View v){
         if(foodName.getText().toString().length() == 0 || f_Way == -1){
             Toast.makeText(getApplicationContext(), "식품명 또는 보관방법이 입력되지 않았습니다.", Toast.LENGTH_SHORT).show();
+        }else {
+            FoodItem foodItem = new FoodItem();
+            foodItem.setFoodName(foodName.getText().toString());
+            foodItem.setDueDate(expiryDate.getText().toString());
+            foodItem.setQuantity(count);
+            foodItem.setStorageWay(f_Way);
+            if (memo.getText().toString().length() != 0) {
+                foodItem.setMemo(memo.getText().toString());
+            }
+
+            //TODO: 이미지 추가 기능
+            if (resId != -1) {
+                foodItem.setResId(resId);
+            }
+
+            mReference.child(uid).child("//").push().setValue(foodItem);
+
+            Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
+
+            //엑티비티 팝업 닫기
+            finish();
         }
-
-        FoodItem foodItem = new FoodItem();
-        foodItem.setFoodName(foodName.getText().toString());
-        foodItem.setDueDate(expiryDate.getText().toString());
-        foodItem.setQuantity(count);
-        foodItem.setStorageWay(f_Way);
-        if(memo.getText().toString().length() != 0){
-            foodItem.setMemo(memo.getText().toString());
-        }
-
-        //TODO: 이미지 추가 기능
-        if(resId != -1){
-            foodItem.setResId(resId);
-        }
-
-        mReference.child(uid).child("//").push().setValue(foodItem);
-
-
-        Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
-
-
-
-
-
-        //데이터 전달하기
-        //Intent intent = new Intent();
-        //TODO: 리스트에 반영되게 저장
-
-        //adapter = new FoodAdapter();
-        //adapter.addItem(new FoodItem(0, "양파", "2022-12-01", 3, "", R.mipmap.ic_launcher_round));
-
-        //엑티비티 팝업 닫기
-        finish();
     }
 
     //취소 버튼 클릭
