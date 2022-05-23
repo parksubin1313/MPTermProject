@@ -1,4 +1,4 @@
-package com.example.termproject.adapter;
+package com.example.termproject;
 
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -11,9 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.termproject.R;
-import com.example.termproject.community.CommunityItem;
 
 import java.util.ArrayList;
 

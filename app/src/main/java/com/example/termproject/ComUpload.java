@@ -1,4 +1,4 @@
-package com.example.termproject.community;
+package com.example.termproject;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.termproject.R;
-import com.example.termproject.community.CommunityItem;
+import com.example.termproject.CommunityItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;

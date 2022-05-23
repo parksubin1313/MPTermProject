@@ -1,4 +1,4 @@
-package com.example.termproject.adapter;
+package com.example.termproject;
 
 
 import android.content.Context;
@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.termproject.R;
-import com.example.termproject.RFData;
 
 import java.util.List;
 

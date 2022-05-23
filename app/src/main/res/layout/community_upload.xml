@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".community.ComUpload">
+    tools:context=".ComUpload">
 
     //상단바 추가되면 layout_below 하기
     <ImageView

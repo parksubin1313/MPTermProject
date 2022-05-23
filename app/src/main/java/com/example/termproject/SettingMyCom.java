@@ -9,9 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.termproject.adapter.CItemAdapter;
-import com.example.termproject.community.CommunityItem;
-
 import java.util.ArrayList;
 
 //Setting 에서 내가 올린 상품들 볼 수 있어야 하니까

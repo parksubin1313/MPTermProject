@@ -1,4 +1,4 @@
-package com.example.termproject.community;
+package com.example.termproject;
 
 //community 에 올라갈 때, 한 상품페이지가 가질 요소
 
