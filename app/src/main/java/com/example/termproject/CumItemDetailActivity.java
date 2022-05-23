@@ -8,7 +8,6 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.termproject.comunity.ChatActivity;
 
 public class CumItemDetailActivity extends AppCompatActivity {
 
