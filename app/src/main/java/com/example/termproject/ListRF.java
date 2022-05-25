@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +40,7 @@ public class ListRF extends AppCompatActivity {
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
 
+    RFAdapter adapter;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -107,6 +110,8 @@ public class ListRF extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
+        //mAdapter.setOnItemClickLi
+
         //chatData chat = new chatData();
         //chat.setNickname(nick);
         //chat.setMsg("hi");
@@ -140,11 +145,7 @@ public class ListRF extends AppCompatActivity {
 
          */
 
-
-
-
-
-        mReference.child(uid).child("/RFList/").addChildEventListener(new ChildEventListener() {
+        mReference.child("/USER/").child(uid).child("/RFList/").addChildEventListener(new ChildEventListener() {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -226,8 +227,5 @@ public class ListRF extends AppCompatActivity {
             result.put("name", name);
             return result;
         }
-
     }
-
-
 }

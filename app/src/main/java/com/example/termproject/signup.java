@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -98,23 +97,23 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
-                            String uid = user != null ? user.getUid() : null;
-                            String nickname = editTextNickname.getText().toString();
-
-
-                            Log.d("uid",uid);
-
-                            if(uid != null){
-                                userData userInfo = new userData();
-                                userInfo.setUid(uid);
-                                userInfo.setNickname(uid);
-                                mReference.child("/USER/").child(nickname).push().setValue(userInfo);
-
-                            //Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
-                            Toast.makeText(getApplicationContext(), uid,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            String uid = user != null ? user.getUid() : null;
+                            /*
+                            String nickname = editTextNickname.getText().toString();
+
+                            if(uid != null){
+                                //userData userInfo = new userData();
+                                //userInfo.setUid(uid);
+                                //userInfo.setNickname(nickname);
+                                //mReference.child("/USER/").child(nickname).push().setValue(uid);
+
+
                             }
+
+                             */
                         }
                         else {
                             //에러발생시

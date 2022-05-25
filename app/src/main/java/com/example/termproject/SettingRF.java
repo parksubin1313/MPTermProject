@@ -73,7 +73,7 @@ public class SettingRF extends AppCompatActivity {
                     RFData rf = new RFData();
                     //chat.setNickname("user");
                     rf.setName(name);
-                    mReference.child(uid).child("/RFList/").push().setValue(rf);
+                    mReference.child("/USER/").child(uid).child("/RFList/").push().setValue(rf);
                     finish();
                 }
             }
