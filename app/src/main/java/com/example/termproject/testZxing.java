@@ -7,10 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class testZxing extends AppCompatActivity {
+
+    DatabaseReference reference;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    private DatabaseReference apiReference = mDatabase.getReference("/API/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,16 @@ public class testZxing extends AppCompatActivity {
                 //result.getContents 를 이용 데이터 재가공
 
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+
+//                TODO: 해당 바코드가 api 에서 있는지 찾는 함수
+//                apiReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot snapshot) {
+//                        if (snapshot.hasChild("BAR_CD")==result.getContents().toString()) {
+//                            // run some code
+//                        }
+//                    }
+//                });
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

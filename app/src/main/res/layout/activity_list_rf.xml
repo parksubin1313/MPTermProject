@@ -74,9 +74,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:onClick="mOnBarcode"
-            android:text="@string/barcode"
-            tools:ignore="OnClick" />
+            android:text="@string/barcode"/>
+<!--            android:onClick="mOnBarcode"-->
+<!--            tools:ignore="OnClick" />-->
 
         <Button
             android:id="@+id/btnAdd"
@@ -85,6 +85,8 @@
             android:layout_gravity="right"
             android:text="냉장고 추가하기"
             android:textSize="20dp" />
+
+
     </LinearLayout>
 
 
