@@ -3,17 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.17401215805471124" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.3578125" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.33" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.11277173913043478" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.3061594202898551" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.3061594202898551" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.18645833333333334" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.264" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.12132725430597771" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_communityitem.xml" value="0.1" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.2796875" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_item_detail.xml" value="0.2796875" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_share.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_shopping_cart.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.264" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.11296296296296296" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.2" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.2" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.14990942028985507" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.2" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.109375" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.14990942028985507" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.14990942028985507" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chat_item.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chatbot.xml" value="0.1" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.264" />
@@ -24,25 +40,15 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_signup.xml" value="0.12" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test.xml" value="0.178125" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.1125" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.264" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_home.xml" value="0.72" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.16" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.176" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.24427083333333333" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_message.xml" value="0.16" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.24427083333333333" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_uploaded_image.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_user.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/app_bar_main.xml" value="0.842741935483871" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.20677083333333332" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cummunity_item_detail.xml" value="0.125" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_chat.xml" value="0.1" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/item_chat.xml" value="0.2" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/item_friends.xml" value="0.2" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_main.xml" value="0.25885416666666666" />
       </map>
     </option>

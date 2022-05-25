@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -143,9 +144,6 @@ public class ListRF extends AppCompatActivity {
          */
 
 
-
-
-
         mReference.child(uid).child("/RFList/").addChildEventListener(new ChildEventListener() {
 
             @Override
@@ -174,17 +172,6 @@ public class ListRF extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        /*장보기 리스트 버튼*/
-        Button listBtn = findViewById(R.id.listBtn);
-        listBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GroceryListActivity.class);
-
-                startActivity(intent);
             }
         });
 
