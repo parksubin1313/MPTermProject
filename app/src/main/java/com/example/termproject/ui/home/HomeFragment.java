@@ -11,8 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.termproject.databinding.FragmentHomeBinding;
-import com.example.termproject.databinding.FragmentNotificationsBinding;
-import com.example.termproject.ui.notifications.NotificationsViewModel;
 
 public class HomeFragment extends Fragment {
 
@@ -25,6 +23,7 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
 
 //        final TextView textView = binding.textNotifications;
 //        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

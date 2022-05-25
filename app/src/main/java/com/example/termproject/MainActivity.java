@@ -51,13 +51,17 @@ public class MainActivity extends AppCompatActivity {
     Button bntFindpw;
     ProgressDialog progressDialog;
 
+//    DatabaseReference reference;
+//    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+//    private DatabaseReference mReference = mDatabase.getReference();
+//    private DatabaseReference myRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
 
         ImageView signup = findViewById(R.id.btnSignup);
         signup.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 //                            Intent intent = new Intent(MainActivity.this, ListRF.class);
 //                            여기 내가 잠시 바꿈!!! - 최선 -
 //                            bottom navigation 확인해보려고!!!!
+
                             Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
                             startActivity(intent);
                             finish();

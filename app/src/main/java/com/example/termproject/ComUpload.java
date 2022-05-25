@@ -81,6 +81,7 @@ public class ComUpload extends AppCompatActivity {
             CommunityItem CItem = new CommunityItem(ETName.getText().toString(), ETDate.getText().toString(), ETLoc.getText().toString(), ETTag.getText().toString(), ETDetail.getText().toString(), false);
 
             //TODO: database에 community 자리 만들고 그 리스트 안에 올리기
+//            mReference.child("/Community/").push().setValue(rf);
 
             //TODO: 개인의 community 안에도 올리기
         }

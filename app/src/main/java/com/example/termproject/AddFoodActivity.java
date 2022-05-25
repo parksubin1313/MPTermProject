@@ -101,6 +101,7 @@ public class AddFoodActivity extends AppCompatActivity {
         //count = Integer.parseInt(foodNum.getText().toString());
 
 
+
     }
 
 
@@ -169,7 +170,8 @@ public class AddFoodActivity extends AppCompatActivity {
                 foodItem.setResId(resId);
             }
 
-            mReference.child(uid).child("//").push().setValue(foodItem);
+
+//            mReference.child("/RFList/").child(get).child(uid).child("//").push().setValue(foodItem);
 
             Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
 
