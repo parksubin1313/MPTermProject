@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,7 +41,6 @@ public class ListRF extends AppCompatActivity {
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
 
-    RFAdapter adapter;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -110,8 +110,6 @@ public class ListRF extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
-        //mAdapter.setOnItemClickLi
-
         //chatData chat = new chatData();
         //chat.setNickname(nick);
         //chat.setMsg("hi");
@@ -145,7 +143,8 @@ public class ListRF extends AppCompatActivity {
 
          */
 
-        mReference.child("/USER/").child(uid).child("/RFList/").addChildEventListener(new ChildEventListener() {
+
+        mReference.child(uid).child("/RFList/").addChildEventListener(new ChildEventListener() {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -176,13 +175,12 @@ public class ListRF extends AppCompatActivity {
             }
         });
 
-        /*장보기 리스트 버튼*/
-        Button listBtn = findViewById(R.id.listBtn);
-        listBtn.setOnClickListener(new View.OnClickListener() {
+        /*채팅 버튼. TODO:채팅 실행 확인을 위해 임의로 채팅버튼을 추가한 거라 채팅 구현 시 지우기*/
+        Button chattingBtn = findViewById(R.id.chattingBtn);
+        chattingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GroceryListActivity.class);
-
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
                 startActivity(intent);
             }
         });
@@ -227,5 +225,8 @@ public class ListRF extends AppCompatActivity {
             result.put("name", name);
             return result;
         }
+
     }
+
+
 }
