@@ -123,9 +123,9 @@ public class MainActivity extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             access=email;
                             Toast.makeText(getApplicationContext(), "로그인 성공",Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
+                            Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
 //                            Intent intent = new Intent(MainActivity.this, ListRF.class);
-                            Intent intent = new Intent(MainActivity.this, AddFoodActivity.class);
+//                            Intent intent = new Intent(MainActivity.this, AddFoodActivity.class);
                             startActivity(intent);
                             finish();
                         }

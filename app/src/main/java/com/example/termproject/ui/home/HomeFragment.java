@@ -45,19 +45,19 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        HomeViewModel homeViewModel =
-//                new ViewModelProvider(this).get(HomeViewModel.class);
-//
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
+//        View v = inflater.inflate(R.layout.fragment_home, container, false);
 
 //        된다된다!!!!! 추가 버튼되면 이 바코드는 없애도 됨
-        Button barcodeBtn = (Button) v.findViewById(R.id.barcodeBtn);
+ /*       Button barcodeBtn = (Button) v.findViewById(R.id.barcodeBtn);
         barcodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
 
                 startActivity(intent);
             }
-        });
+        });*/
 //        //바코드 버튼 클릭
 //        public void mOnBarcode(View v){
 //            Toast.makeText(getContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
@@ -76,18 +76,18 @@ public class HomeFragment extends Fragment {
 //
 //        }
 
-        Button btnAdd = (Button) v.findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //save();
-                //Intent intent = new Intent(MainActivity.this, checkNakigi.class);
-                Intent intent = new Intent(getContext(), SettingRF.class);
-                startActivity(intent);
-            }
-        });
+//        Button btnAdd = (Button) v.findViewById(R.id.btnAdd);
+//        btnAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //save();
+//                //Intent intent = new Intent(MainActivity.this, checkNakigi.class);
+//                Intent intent = new Intent(getContext(), SettingRF.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        return v;
+        return root;
     }
 
 
