@@ -13,6 +13,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentNotificationsBinding;
 
+/**
+ * @description 커뮤니티 fragment
+ */
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;

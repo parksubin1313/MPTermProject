@@ -33,8 +33,11 @@
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank.xml" value="0.1725" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.1725" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_frigge.xml" value="0.1725" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_additembtn.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_checkbox.xml" value="0.1385" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.1" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1953125" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.128" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.176" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.24427083333333333" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
@@ -45,9 +48,12 @@
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_mine.xml" value="0.264" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_other.xml" value="0.16" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.2" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.1816123188405797" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.15520833333333334" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.15520833333333334" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/shopping_checkbox.xml" value="0.1953125" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_shoppinglist_item.xml" value="0.144" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_main.xml" value="0.25885416666666666" />
       </map>

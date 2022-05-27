@@ -32,6 +32,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+/**
+ * @description 냉장고 리스트 보여주는 fragment
+ */
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
