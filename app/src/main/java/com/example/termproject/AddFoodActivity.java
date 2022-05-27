@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.termproject.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -28,10 +30,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class AddFoodActivity extends AppCompatActivity {
 
@@ -55,6 +60,8 @@ public class AddFoodActivity extends AppCompatActivity {
     FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
     private DatabaseReference myRef;
+    private DatabaseReference apiReference = mDatabase.getReference("/API/");
+    private DatabaseReference prdtReference = mDatabase.getReference("/API/").child("PRDLST_NM");
 
     /*ListView*/
     private RecyclerView mRecyclerView;
@@ -189,9 +196,49 @@ public class AddFoodActivity extends AppCompatActivity {
     public void mOnBarcode(View v){
 
         Toast.makeText(getApplicationContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), testZxing.class);
 
-        startActivity(intent);
+//        =================================================================
+        if(apiReference.orderByChild("BAR_CD").equalTo("8805522061018") != null){
+            Toast.makeText(this, "상품명" + prdtReference.get().toString(), Toast.LENGTH_SHORT).show();
+
+//            apiReference.child("PRDLST_NM").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                    if (!task.isSuccessful()) {
+//                        Log.e("firebase", "Error getting data", task.getException());
+//                    }
+//                    else {
+//                        Log.d("firebase", String.valueOf(task.getResult().getValue()));
+//                    }
+//                }
+//            });
+
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            DatabaseReference loginRef = rootRef.child("/API/").child("/-N2wsZkwHlBnOc2MuWuF/").child("/2/");
+            Query query = loginRef.orderByChild("BAR_CD").equalTo("8805522061018");
+            query.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (DataSnapshot ds : task.getResult().getChildren()) {
+                            String passwordUser = ds.child("PRDLST_NM").getValue(String.class);
+                            Log.d("firebase", String.valueOf(passwordUser));
+                            Toast.makeText(getApplicationContext(), "pwuser " + passwordUser, Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Log.d("TAG", task.getException().getMessage()); //Don't ignore potential errors!
+                    }
+                }
+            });
+
+        }
+
+//        =================================================================
+
+//        Intent intent = new Intent(getApplicationContext(), testZxing.class);
+//
+//        startActivity(intent);
     }
 
     @Override

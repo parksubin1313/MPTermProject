@@ -42,8 +42,6 @@ public class HomeFragment extends Fragment {
     private DatabaseReference mReference = mDatabase.getReference();
     private DatabaseReference apiReference = mDatabase.getReference("/API/");
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-//    myRef =
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

@@ -1,15 +1,20 @@
 package com.example.termproject;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -53,9 +58,55 @@ public class testZxing extends AppCompatActivity {
 //                        }
 //                    }
 //                });
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-}
+
+//                if(apiReference.orderByChild("BAR_CD").equalTo("8805522061018") != null){
+//                    Toast.makeText(this, "상품명", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                Query thisAPIQuery = apiReference.orderByChild("BAR_CD").equalTo(result.getContents().toString());
+//                thisAPIQuery.addChildEventListener(new ChildEventListener() {
+//                    @Override
+//                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+//
+//                thisAPIQuery.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//                        Log.w("onCancelled", "loadPost:onCancelled", databaseError.toException());
+//                    }
+//                });
+//
+//            }
+//        } else {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
+    }}}}

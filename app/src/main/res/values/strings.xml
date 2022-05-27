@@ -14,6 +14,7 @@
     <!--식품-->
     <string name="groceryList">장보기 리스트</string>
     <string name="addFood">식품추가</string>
+    <string name="fridgeList">냉장고 리스트</string>
     <!--식품 추가-->
     <string name="frigeWay_cool">냉장</string>
     <string name="frigeWay_freeze">냉동</string>
