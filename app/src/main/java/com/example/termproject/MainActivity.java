@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     public static String access;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
     //Email Login
     //define view objects
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        AutomaticSignIn();
 
 
         ImageView signup = findViewById(R.id.btnSignup);
@@ -132,6 +136,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void AutomaticSignIn() {
+        if(firebaseUser != null) {
+            Log.d("자동로그인", "성공");
+            Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
+            startActivity(intent);
+        }
+        else{
+            Log.d("자동로그인", "실패");
+        }
+    }
+
 
 //    이미 DB 에 올렸으니까 필요없음!!!!!!!!!!!!!!!!!
 //    //open api 가져올 때 사용할 parseXML, precessParsing, printFood

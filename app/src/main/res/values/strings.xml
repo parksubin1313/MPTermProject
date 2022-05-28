@@ -36,4 +36,5 @@
 
     <!--장바구니-->
     <string name="itemToBuy">살 것</string>
+    <string name="shoppingList_title">사야할 것</string>
 </resources>
