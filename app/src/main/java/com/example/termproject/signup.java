@@ -1,5 +1,105 @@
 package com.example.termproject;
 
+//import androidx.annotation.NonNull;
+//import androidx.appcompat.app.AppCompatActivity;
+//
+//import android.content.Intent;
+//import android.os.Bundle;
+//import android.util.Log;
+//import android.view.View;
+//import android.widget.Button;
+//import android.widget.EditText;
+//
+//import com.example.termproject.domain.Member;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.auth.AuthResult;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//
+//
+//public class signup extends AppCompatActivity {
+//
+//
+//    EditText Email, Password, Nickname;
+//    Button btnSignup;
+//    static final String TAG = "SignUp";
+//    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+//    FirebaseUser user;
+//    FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_signup);
+//        btnSignup = findViewById(R.id.btnSignup);
+//        Email = findViewById(R.id.SignUpEmailEditText);
+//        Password = findViewById(R.id.SignUpPasswordEditText);
+//        Nickname = findViewById(R.id.SignUpNicknameEditText);
+//
+//        btnSignup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String EmailValue, PasswordValue, NicknameValue, NameValue, BirthDateValue;
+//                EmailValue = Email.getText().toString();
+//                PasswordValue = Password.getText().toString();
+//                NicknameValue = Nickname.getText().toString();
+//
+//                if (conditionChecker(EmailValue, PasswordValue, NicknameValue)) {
+//                    Member member = new Member(EmailValue, NicknameValue);
+//                    SignUp(member, PasswordValue);
+//                } else {
+//                    Log.e("signUpError", "Fail to SignUp : check the condition");
+//                }
+//            }
+//        });
+//    }
+//
+//    private boolean conditionChecker(String EmailValue, String PasswordValue, String NicknameValue){// 회원가입 조건들. 추가 예정
+//        if (EmailValue.length() != 0 && PasswordValue.length() != 0 && NicknameValue.length() != 0)
+//            return true;
+//        else
+//            return false;
+//    }
+//
+//
+//    private void SignUp(Member member, String PasswordValue) {
+//        firebaseAuth.createUserWithEmailAndPassword(member.getEmail(), PasswordValue).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()) {
+//                    Log.e("SignUp", "계정생성 성공");
+//                    // 생성한 계정의 firebaseAuth 바로 가져오기. uid를 얻기 위함.
+//                    user = firebaseAuth.getCurrentUser();
+//                    // 계정 생성에 성공할 경우만 DB에 정보를 저장.
+//                    firebaseFirestore.collection("user").document(user.getUid()).set(member).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            if (task.isSuccessful()) {
+//                                Log.e("SignUp", "회원가입 완료");
+//                                StartActivity(MainActivity.class);
+//                            } else {
+//                                Log.e("SignUp", "회원가입 실패");
+//                            }
+//                        }
+//                    });
+//                } else {
+//                    Log.e("SignUp", "계정생성 실패");
+//                }
+//            }
+//        });
+//    }
+//
+//
+//    private void StartActivity(Class c) {
+//        Intent intent = new Intent(this, c);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        startActivity(intent);
+//    }
+//}
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,19 +124,25 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class signup extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextEmail, editTextPassword, editTextNickname;
-    ImageView buttonSignup;
-    private AlertDialog dialog;
+    Button buttonSignup;
 
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    private DatabaseReference mReference = mDatabase.getReference();
+//    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+//    private DatabaseReference mReference = mDatabase.getReference();
+
+
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    FirebaseUser user;
+    FirebaseFirestore mDatabase = FirebaseFirestore.getInstance();
 
     ProgressDialog progressDialog;
     //define firebase object
-    FirebaseAuth firebaseAuth;
+//    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +154,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
 
         //initializig firebase auth object
-        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseAuth = FirebaseAuth.getInstance();
 
         /*
         if (firebaseAuth.getCurrentUser() != null) {
@@ -61,15 +167,20 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
 
         //initializing views
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        editTextNickname = (EditText) findViewById(R.id.editTextNickname);
+        editTextEmail = (EditText) findViewById(R.id.SignUpEmailEditText);
+        editTextPassword = (EditText) findViewById(R.id.SignUpPasswordEditText);
+        editTextNickname = (EditText) findViewById(R.id.SignUpNicknameEditText);
 
-        buttonSignup = (ImageView) findViewById(R.id.signup);
-        progressDialog = new ProgressDialog(this);
+        buttonSignup = (Button) findViewById(R.id.btnSignup);
+//        progressDialog = new ProgressDialog(this);
 
         //button click event
-        buttonSignup.setOnClickListener(this);
+        buttonSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerUser();
+            }
+        });
     }
 
     //Firebse creating a new user
@@ -90,13 +201,14 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
         progressDialog.setMessage("등록중입니다. 기다려 주세요...");
         progressDialog.show();
 
-        //creating a new user
+//        creating a new user
         firebaseAuth.createUserWithEmailAndPassword(email, password) //회원가입
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+//                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+                            user = firebaseAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -122,6 +234,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                         progressDialog.dismiss();
                     }
                 });
+
+
     }
 
     @Override

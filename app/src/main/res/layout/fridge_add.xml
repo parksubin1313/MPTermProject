@@ -9,7 +9,7 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="냉장고의 이름을 적어주세요"
+        android:text="@string/fridgeList_add_info"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
             />
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/fridgeName_editText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -47,10 +47,10 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/fridgeList_register_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="추가하기"
+        android:text="@string/add"
         android:textSize="20dp"
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"

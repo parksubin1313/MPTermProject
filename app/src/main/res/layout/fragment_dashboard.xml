@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    android:orientation="vertical">
 
-    <include layout="@layout/activity_grocery_list"/>
+
+    <TextView
+        android:id="@+id/shoppingList_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shoppingList"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/shoppingList_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

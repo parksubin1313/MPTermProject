@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
     <ImageView
         android:id="@+id/foodImg"
         android:layout_width="50dp"
@@ -11,18 +13,18 @@
         android:layout_marginLeft="10dp"
         />
     <TextView
-        android:id="@+id/foodName"
+        android:id="@+id/foodName_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="식품명"
+        android:text="@string/foodName"
         android:textSize="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         />
     <TextView
-        android:id="@+id/dueDate"
+        android:id="@+id/foodDate_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D - N"
+        android:text="@string/foodDate"
         android:layout_marginLeft="10dp"/>
 </LinearLayout>
