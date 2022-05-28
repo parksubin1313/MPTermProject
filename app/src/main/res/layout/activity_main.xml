@@ -42,12 +42,13 @@
             android:layout_marginTop="80dp"
             android:background="@null"
             android:backgroundTint="#A5A5A5"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyen"
             android:hint="아이디"
             android:textColor="#172F57"
             android:textColorHint="#172F57"
             android:textSize="15dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <ImageView
             android:layout_width="300dp"
@@ -60,7 +61,7 @@
 
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/SignInPasswordEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -76,22 +77,38 @@
             android:inputType="textPassword"/>
 
 
-        <ImageView
-            android:id="@+id/buttonLogin"
-            android:layout_width="280dp"
-            android:layout_height="85dp"
+<!--        <ImageView-->
+<!--            android:id="@+id/buttonLogin"-->
+<!--            android:layout_width="280dp"-->
+<!--            android:layout_height="85dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="230dp"-->
+<!--            android:src="@drawable/btnsignin"></ImageView>-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/btnSignup"-->
+<!--            android:layout_width="280dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="300dp"-->
+<!--            android:src="@drawable/gosignup"></ImageView>-->
+
+        <Button
+            android:id="@+id/SignInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="230dp"
-            android:src="@drawable/btnsignin"></ImageView>
+            android:text="@string/signIn"/>
 
-
-        <ImageView
-            android:id="@+id/btnSignup"
-            android:layout_width="280dp"
-            android:layout_height="50dp"
+        <Button
+            android:id="@+id/MoveToSignUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="300dp"
-            android:src="@drawable/gosignup"></ImageView>
+            android:text="@string/moveToSignUp"/>
 
 
     </FrameLayout>

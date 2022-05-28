@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/addFood"
+            android:fontFamily="@font/bmdohyen"
             />
 
     </LinearLayout>
@@ -46,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:hint="검색어를 입력하세요."/>
+            android:hint="검색어를 입력하세요."
+            android:fontFamily="@font/bmdohyen"/>
 <!--        <ListView
             android:id="@+id/addFood_listView"
             android:layout_width="match_parent"

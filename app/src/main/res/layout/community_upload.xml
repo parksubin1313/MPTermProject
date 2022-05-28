@@ -40,7 +40,8 @@
         android:layout_toEndOf="@+id/TVName"
         android:hint="음식명"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyen"/>
 
     <TextView
         android:id="@+id/TVDate"
@@ -74,7 +75,8 @@
         android:layout_marginStart="40dp"
         android:layout_alignTop="@id/ETLoc"
         android:text="장소"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:fontFamily="@font/bmdohyen"/>
 
     <EditText
         android:id="@+id/ETLoc"
@@ -88,7 +90,8 @@
         android:layout_toEndOf="@+id/TVLoc"
         android:hint="장소"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyen"/>
 
     <TextView
         android:id="@+id/TVTag"
@@ -112,7 +115,8 @@
         android:layout_toEndOf="@+id/TVTag"
         android:hint="태그"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyen"/>
 
     <TextView
         android:id="@+id/TVDetail"
@@ -136,15 +140,17 @@
         android:layout_toEndOf="@+id/TVDetail"
         android:hint="상세설명"
         android:maxLength="100"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyen"/>
 
     <Button
-        android:onClick="Upload"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="33dp"
         android:layout_marginBottom="20dp"
-        android:text="완료" />
+        android:onClick="Upload"
+        android:text="완료"
+        android:fontFamily="@font/bmdohyen"/>
 
 </RelativeLayout>

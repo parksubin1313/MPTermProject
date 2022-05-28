@@ -22,7 +22,7 @@
             android:textSize="16dp"
             android:id="@+id/txt_Name"
             android:layout_width="match_parent"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyen"
             android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:text="상품 이름"

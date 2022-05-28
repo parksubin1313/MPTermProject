@@ -51,7 +51,8 @@
             android:layout_weight="1"
             android:background="#FFEB3B"
             android:text="전체선택체크"
-            android:textSize="22dp" />
+            android:textSize="22dp"
+            android:fontFamily="@font/bmdohyen"/>
 
 
 <!--        <Button-->

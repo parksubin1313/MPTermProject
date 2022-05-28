@@ -12,17 +12,15 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_marginTop="175dp"
-        android:gravity="center"
-        android:layout_centerInParent="true">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:src="@drawable/signupment"
             android:layout_gravity="center_horizontal"
-            >
-        </ImageView>
+            android:src="@drawable/signupment"></ImageView>
 
         <ImageView
             android:layout_width="300dp"
@@ -34,7 +32,7 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/SignUpEmailEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -58,7 +56,7 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/SignUpPasswordEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -84,7 +82,7 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextNickname"
+            android:id="@+id/SignUpNicknameEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -99,14 +97,21 @@
             android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/signup"
-            android:layout_width="300dp"
-            android:layout_height="75dp"
+<!--        <ImageView-->
+<!--            android:id="@+id/signup"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:src="@drawable/signup"-->
+<!--            android:layout_marginTop="310dp"-->
+<!--            />-->
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/signup"
             android:layout_marginTop="310dp"
-            />
+            android:text="@string/signUp"/>
 
     </FrameLayout>
 
