@@ -22,6 +22,7 @@
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.11296296296296296" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.1" />
@@ -29,17 +30,20 @@
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/detail_fridge.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.16" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_my_fridge_cool.xml" value="0.23385416666666667" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_my_fridge_freeze.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.4" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fridge_add.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fridgelist.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/my_fridge.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/my_fridge.xml" value="0.2" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.2" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_allfridge_item.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_detailfridge_item.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_fridgelist_item.xml" value="0.176" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_myfridge_item.xml" value="0.24048913043478262" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23385416666666667" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.2" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.14990942028985507" />

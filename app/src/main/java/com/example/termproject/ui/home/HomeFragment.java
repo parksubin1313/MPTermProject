@@ -8,21 +8,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.termproject.adapter.AllFridgeAdapter;
+import com.example.termproject.adapter.VPAdapter;
 import com.example.termproject.domain.DetailFridge;
 import com.example.termproject.domain.Food;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentHomeBinding;
 import com.example.termproject.domain.MyFridge;
+import com.example.termproject.myFridge_cool;
+import com.example.termproject.myFridge_freeze;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,6 +38,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -41,6 +49,8 @@ public class HomeFragment extends Fragment {
     private FirebaseUser curUser = FirebaseAuth.getInstance().getCurrentUser();
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
     private AllFridgeAdapter AFadapter;
+    private VPAdapter vpAdapter;
+    private ListView listView;
 
     private FragmentHomeBinding binding;
 
@@ -57,32 +67,55 @@ public class HomeFragment extends Fragment {
 //        return root;
         Log.d("HomeFragment", "들어옴");
         ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_home , container, false);
+//        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.my_fridge , container, false);
+//        setContentView(R.layout.my_fridge);
+
+//        TabLayout tabLayout = rootView.findViewById(R.id.myFridge_tabLayout);
+//        ViewPager viewPager = rootView.findViewById(R.id.myFridge_viewPager);
+//
+//        tabLayout.setupWithViewPager(viewPager);
+//
+//        vpAdapter = new VPAdapter(getParentFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+//        vpAdapter.addFragment(new myFridge_cool(), "냉장");
+//        vpAdapter.addFragment(new myFridge_freeze(), "냉동");
 
         foodList = new ArrayList<>();
 
-        ListView listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
+        listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
 
-        AFadapter = new AllFridgeAdapter();
-        listView.setAdapter(AFadapter);
+//        AFadapter = new AllFridgeAdapter();
+        List<String> data = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+//        listView.setAdapter(AFadapter);
+        listView.setAdapter(adapter);
 
-        db.collection("All_Fridge").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if(task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        //추가될 AllFridge
-                        DetailFridge tempContent = document.toObject(DetailFridge.class);
-                        //User -> 내 냉장고 list 불러와서
-                        if(MyFridgeCheck(tempContent.getUserList())) {
-                            //냉장고가 되어야 함
-//                            TODO: 해결해야 함
-//                            AFadapter.addItem(tempContent);
-                        }
-                    }
-                    AFadapter.notifyDataSetChanged();
-                }
-            }
-        });
+        for(int i=0; i<15; i++){
+            String fName = "RF"+(i+1);
+            data.add(fName);
+        }
+//        이걸 해줘야 add 가 반영됨
+        adapter.notifyDataSetChanged();
+
+
+//          TODO: DB 는 따로 혜균이 오면 손보자
+//        db.collection("All_Fridge").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                if(task.isSuccessful()) {
+//                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                        //추가될 AllFridge
+//                        DetailFridge tempContent = document.toObject(DetailFridge.class);
+//                        //User -> 내 냉장고 list 불러와서
+//                        if(MyFridgeCheck(tempContent.getUserList())) {
+//                            //냉장고가 되어야 함
+////                            TODO: 해결해야 함
+////                            AFadapter.addItem(tempContent);
+//                        }
+//                    }
+////                    AFadapter.notifyDataSetChanged();
+//                }
+//            }
+//        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -107,8 +140,9 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onResume() {
-        AFadapter.notifyDataSetChanged();
-        Log.e(TAG, " : " + AFadapter.getCount());
+//        TODO: 이거 왜 오류남? 없어도 되냐?
+//        AFadapter.notifyDataSetChanged();
+//        Log.e(TAG, " : " + AFadapter.getCount());
         super.onResume();
     }
 
