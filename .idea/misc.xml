@@ -26,6 +26,7 @@
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/add_fridge.xml" value="0.13949275362318841" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/all_fridge.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/detail_fridge.xml" value="0.2427536231884058" />
@@ -37,7 +38,7 @@
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.4" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fridge_add.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/fridgelist.xml" value="0.1" />
-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/my_fridge.xml" value="0.2" />
+        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/my_fridge.xml" value="0.16" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.2" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_allfridge_item.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/single_detailfridge_item.xml" value="0.2427536231884058" />

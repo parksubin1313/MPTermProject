@@ -33,7 +33,7 @@ public class FridgeAddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fridge_add);
+        setContentView(R.layout.add_fridge);
 
         fridgeName = findViewById(R.id.fridgeName_editText);
         CreateButton = findViewById(R.id.fridgeList_register_btn);

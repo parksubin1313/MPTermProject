@@ -3,12 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".myFridge_freeze">
+    tools:context=".myFridge_freeze"
+    android:id="@+id/fragment_container_freeze">
 
+<!--    <TextView-->
+<!--        android:id="@+id/freeze_textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Freeze"/>-->
+<!--    -->
     <ListView
         android:id="@+id/myFridge_freeze_listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/fridgeList_textView"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>

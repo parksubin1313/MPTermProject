@@ -3,7 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".myFridge_cool">
+    tools:context=".myFridge_cool"
+    android:id="@+id/fragment_container_cool">
+
+<!--    <TextView-->
+<!--        android:id="@+id/cool_textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Cool"/>-->
 
     <ListView
         android:id="@+id/myFridge_cool_listView"

@@ -14,27 +14,17 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.termproject.adapter.AllFridgeAdapter;
-import com.example.termproject.adapter.VPAdapter;
-import com.example.termproject.domain.DetailFridge;
 import com.example.termproject.domain.Food;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentHomeBinding;
-import com.example.termproject.domain.MyFridge;
-import com.example.termproject.myFridge_cool;
-import com.example.termproject.myFridge_freeze;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
@@ -43,13 +33,9 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     String TAG = "HomeFragment";
-    private ArrayList<Food> foodList;
-
 
     private FirebaseUser curUser = FirebaseAuth.getInstance().getCurrentUser();
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private AllFridgeAdapter AFadapter;
-    private VPAdapter vpAdapter;
     private ListView listView;
 
     private FragmentHomeBinding binding;
@@ -79,7 +65,6 @@ public class HomeFragment extends Fragment {
 //        vpAdapter.addFragment(new myFridge_cool(), "냉장");
 //        vpAdapter.addFragment(new myFridge_freeze(), "냉동");
 
-        foodList = new ArrayList<>();
 
         listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
 
