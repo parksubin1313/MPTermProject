@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.termproject.CommunityActivity;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentNotificationsBinding;
@@ -58,6 +59,8 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
                 Toast.makeText(getActivity(), index+1 + "th is clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), CommunityActivity.class);
+                startActivity(intent);
             }
         });
 

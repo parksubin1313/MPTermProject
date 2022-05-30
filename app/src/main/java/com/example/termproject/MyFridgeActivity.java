@@ -30,9 +30,9 @@ public class MyFridgeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.d("MyFridgeActivity : ", "들어옴");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_fridge);
+        Log.d("MyFridgeActivity", "들어옴");
 
         //뷰페이저 세팅
         ViewPager viewPager = findViewById(R.id.myFridge_viewPager);

@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.termproject.AddFridgeActivity;
 import com.example.termproject.adapter.AllFridgeAdapter;
 import com.example.termproject.domain.Food;
 import com.example.termproject.MyFridgeActivity;
@@ -116,6 +117,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //TODO: 냉장고 추가하기 activity 로 이동
+                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
+                startActivity(intent);
             }
         });
 

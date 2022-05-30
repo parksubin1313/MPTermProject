@@ -19,6 +19,12 @@
         <activity
             android:name=".MyFridgeActivity"
             android:exported="true"/>
+        <activity
+            android:name=".CommunityActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AddFridgeActivity"
+            android:exported="true"/>
 <!--        <activity-->
 <!--            android:name=".InviteUser"-->
 <!--            android:exported="false" />-->

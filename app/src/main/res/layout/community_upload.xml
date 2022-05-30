@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ComUpload">
+    android:layout_height="match_parent">
 
     //상단바 추가되면 layout_below 하기
     <ImageView
@@ -139,6 +138,7 @@
         android:minHeight="48dp" />
 
     <Button
+        android:id="@+id/uploadBtn"
         android:onClick="Upload"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
