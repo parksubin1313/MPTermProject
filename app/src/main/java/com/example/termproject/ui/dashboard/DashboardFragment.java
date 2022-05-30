@@ -2,50 +2,84 @@ package com.example.termproject.ui.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.termproject.AddFoodActivity;
+import com.example.termproject.AddShoppingActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentDashboardBinding;
 
-/**
- * @description 장바구니 fragment
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
+    private ListView listView;
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        MenuInflater inflater1 = getActivity().getMenuInflater();
+        inflater1.inflate(R.menu.menu_add_shopping, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), AddShoppingActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+//        DashboardViewModel dashboardViewModel =
+//                new ViewModelProvider(this).get(DashboardViewModel.class);
+//
+//        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+//        View root = binding.getRoot();
 
-        View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        Log.d("HomeFragment", "들어옴");
+        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_dashboard , container, false);
 
-        Button add_shoppingList = (Button) v.findViewById(R.id.add_shoppingList);
+        listView= (ListView) rootView.findViewById(R.id.shoppingList_listView);
 
-        add_shoppingList.setOnClickListener(new View.OnClickListener() {
+        List<String> data = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+        listView.setAdapter(adapter);
+
+        for(int i=0; i<15; i++){
+            String fName = "Shopping "+(i+1);
+            data.add(fName);
+        }
+//        이걸 해줘야 add 가 반영됨
+        adapter.notifyDataSetChanged();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "구매할 음식 추가", Toast.LENGTH_SHORT).show();
-                mOnPopupClick(view);
+            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+                Toast.makeText(getActivity(), index+1 + "th is clicked", Toast.LENGTH_SHORT).show();
             }
         });
-        return v;
-    }
 
-    public void mOnPopupClick(View v){
-        //음식 추가하는 팝업(엑티비티)호출
-        Intent intent = new Intent(getContext(), AddFoodActivity.class);
-        //intent.putExtra("data", "Test addFood Popup");
-        startActivity(intent);
+
+        setHasOptionsMenu(true);
+
+        return rootView;
     }
 
     @Override
@@ -54,50 +88,3 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
 }
-
-/**
- * 되면 지워
- */
-//public class DashboardFragment extends Fragment {
-//
-//    private FragmentDashboardBinding binding;
-//
-//    public View onCreateView(@NonNull LayoutInflater inflater,
-//                             ViewGroup container, Bundle savedInstanceState) {
-////        DashboardViewModel dashboardViewModel =
-////                new ViewModelProvider(this).get(DashboardViewModel.class);
-////
-////        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-////        View root = binding.getRoot();
-////
-////        final TextView textView = binding.textDashboard;
-////        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-////        return root;
-//
-//        View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
-//
-//        Button addFoodBtn = (Button) v.findViewById(R.id.addFoodBtn);
-//
-//        addFoodBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getContext(), "음식 추가", Toast.LENGTH_SHORT).show();
-//                mOnPopupClick(view);
-//            }
-//        });
-//        return v;
-//    }
-//
-//    public void mOnPopupClick(View v){
-//        //음식 추가하는 팝업(엑티비티)호출
-//        Intent intent = new Intent(getContext(), AddFoodActivity.class);
-//        //intent.putExtra("data", "Test addFood Popup");
-//        startActivity(intent);
-//    }
-//
-//    @Override
-//    public void onDestroyView() {
-//        super.onDestroyView();
-//        binding = null;
-//    }
-//}

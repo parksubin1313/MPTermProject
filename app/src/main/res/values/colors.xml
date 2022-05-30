@@ -7,10 +7,4 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <!--Frige original color-->
-    <color name="frige_green">#074A59</color>
-    <color name="frige_yellow">#F2B544</color>
-    <color name="frige_orange">#F27F3D</color>
-    <color name="frige_orange_deep">#F25A38</color>
-    <color name="frige_white">#F2F2F2</color>
 </resources>

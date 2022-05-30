@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Frigge</string>
+    <string name="app_name">TermProject</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -14,7 +14,6 @@
     <!--식품-->
     <string name="groceryList">장보기 리스트</string>
     <string name="addFood">식품추가</string>
-    <string name="fridgeList">냉장고 리스트</string>
     <!--식품 추가-->
     <string name="frigeWay_cool">냉장</string>
     <string name="frigeWay_freeze">냉동</string>
@@ -33,8 +32,4 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">List</string>
     <string name="title_notifications">Community</string>
-
-    <!--장바구니-->
-    <string name="itemToBuy">살 것</string>
-    <string name="shoppingList_title">사야할 것</string>
 </resources>

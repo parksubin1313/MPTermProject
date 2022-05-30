@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".signup"
     android:background="@color/white"
     >
 
@@ -34,14 +33,14 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/SignUpEmailEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="70dp"
             android:background="@null"
             android:backgroundTint="#172F57"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:hint="Email"
             android:textColor="#6f6f6f"
             android:textColorHint="#172F57"
@@ -58,14 +57,14 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/SignUpPasswordEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="150dp"
             android:textColor="#6f6f6f"
             android:hint="비밀번호"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:backgroundTint="#172F57"
             android:textSize="15dp"
             android:textColorHint="#172F57"
@@ -84,14 +83,14 @@
             ></ImageView>
 
         <EditText
-            android:id="@+id/editTextNickname"
+            android:id="@+id/SignUpNicknameEditText"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="230dp"
             android:background="@null"
             android:backgroundTint="#172F57"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:hint="Nickname"
             android:textColor="#6f6f6f"
             android:textColorHint="#172F57"
@@ -99,14 +98,22 @@
             android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/signup"
-            android:layout_width="300dp"
-            android:layout_height="75dp"
+<!--        <ImageView-->
+<!--            android:id="@+id/signup"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:src="@drawable/signup"-->
+<!--            android:layout_marginTop="310dp"-->
+<!--            />-->
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/signup"
             android:layout_marginTop="310dp"
-            />
+            android:text="@string/signUp"
+            android:fontFamily="@font/bmdohyeon"/>
 
     </FrameLayout>
 

@@ -16,4 +16,11 @@
         android:fontWeight="400"
         android:font="@font/cartoon"/>
 
+    <font android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cartoon"/>
+
+    <font android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/bmdohyeon"/>
 </font-family>

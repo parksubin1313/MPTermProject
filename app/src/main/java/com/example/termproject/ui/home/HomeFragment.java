@@ -1,103 +1,170 @@
 package com.example.termproject.ui.home;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.termproject.Food;
-import com.example.termproject.GroceryListActivity;
-import com.example.termproject.ListRF;
+import com.example.termproject.AddFridgeActivity;
+import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
-import com.example.termproject.SettingRF;
 import com.example.termproject.databinding.FragmentHomeBinding;
-import com.example.termproject.testZxing;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @description 냉장고 리스트 보여주는 fragment
- */
 public class HomeFragment extends Fragment {
 
+    String TAG = "HomeFragment";
+
+    private FirebaseUser curUser = FirebaseAuth.getInstance().getCurrentUser();
+    final FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ListView listView;
+
     private FragmentHomeBinding binding;
-    private DatabaseReference myRef;
 
-    DatabaseReference reference;
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    private DatabaseReference mReference = mDatabase.getReference();
-    private DatabaseReference apiReference = mDatabase.getReference("/API/");
+    public HomeFragment(){}
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        MenuInflater inflater1 = getActivity().getMenuInflater();
+        inflater1.inflate(R.menu.menu_add_fridge, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getActivity(), "fridge add clicked", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+//        HomeViewModel homeViewModel =
+//                new ViewModelProvider(this).get(HomeViewModel.class);
+//
+//        binding = FragmentHomeBinding.inflate(inflater, container, false);
+//        View root = binding.getRoot();
+//
+//        return root;
+        Log.d("HomeFragment", "들어옴");
+        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_home , container, false);
+//        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.my_fridge , container, false);
+//        setContentView(R.layout.my_fridge);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+//        TabLayout tabLayout = rootView.findViewById(R.id.myFridge_tabLayout);
+//        ViewPager viewPager = rootView.findViewById(R.id.myFridge_viewPager);
+//
+//        tabLayout.setupWithViewPager(viewPager);
+//
+//        vpAdapter = new VPAdapter(getParentFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+//        vpAdapter.addFragment(new myFridge_cool(), "냉장");
+//        vpAdapter.addFragment(new myFridge_freeze(), "냉동");
 
-//        final TextView textView = binding.textHome;
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-//        View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-//        된다된다!!!!! 추가 버튼되면 이 바코드는 없애도 됨
- /*       Button barcodeBtn = (Button) v.findViewById(R.id.barcodeBtn);
-        barcodeBtn.setOnClickListener(new View.OnClickListener() {
+
+        listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
+
+//        AFadapter = new AllFridgeAdapter();
+        List<String> data = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+//        listView.setAdapter(AFadapter);
+        listView.setAdapter(adapter);
+
+        for(int i=0; i<15; i++){
+            String fName = "RF"+(i+1);
+            data.add(fName);
+        }
+//        이걸 해줘야 add 가 반영됨
+        adapter.notifyDataSetChanged();
+
+
+//          TODO: DB 는 따로 혜균이 오면 손보자
+//        db.collection("All_Fridge").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                if(task.isSuccessful()) {
+//                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                        //추가될 AllFridge
+//                        DetailFridge tempContent = document.toObject(DetailFridge.class);
+//                        //User -> 내 냉장고 list 불러와서
+//                        if(MyFridgeCheck(tempContent.getUserList())) {
+//                            //냉장고가 되어야 함
+////                            TODO: 해결해야 함
+////                            AFadapter.addItem(tempContent);
+//                        }
+//                    }
+////                    AFadapter.notifyDataSetChanged();
+//                }
+//            }
+//        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), testZxing.class);
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+                //내 냉장고로 이동
+                Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
                 startActivity(intent);
             }
-        });*/
-//        //바코드 버튼 클릭
-//        public void mOnBarcode(View v){
-//            Toast.makeText(getContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(getContext(), testZxing.class);
-//
-//            startActivity(intent);
-//
-//        }
-
-//        Button btnAdd = (Button) v.findViewById(R.id.btnAdd);
-//        btnAdd.setOnClickListener(new View.OnClickListener() {
+        });
+//        //냉장고 등록하기 버튼
+//        Button add = (Button) rootView.findViewById(R.id.fridgeList_add_btn);
+//        add.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v) {
-//                //save();
-//                //Intent intent = new Intent(MainActivity.this, checkNakigi.class);
-//                Intent intent = new Intent(getContext(), SettingRF.class);
+//            public void onClick(View view) {
+//                //TODO: 냉장고 추가하기 activity 로 이동
+//                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
 //                startActivity(intent);
 //            }
 //        });
 
-        return root;
+        setHasOptionsMenu(true);
+
+        return rootView;
+
     }
 
-
+    @Override
+    public void onResume() {
+//        TODO: 이거 왜 오류남? 없어도 되냐?
+//        AFadapter.notifyDataSetChanged();
+//        Log.e(TAG, " : " + AFadapter.getCount());
+        super.onResume();
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
+
+    public boolean MyFridgeCheck(ArrayList<String> userList){
+        String myUid = curUser.getUid();
+        for(String memberUid : userList){
+            if(myUid.equals(memberUid))
+                //내 냉장고임
+                return true;
+        }
+        return false;
+    }
+    
 }
