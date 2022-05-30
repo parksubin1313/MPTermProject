@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/shoppingList_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/shoppingList" />
+<!--    <TextView-->
+<!--        android:id="@+id/shoppingList_textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/shoppingList" />-->
 
 <!--    TODO: 이 리스트는 체크리스트로 구성될 것-->
     <ListView
