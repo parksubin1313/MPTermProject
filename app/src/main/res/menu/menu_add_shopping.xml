@@ -4,5 +4,6 @@
     <item
         android:id="@+id/shopping_add_menu"
         android:title="@string/shopping_add"
-        app:showAsAction="never"/>
+        app:showAsAction="always"
+        android:icon="@drawable/shopping_add_itembtn_clicked"/>
 </menu>
