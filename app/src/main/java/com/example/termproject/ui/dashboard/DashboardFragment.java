@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.termproject.AddFoodActivity;
+import com.example.termproject.AddShoppingActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentDashboardBinding;
 
@@ -33,14 +34,13 @@ public class DashboardFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         MenuInflater inflater1 = getActivity().getMenuInflater();
-        inflater1.inflate(R.menu.menu_add_food, menu);
+        inflater1.inflate(R.menu.menu_add_shopping, menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getActivity(), "food add clicked", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getActivity(), AddFoodActivity.class);
+        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), AddShoppingActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }

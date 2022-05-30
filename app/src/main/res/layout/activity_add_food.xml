@@ -18,14 +18,12 @@
             android:id="@+id/fridgeWay_cool_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/frigeWay_cool"
-            android:fontFamily="@font/bmdohyeon"/>
+            android:text="@string/fridgeWay_cool"/>
         <RadioButton
             android:id="@+id/fridgeWay_freeze_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/frigeWay_freeze"
-            android:fontFamily="@font/bmdohyeon"/>
+            android:text="@string/fridgeWay_freeze"/>
     </RadioGroup>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -86,7 +84,6 @@
         android:text="@string/barcode"
         android:layout_gravity="center"
         android:onClick="mOnBarcode"
-        android:fontFamily="@font/bmdohyeon"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -100,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:fontFamily="@font/bmdohyeon"
+
             android:text="@string/submit"/>
 
 <!--            android:onClick="mOnSubmit"/>-->
@@ -110,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
-            android:fontFamily="@font/bmdohyeon"
+
             android:layout_marginLeft="10dp"/>
 
 <!--            android:onClick="mOnClose"/>-->

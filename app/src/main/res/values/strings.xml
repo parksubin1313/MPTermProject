@@ -38,9 +38,11 @@
     <string name="add">추가하기</string>
     <string name="myFridge_Add">식품 등록하기</string>
     <string name="plus">+</string>
+    <string name="shopping_add">체크리스트 추가하기</string>
 
     <!--안내문-->
     <string name="fridgeList_add_info">냉장고의 이름을 적어주세요</string>
+    <string name="shoppingList_add_info">사야할 식품을 적어주세요</string>
     <!---->
 
 
@@ -49,9 +51,9 @@
     <string name="addFood">식품추가</string>
 
     <!--식품 추가-->
-    <string name="frigeWay_cool">냉장</string>
-    <string name="frigeWay_freeze">냉동</string>
-    <string name="frigeWay_etc">기타</string>
+    <string name="fridgeWay_cool">냉장</string>
+    <string name="fridgeWay_freeze">냉동</string>
+    <string name="fridgeWay_etc">기타</string>
     <!--    <string name="foodName">식품명</string>-->
     <string name="exDate">유통기한</string>
     <string name="quantity">수량</string>
