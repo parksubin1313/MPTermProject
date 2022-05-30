@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#0E5400</color>
     <color name="ggreen">#004200</color>
+    <color name="gold">#FFD700</color>
+    <color name="orange">#FFA500</color>
+    <color name="dark_orange">#FF8C00</color>
+    <color name="ivory">#FFFFFA</color>
 </resources>

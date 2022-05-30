@@ -33,10 +33,6 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
     private RadioButton storageWayRadio;
     private int storageWayInt;
 
-
-//    TODO: 체크리스트 추가하는 activity 추가하고 연결하기 여기말고 dashboardFragment 에
-
-
     private Food food;
 
     private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
