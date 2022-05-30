@@ -39,15 +39,16 @@
         android:layout_toEndOf="@+id/TVName"
         android:hint="음식명"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyeon"/>
 
     <TextView
         android:id="@+id/TVDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TVName"
-        android:layout_marginStart="40dp"
         android:layout_alignTop="@id/ETDate"
+        android:layout_marginStart="40dp"
         android:text="유통기한"
         android:textSize="30dp" />
 
@@ -87,7 +88,8 @@
         android:layout_toEndOf="@+id/TVLoc"
         android:hint="장소"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyeon"/>
 
     <TextView
         android:id="@+id/TVTag"
@@ -111,7 +113,8 @@
         android:layout_toEndOf="@+id/TVTag"
         android:hint="태그"
         android:maxLength="10"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyeon"/>
 
     <TextView
         android:id="@+id/TVDetail"
@@ -135,7 +138,8 @@
         android:layout_toEndOf="@+id/TVDetail"
         android:hint="상세설명"
         android:maxLength="100"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:fontFamily="@font/bmdohyeon"/>
 
 <!--    <Button-->
 <!--        android:id="@+id/uploadBtn"-->

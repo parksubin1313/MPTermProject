@@ -42,7 +42,7 @@
             android:layout_marginTop="80dp"
             android:background="@null"
             android:backgroundTint="#A5A5A5"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:hint="아이디"
             android:textColor="#172F57"
             android:textColorHint="#172F57"
@@ -67,7 +67,7 @@
             android:layout_marginTop="150dp"
             android:background="@null"
             android:backgroundTint="#A5A5A5"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:hint="비밀번호"
             android:textColor="#172F57"
             android:textColorHint="#172F57"
@@ -99,7 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="230dp"
-            android:text="@string/signIn"/>
+            android:text="@string/signIn"
+            android:fontFamily="@font/bmdohyeon"/>
 
         <Button
             android:id="@+id/MoveToSignUpButton"
@@ -107,7 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="300dp"
-            android:text="@string/moveToSignUp"/>
+            android:text="@string/moveToSignUp"
+            android:fontFamily="@font/bmdohyeon"/>
 
 
     </FrameLayout>

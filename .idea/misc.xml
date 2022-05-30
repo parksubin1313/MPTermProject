@@ -3,15 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/font/custom_font_family.xml" value="0.25" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/font/font.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.3578125" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.25" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.33" />
-        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.11277173913043478" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.33" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.3061594202898551" />
-        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.3061594202898551" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/add_fridge.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.2796875" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_item_detail.xml" value="0.2796875" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/detail_fridge.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_my_fridge_cool.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_my_fridge_freeze.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fridge_add.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/my_fridge.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/setting_my_communityitem.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/single_allfridge_item.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/single_detailfridge_item.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2760416666666667" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/menu/menu_add_community.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/menu/menu_main.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank.xml" value="0.1" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_share.xml" value="0.1" />
         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_shopping_cart.xml" value="0.1" />
