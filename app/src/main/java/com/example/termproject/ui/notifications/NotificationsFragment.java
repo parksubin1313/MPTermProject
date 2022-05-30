@@ -1,6 +1,7 @@
 package com.example.termproject.ui.notifications;
 
 import android.content.Intent;
+import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentNotificationsBinding;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +35,9 @@ public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
     private ListView listView;
+    SearchView searchView;
+    ViewGroup rootView;
+    ArrayAdapter<String> adapter;
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -58,13 +64,13 @@ public class NotificationsFragment extends Fragment {
 //        View root = binding.getRoot();
 
         Log.d("HomeFragment", "들어옴");
-        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_notifications , container, false);
-
+        rootView= (ViewGroup) inflater.inflate(R.layout.fragment_notifications , container, false);
+        searchView = (SearchView) rootView.findViewById(R.id.community_searchView);
         listView= (ListView) rootView.findViewById(R.id.communityList_listView);
 
 //        AFadapter = new AllFridgeAdapter();
         List<String> data = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
 //        listView.setAdapter(AFadapter);
         listView.setAdapter(adapter);
 
@@ -84,8 +90,20 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-//        final TextView textView = binding.textNotifications;
-//        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                NotificationsFragment.this.adapter.getFilter().filter(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                NotificationsFragment.this.adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
         setHasOptionsMenu(true);
         return rootView;
     }
@@ -95,4 +113,8 @@ public class NotificationsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
+
+
 }

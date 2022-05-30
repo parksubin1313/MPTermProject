@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-<!--    <TextView-->
-<!--        android:id="@+id/communityList_textView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/communityList"-->
-<!--        android:gravity="center"/>-->
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/community_searchView"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/community_search_info"/>
 
     <ListView
         android:id="@+id/communityList_listView"

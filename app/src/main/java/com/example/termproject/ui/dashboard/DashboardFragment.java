@@ -58,10 +58,8 @@ public class DashboardFragment extends Fragment {
 
         listView= (ListView) rootView.findViewById(R.id.shoppingList_listView);
 
-//        AFadapter = new AllFridgeAdapter();
         List<String> data = new ArrayList<>();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
-//        listView.setAdapter(AFadapter);
         listView.setAdapter(adapter);
 
         for(int i=0; i<15; i++){

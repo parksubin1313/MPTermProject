@@ -43,6 +43,7 @@
     <!--안내문-->
     <string name="fridgeList_add_info">냉장고의 이름을 적어주세요</string>
     <string name="shoppingList_add_info">사야할 식품을 적어주세요</string>
+    <string name="community_search_info">검색어를 입력하세요</string>
     <!---->
 
 
