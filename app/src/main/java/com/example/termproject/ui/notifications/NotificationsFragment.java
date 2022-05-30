@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.termproject.AddFoodActivity;
 import com.example.termproject.CommunityActivity;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
@@ -28,6 +32,22 @@ public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
     private ListView listView;
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        MenuInflater inflater1 = getActivity().getMenuInflater();
+        inflater1.inflate(R.menu.menu_add_community, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), CommunityActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,6 +86,7 @@ public class NotificationsFragment extends Fragment {
 
 //        final TextView textView = binding.textNotifications;
 //        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        setHasOptionsMenu(true);
         return rootView;
     }
 

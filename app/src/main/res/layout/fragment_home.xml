@@ -20,14 +20,14 @@
         android:layout_height="match_parent"
         android:layout_below="@id/fridgeList_textView"/>
 
-    <Button
-        android:id="@+id/fridgeList_add_btn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/plus"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"/>
+<!--    <Button-->
+<!--        android:id="@+id/fridgeList_add_btn"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:text="@string/plus"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginBottom="10dp"/>-->
 
 </RelativeLayout>

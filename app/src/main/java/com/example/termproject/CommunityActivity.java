@@ -25,16 +25,16 @@ public class CommunityActivity extends AppCompatActivity {
         EditText tag = findViewById(R.id.ETTag);
         EditText detail = findViewById(R.id.ETDetail);
         ImageView imageView = findViewById(R.id.imageView);
-        Button btn = findViewById(R.id.uploadBtn);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), AddFridgeActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button btn = findViewById(R.id.uploadBtn);
+//
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getApplicationContext(), AddFridgeActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
     }

@@ -5,28 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.termproject.AddFridgeActivity;
-import com.example.termproject.adapter.AllFridgeAdapter;
-import com.example.termproject.domain.Food;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentHomeBinding;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +40,21 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
 
     public HomeFragment(){}
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        MenuInflater inflater1 = getActivity().getMenuInflater();
+        inflater1.inflate(R.menu.menu_add_fridge, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getActivity(), "fridge add clicked", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -65,6 +78,8 @@ public class HomeFragment extends Fragment {
 //        vpAdapter = new VPAdapter(getParentFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 //        vpAdapter.addFragment(new myFridge_cool(), "냉장");
 //        vpAdapter.addFragment(new myFridge_freeze(), "냉동");
+
+
 
 
         listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
@@ -111,16 +126,18 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        //냉장고 등록하기 버튼
-        Button add = (Button) rootView.findViewById(R.id.fridgeList_add_btn);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO: 냉장고 추가하기 activity 로 이동
-                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
-                startActivity(intent);
-            }
-        });
+//        //냉장고 등록하기 버튼
+//        Button add = (Button) rootView.findViewById(R.id.fridgeList_add_btn);
+//        add.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //TODO: 냉장고 추가하기 activity 로 이동
+//                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+        setHasOptionsMenu(true);
 
         return rootView;
 

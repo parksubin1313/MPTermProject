@@ -137,14 +137,14 @@
         android:maxLength="100"
         android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/uploadBtn"
-        android:onClick="Upload"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="20dp"
-        android:text="완료" />
+<!--    <Button-->
+<!--        android:id="@+id/uploadBtn"-->
+<!--        android:onClick="Upload"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="33dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:text="완료" />-->
 
 </RelativeLayout>
