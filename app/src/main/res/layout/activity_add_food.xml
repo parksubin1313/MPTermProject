@@ -38,12 +38,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/foodName"/>
+                android:text="@string/foodName"
+                android:fontFamily="@font/bmdohyeon"/>
             <EditText
                 android:id="@+id/foodName_editView"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:fontFamily="@font/bmdohyeon"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -62,7 +64,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/exDate"/>
+                android:text="@string/exDate"
+                android:fontFamily="@font/bmdohyeon"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
