@@ -5,5 +5,5 @@
         android:id="@+id/shopping_add_menu"
         android:title="@string/shopping_add"
         app:showAsAction="always"
-        android:icon="@drawable/shopping_add_itembtn_clicked"/>
+        android:icon="@drawable/menu_add_shoppinglist"/>
 </menu>

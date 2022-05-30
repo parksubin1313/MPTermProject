@@ -43,6 +43,7 @@
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.24427083333333333" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/add_fridge.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/back_et_mymsgbox.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_mine.xml" value="0.264" />
@@ -56,8 +57,9 @@
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_shoppinglist_item.xml" value="0.144" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_community.xml" value="0.1078125" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_food.xml" value="0.264" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_fridge.xml" value="0.536" />
-        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_shopping.xml" value="0.2" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_shopping.xml" value="0.4" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_main.xml" value="0.25885416666666666" />
       </map>
     </option>
