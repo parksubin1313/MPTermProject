@@ -1,56 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.termproject">
+xmlns:tools="http://schemas.android.com/tools"
+package="com.example.termproject">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_friggelogo"
+
+<application
+    android:allowBackup="true"
+    android:icon="@drawable/ic_friggelogo"
+    android:label="@string/app_name"
+    android:roundIcon="@drawable/ic_friggelogo"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.TermProject">
+    <activity
+        android:name=".BottomNavigation"
+        android:exported="true"
+        android:label="@string/title_activity_bottom_navigation" />
+    <activity
+        android:name=".MyFridgeActivity"
+        android:exported="true"/>
+    <activity
+        android:name=".CommunityActivity"
+        android:exported="true"/>
+    <activity
+        android:name=".AddFridgeActivity"
+        android:exported="true"/>
+    <!--        <activity-->
+    <!--            android:name=".InviteUser"-->
+    <!--            android:exported="false" />-->
+    <!--        <activity-->
+    <!--            android:name=".testZxing"-->
+    <!--            android:exported="true" />-->
+    <!--        <activity-->
+    <!--            android:name=".ListRF"-->
+    <!--            android:exported="true" />-->
+    <!--        <activity-->
+    <!--            android:name=".SettingRF"-->
+    <!--            android:exported="true"-->
+    <!--            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />-->
+    <activity
+        android:name=".signup"
+        android:exported="true" />
+    <activity
+        android:name=".FridgeAddActivity"
+        android:exported="true"/>
+    <activity
+        android:name=".AddShoppingActivity"
+        android:exported="true"/>
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_friggelogo"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.TermProject">
-        <activity
-            android:name=".InviteUser"
-            android:exported="false" />
-        <activity
-            android:name=".testZxing"
-            android:exported="true" />
-        <activity
-            android:name=".ListRF"
-            android:exported="true" />
-        <activity
-            android:name=".SettingRF"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
-        <activity
-            android:name=".signup"
-            android:exported="true" />
-        <activity
-            android:name=".BottomNavigation"
-            android:exported="true"/>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.TermProject.NoActionBar">
+        android:theme="@style/Theme.TermProject.NoActionBar">
 
-            <!-- 세로로 코드 -->
+        <!-- 세로로 코드 -->
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".GroceryListActivity" />
-        <activity
-            android:name=".AddFoodActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
-
-        <activity android:name="ChatActivity" />
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <!--        <activity android:name=".GroceryListActivity" />-->
+    <activity
+        android:name=".AddFoodActivity"
+        android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+    <!--        <activity android:name=".ChatActivity" />-->
+</application>
 
 </manifest>
