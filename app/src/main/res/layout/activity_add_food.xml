@@ -5,158 +5,146 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".AddFoodActivity"
-    android:layout_gravity="center">
-    <!--냉장, 냉동 버튼-->
-    <RadioGroup
-        android:id="@+id/frigeWay"
+    android:layout_gravity="center"
+    android:background="@drawable/fill_round"
+ >
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
+        android:background="@drawable/outline_round"
         android:padding="10dp">
-        <RadioButton
-            android:id="@+id/frigeWay_cool"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/frigeWay_cool"/>
-        <RadioButton
-            android:id="@+id/frigeWay_freeze"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/frigeWay_freeze"/>
-    </RadioGroup>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:padding="10dp">
+        <!--냉장, 냉동 버튼-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
+            <RadioGroup
+                android:id="@+id/fridgeWayRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/foodName"/>
-            <EditText
-                android:id="@+id/foodName"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/memo"/>
-            <EditText
-                android:id="@+id/memo"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:maxLines="2"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:padding="10dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingRight="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/exDate"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/expiryDate"
-                    android:layout_width="120dp"
-                    android:layout_height="65dp"
-                    android:onClick="mOnClick_DatePick"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/quantity"/>
-
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/minus"
-                    android:layout_width="35dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="mOnMinus"
-                    android:text="-" />
-                <TextView
-                    android:id="@+id/foodNum"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="10dp">
+                <RadioButton
+                    android:id="@+id/fridgeWay_cool_radioBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"/>
-                <Button
-                    android:id="@+id/plus"
-                    android:layout_width="35dp"
+                    android:text="@string/fridgeWay_cool"
+                    android:textColor="@color/ggreen"
+                    android:fontFamily="@font/bmdohyeon"/>
+                <RadioButton
+                    android:id="@+id/fridgeWay_freeze_radioBtn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="mOnPlus"
-                    android:text="+" />
+                    android:text="@string/fridgeWay_freeze"
+                    android:textColor="@color/ggreen"
+                    android:fontFamily="@font/bmdohyeon"/>
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodName"
+                        android:fontFamily="@font/bmdohyeon"
+                        android:textColor="@color/ggreen"/>
+                    <EditText
+                        android:id="@+id/foodName_editView"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:fontFamily="@font/bmdohyeon"
+                        android:hint="@string/ex_foodName"
+                        android:textColorHint="@color/gold"
+                        android:textColor="@color/dark_orange"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingRight="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exDate"
+                        android:fontFamily="@font/bmdohyeon"
+                        android:textColor="@color/ggreen"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/foodDate_dateView"
+                            android:layout_width="120dp"
+                            android:layout_height="65dp"
+                            android:onClick="mOnClick_DatePick"
+                            android:textColor="@color/dark_orange"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/barcodeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/barcode"
+                android:layout_gravity="center"
+                android:onClick="mOnBarcode"
+                android:textColor="@color/ivory"
+                android:background="@drawable/fill_round_orange"
+                android:fontFamily="@font/bmdohyeon"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp">
+
+                <Button
+                    android:id="@+id/submitBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/ivory"
+                    android:text="@string/submit"
+                    android:onClick="mOnSubmit"
+                    android:background="@drawable/fill_round_green"
+                    android:fontFamily="@font/bmdohyeon"/>
+
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textColor="@color/ivory"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="mOnClose"
+                    android:background="@drawable/fill_round_green"
+                    android:fontFamily="@font/bmdohyeon"/>
+
+                <!--            android:onClick="mOnClose"/>-->
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    <Button
-        android:id="@+id/barcodeBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/barcode"
-        android:layout_gravity="center"
-        android:onClick="mOnBarcode"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp">
-
-        <Button
-            android:id="@+id/submitBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:onClick="mOnSubmit"
-            android:text="@string/submit" />
-
-        <Button
-            android:id="@+id/cancelBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cancel"
-            android:onClick="mOnClose"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-
-
+    </FrameLayout>
 </LinearLayout>
