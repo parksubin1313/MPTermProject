@@ -127,10 +127,10 @@
                     android:layout_marginRight="10dp"
                     android:textColor="@color/ivory"
                     android:text="@string/submit"
+                    android:onClick="mOnSubmit"
                     android:background="@drawable/fill_round_green"
                     android:fontFamily="@font/bmdohyeon"/>
 
-                <!--            android:onClick="mOnSubmit"/>-->
 
                 <Button
                     android:id="@+id/cancelBtn"
@@ -139,6 +139,7 @@
                     android:text="@string/cancel"
                     android:textColor="@color/ivory"
                     android:layout_marginLeft="10dp"
+                    android:onClick="mOnClose"
                     android:background="@drawable/fill_round_green"
                     android:fontFamily="@font/bmdohyeon"/>
 
