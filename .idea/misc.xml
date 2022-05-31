@@ -86,6 +86,8 @@
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test.xml" value="0.178125" />
         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.1125" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/border_fill.xml" value="0.1095" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/chatting_back_mymsgbox.xml" value="0.195" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/chatting_back_othermsgbox.xml" value="0.195" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_additembtn.xml" value="0.1095" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_checkbox.xml" value="0.1095" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.16" />
@@ -97,8 +99,14 @@
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.24427083333333333" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_mymsgbox.xml" value="0.264" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_othermsgbox.xml" value="0.536" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.203125" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.2" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_allfridge_item.xml" value="0.10729166666666666" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_detailfridge_item.xml" value="0.10729166666666666" />
+        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_shoppinglist_item.xml" value="0.10729166666666666" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_community.xml" value="0.1" />
         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_food.xml" value="0.1" />
