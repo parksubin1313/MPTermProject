@@ -14,6 +14,18 @@ package="com.example.termproject">
     android:supportsRtl="true"
     android:theme="@style/Theme.TermProject">
     <activity
+        android:name=".SplashActivity"
+        android:theme="@style/SplashTheme"
+        android:screenOrientation="portrait"
+        android:exported="true"
+        >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
         android:name=".BottomNavigation"
         android:exported="true"
         android:label="@string/title_activity_bottom_navigation" />
