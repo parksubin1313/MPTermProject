@@ -7,12 +7,14 @@
     android:gravity="center_vertical">
 
     <CheckBox
+        android:id="@+id/shopping_checkBox"
         android:checked="false"
         android:button="@android:color/transparent"
         android:background="@drawable/shopping_checkbox"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
     <TextView
+        android:id="@+id/shopping_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/itemToBuy"

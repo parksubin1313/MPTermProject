@@ -11,11 +11,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_fill"
         android:layout_margin="15dp">
+
         <ListView
             android:id="@+id/shoppingList_listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:choiceMode="multipleChoice"/>
+
     </FrameLayout>
 
 
