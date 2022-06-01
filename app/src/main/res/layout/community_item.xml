@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fill_round"
-    android:layout_margin="15dp">
+    android:layout_margin="10dp">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,37 +13,42 @@
         android:background="@drawable/outline_round"
         android:padding="15dp">
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            //상단바 추가되면 layout_below 하기
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentStart="true"-->
-<!--                android:layout_alignParentEnd="true"-->
-<!--                android:layout_marginStart="113dp"-->
-<!--                android:layout_marginEnd="109dp"-->
-<!--                tools:srcCompat="@drawable/ic_img_upload" />-->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="113dp"
+                android:layout_marginEnd="109dp"
+                tools:srcCompat="@drawable/ic_img_upload" />
 
             <TextView
                 android:id="@+id/TVName"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:text="음식명"
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
             <EditText
                 android:id="@+id/ETName"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_alignTop="@+id/TVName"
-                android:layout_marginLeft="130dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toEndOf="@+id/TVName"
                 android:fontFamily="@font/bmdohyeon"
                 android:hint="음식명"
                 android:maxLength="10"
@@ -54,12 +59,10 @@
             <TextView
                 android:id="@+id/TVDate"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/TVName"
                 android:layout_alignTop="@id/ETDate"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
                 android:text="유통기한"
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
@@ -68,11 +71,11 @@
             <TextView
                 android:id="@+id/ETDate"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="42dp"
                 android:layout_below="@+id/ETName"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVDate"
                 android:onClick="mOnClick_DatePick"
@@ -82,10 +85,10 @@
             <TextView
                 android:id="@+id/TVLoc"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/TVDate"
                 android:layout_alignTop="@id/ETLoc"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
                 android:text="장소"
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
@@ -93,7 +96,7 @@
             <EditText
                 android:id="@+id/ETLoc"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/ETDate"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="27dp"
@@ -138,7 +141,7 @@
             <TextView
                 android:id="@+id/TVDetail"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/TVLoc"
                 android:layout_alignTop="@id/ETDetail"
                 android:layout_marginStart="20dp"
@@ -149,7 +152,7 @@
             <EditText
                 android:id="@+id/ETDetail"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/ETLoc"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
@@ -171,10 +174,10 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/fill_round_green"
+                android:fontFamily="@font/bmdohyeon"
                 android:onClick="Upload"
                 android:text="완료"
-                android:fontFamily="@font/bmdohyeon"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
         </RelativeLayout>
     </FrameLayout>
 
