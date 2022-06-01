@@ -37,7 +37,7 @@ public class AddFridgeActivity extends AppCompatActivity {
     String uid = user != null ? user.getUid() : null;
 
     String countString;
-    int count=1, countNum;
+    int count=0, countNum;
     public static int cnt=1;
 
     EditText fridgeName;
@@ -106,6 +106,8 @@ public class AddFridgeActivity extends AppCompatActivity {
     // Data storage and modification method
     public void postFirebaseDataBase(boolean add) {
 
+        cnt++;
+
         //reference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
@@ -116,7 +118,7 @@ public class AddFridgeActivity extends AppCompatActivity {
 
         cnt = countDB();
 
-        childUpdates.put("/USER/" + uid + "/RFList/" + cnt + "/", postValues);
+        childUpdates.put("/USER/" + uid + "/RFList/" + count + "/", postValues);
         mReference.updateChildren(childUpdates);
     }
 

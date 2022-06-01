@@ -30,7 +30,7 @@
             android:exported="true" />
         <activity
             android:name=".InviteUser"
-            android:exported="true" />
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
         <activity
             android:name=".AddFridgeActivity"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" /> <!-- <activity -->

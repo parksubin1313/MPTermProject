@@ -2,24 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="300dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
     tools:context=".InviteUser">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmdohyeon"
+        android:text = "친구의 uid를 입력해주세요."
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="231dp" />
 
     <EditText
         android:id="@+id/user"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="182dp"
         tools:layout_editor_absoluteY="231dp"
-        android:fontFamily="@font/bmdohyeon"/>
+        android:fontFamily="@font/bmdohyeon"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="추가하기"
+        android:layout_gravity="center"
         tools:layout_editor_absoluteX="158dp"
         tools:layout_editor_absoluteY="326dp"
         android:fontFamily="@font/bmdohyeon"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmdohyeon"
+        android:layout_marginTop="20dp"
+        android:text = "당신의 UID 입니다."
+        android:textSize="10dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <TextView
+        android:id="@+id/textUid"
+        android:textIsSelectable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmdohyeon"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="231dp" />
 </LinearLayout>
