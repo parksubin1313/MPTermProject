@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/fill_round"
     android:layout_margin="10dp">
 
     <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/outline_round"
         android:padding="15dp">
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             //상단바 추가되면 layout_below 하기
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="170dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="113dp"
                 android:layout_marginEnd="109dp"
-                tools:srcCompat="@drawable/ic_img_upload" />
+                android:src="@drawable/salad"/>
 
             <TextView
                 android:id="@+id/TVName"
@@ -39,7 +39,7 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,18 +50,18 @@
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVName"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="음식명"
                 android:maxLength="10"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
             <TextView
                 android:id="@+id/TVDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/TVName"
-                android:layout_alignTop="@id/ETDate_upload"
+                android:layout_alignTop="@id/ETDate"
                 android:layout_marginStart="20dp"
                 android:text="유통기한"
                 android:textColor="@color/ggreen"
@@ -69,18 +69,18 @@
 
 
             <TextView
-                android:id="@+id/ETDate_upload"
+                android:id="@+id/ETDate"
                 android:layout_width="wrap_content"
                 android:layout_height="42dp"
                 android:layout_below="@+id/ETName"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVDate"
-                android:clickable="true"
                 android:textColor="@color/dark_orange"
-                android:textSize="17dp" />
+                android:textSize="20sp"
+                android:gravity="center_vertical"/>
 
             <TextView
                 android:id="@+id/TVLoc"
@@ -93,22 +93,22 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ETDate_upload"
+                android:layout_below="@+id/ETDate"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="27dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVLoc"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="장소"
                 android:maxLength="10"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
 <!--            <TextView-->
 <!--                android:id="@+id/TVTag"-->
@@ -149,22 +149,22 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ETLoc"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVDetail"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="상세설명"
                 android:maxLength="100"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
             <Button
                 android:id="@+id/uploadBtn"
@@ -174,10 +174,10 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/fill_round_green"
-                android:onClick="Upload"
-                android:text="식품 등록하기"
                 android:fontFamily="@font/bmdohyeon"
-                android:textSize="17sp"/>
+                android:onClick="Upload"
+                android:text="채팅하기"
+                android:textSize="20sp" />
         </RelativeLayout>
     </FrameLayout>
 

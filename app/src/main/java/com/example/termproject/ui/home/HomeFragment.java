@@ -19,11 +19,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.termproject.AddFridgeActivity;
+import com.example.termproject.DeletePopup;
 import com.example.termproject.MyFridgeActivity;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentHomeBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -35,9 +41,15 @@ public class HomeFragment extends Fragment {
 
     private FirebaseUser curUser = FirebaseAuth.getInstance().getCurrentUser();
     final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    private DatabaseReference mReference = mDatabase.getReference();
+
     private ListView listView;
 
     private FragmentHomeBinding binding;
+
+    String uid = curUser != null ? curUser.getUid() : null;
 
     public HomeFragment(){}
 
@@ -58,84 +70,94 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        HomeViewModel homeViewModel =
-//                new ViewModelProvider(this).get(HomeViewModel.class);
-//
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
-//
-//        return root;
+
         Log.d("HomeFragment", "들어옴");
         ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_home , container, false);
-//        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.my_fridge , container, false);
-//        setContentView(R.layout.my_fridge);
-
-//        TabLayout tabLayout = rootView.findViewById(R.id.myFridge_tabLayout);
-//        ViewPager viewPager = rootView.findViewById(R.id.myFridge_viewPager);
-//
-//        tabLayout.setupWithViewPager(viewPager);
-//
-//        vpAdapter = new VPAdapter(getParentFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-//        vpAdapter.addFragment(new myFridge_cool(), "냉장");
-//        vpAdapter.addFragment(new myFridge_freeze(), "냉동");
-
-
-
 
         listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
 
-//        AFadapter = new AllFridgeAdapter();
-        List<String> data = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
-//        listView.setAdapter(AFadapter);
-        listView.setAdapter(adapter);
+        mReference.child("USER").child(uid).child("RFList").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-        for(int i=0; i<15; i++){
-            String fName = "RF"+(i+1);
-            data.add(fName);
-        }
-//        이걸 해줘야 add 가 반영됨
-        adapter.notifyDataSetChanged();
+                List<String> data = new ArrayList<>();
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+                listView.setAdapter(adapter);
+
+                for(int i=1; i<100; i++)
+                {
+                    if(snapshot.hasChild(Integer.toString(i))){
+                        for(DataSnapshot dataSnapshot : snapshot.child(Integer.toString(i)).getChildren()){
+                            String key = dataSnapshot.getKey();
+
+                            if(key.equals("name")){
+                                String name=""+dataSnapshot.getValue().toString();
+                                data.add(name);
+                                Log.e("name", name);
+                            }
+//                          이걸 해줘야 add 가 반영됨
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                    else{
+                        break;
+                    }
+                }
 
 
-//          TODO: DB 는 따로 혜균이 오면 손보자
-//        db.collection("All_Fridge").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if(task.isSuccessful()) {
-//                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                        //추가될 AllFridge
-//                        DetailFridge tempContent = document.toObject(DetailFridge.class);
-//                        //User -> 내 냉장고 list 불러와서
-//                        if(MyFridgeCheck(tempContent.getUserList())) {
-//                            //냉장고가 되어야 함
-////                            TODO: 해결해야 함
-////                            AFadapter.addItem(tempContent);
-//                        }
-//                    }
-////                    AFadapter.notifyDataSetChanged();
-//                }
-//            }
-//        });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
-                //내 냉장고로 이동
-                Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
-                startActivity(intent);
+
+                mReference.child("USER").child(uid).child("RFList").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChild(Integer.toString(index+1))){
+                            for(DataSnapshot dataSnapshot : snapshot.child(Integer.toString(index+1)).getChildren())
+                            {
+                                String key = dataSnapshot.getKey();
+
+                                if(key.equals("name")){
+                                    String name = "" + dataSnapshot.getValue().toString();
+                                    Log.e("gg", name);
+                                    Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
+                                    intent.putExtra("fName",name);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
-//        //냉장고 등록하기 버튼
-//        Button add = (Button) rootView.findViewById(R.id.fridgeList_add_btn);
-//        add.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //TODO: 냉장고 추가하기 activity 로 이동
-//                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(getActivity(), DeletePopup.class);
+                intent.putExtra("index", Integer.toString(i+1));
+                intent.putExtra("root", "RFList");
+                startActivity(intent);
+
+                return true;
+            }
+        });
 
         setHasOptionsMenu(true);
 
@@ -166,5 +188,5 @@ public class HomeFragment extends Fragment {
         }
         return false;
     }
-    
+
 }
