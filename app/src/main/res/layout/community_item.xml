@@ -39,7 +39,7 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,11 +50,11 @@
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVName"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="음식명"
                 android:maxLength="10"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
             <TextView
                 android:id="@+id/TVDate"
@@ -74,13 +74,13 @@
                 android:layout_height="42dp"
                 android:layout_below="@+id/ETName"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVDate"
-                android:onClick="mOnClick_DatePick"
                 android:textColor="@color/dark_orange"
-                android:textSize="17dp" />
+                android:textSize="20sp"
+                android:gravity="center_vertical"/>
 
             <TextView
                 android:id="@+id/TVLoc"
@@ -93,7 +93,7 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,11 +104,11 @@
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVLoc"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="장소"
                 android:maxLength="10"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
 <!--            <TextView-->
 <!--                android:id="@+id/TVTag"-->
@@ -149,22 +149,22 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ETLoc"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVDetail"
                 android:fontFamily="@font/bmdohyeon"
-                android:hint="상세설명"
                 android:maxLength="100"
                 android:minHeight="48dp"
                 android:textColor="@color/dark_orange"
-                android:textColorHint="@color/gold" />
+                android:textSize="20sp"
+                android:gravity="center_vertical" />
 
             <Button
                 android:id="@+id/uploadBtn"
@@ -176,8 +176,8 @@
                 android:background="@drawable/fill_round_green"
                 android:fontFamily="@font/bmdohyeon"
                 android:onClick="Upload"
-                android:text="완료"
-                android:textSize="17sp" />
+                android:text="채팅하기"
+                android:textSize="20sp" />
         </RelativeLayout>
     </FrameLayout>
 

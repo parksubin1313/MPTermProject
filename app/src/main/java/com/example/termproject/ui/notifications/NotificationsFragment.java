@@ -1,5 +1,6 @@
 package com.example.termproject.ui.notifications;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -35,6 +37,7 @@ import com.example.termproject.databinding.FragmentNotificationsBinding;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,6 +48,7 @@ public class NotificationsFragment extends Fragment {
     SearchView searchView;
     ViewGroup rootView;
     ArrayAdapter<String> adapter;
+    TextView ETDate_upload;
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -78,9 +82,32 @@ public class NotificationsFragment extends Fragment {
             // 커스텀 다이얼로그의 각 위젯들을 정의한다.
             Button saveButton = findViewById(R.id.uploadBtn);
             EditText name = findViewById(R.id.ETName);
-            TextView date = findViewById(R.id.ETDate);
+            ETDate_upload = findViewById(R.id.ETDate_upload);
             EditText loc = findViewById(R.id.ETLoc);
             EditText detail = findViewById(R.id.ETDetail);
+
+            ETDate_upload = (TextView) findViewById(R.id.ETDate_upload);
+            Calendar cal = Calendar.getInstance();
+            ETDate_upload.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DATE));
+
+            DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+                public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
+                    //Date Picker 에서 선택한 날짜를 TextView에 설정.
+
+                    ETDate_upload.setText(String.format("%d-%d-%d", yy, mm + 1, dd));
+                }
+            };
+
+            /*유통기한 클릭시 실행 함수*/
+            ETDate_upload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Calendar cal = Calendar.getInstance();
+                    new DatePickerDialog(getActivity(), mDateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
+                }
+            });
+
 
 
             // 버튼 리스너 설정
@@ -112,6 +139,24 @@ public class NotificationsFragment extends Fragment {
 //
 //        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
 //        View root = binding.getRoot();
+
+
+
+//        /*유통기한 날짜 선택하면 뜨는 DatePicker*/
+//        DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
+//                //Date Picker 에서 선택한 날짜를 TextView에 설정.
+//                ETDate = (TextView) findViewById(R.id.ETDate_upload);
+//                ETDate.setText(String.format("%d-%d-%d", yy, mm + 1, dd));
+//            }
+//        };
+//
+//        /*유통기한 클릭시 실행 함수*/
+//        public void mOnClick_DatePick(View v){
+//            Calendar cal = Calendar.getInstance();
+//            new DatePickerDialog(this, mDateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
+//        }
 
         Log.d("HomeFragment", "들어옴");
         rootView= (ViewGroup) inflater.inflate(R.layout.fragment_notifications , container, false);

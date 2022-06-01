@@ -23,9 +23,9 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class CommunityActivity extends AppCompatActivity {
-    private EditText name;
-    private EditText loc;
-    private EditText detail;
+    private TextView name;
+    private TextView loc;
+    private TextView detail;
     private ImageView imageView;
     private TextView ETDate;
 
@@ -41,6 +41,10 @@ public class CommunityActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         ETDate = findViewById(R.id.ETDate);
 
+        name.setText("상품 이름 가져와라");
+        loc.setText("위치 이름 가져와라");
+        detail.setText("상세정보 가져와라");
+
 //        Button btn = findViewById(R.id.uploadBtn);
 //
 //        btn.setOnClickListener(new View.OnClickListener() {
@@ -55,23 +59,7 @@ public class CommunityActivity extends AppCompatActivity {
         /*유통기한-디폴트 값으로 오늘 날짜 설정*/
         ETDate = findViewById(R.id.ETDate);
         Calendar cal = Calendar.getInstance();
-        ETDate.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DATE));
+        ETDate.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 2) + "-" + cal.get(Calendar.DATE));
     }
 
-
-    /*유통기한 날짜 선택하면 뜨는 DatePicker*/
-    DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
-            //Date Picker 에서 선택한 날짜를 TextView에 설정.
-            ETDate = (TextView) findViewById(R.id.ETDate);
-            ETDate.setText(String.format("%d-%d-%d", yy, mm + 1, dd));
-        }
-    };
-
-    /*유통기한 클릭시 실행 함수*/
-    public void mOnClick_DatePick(View v){
-        Calendar cal = Calendar.getInstance();
-        new DatePickerDialog(this, mDateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
-    }
 }

@@ -160,6 +160,7 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //바깥 레이어 클릭 시 안닫히게
