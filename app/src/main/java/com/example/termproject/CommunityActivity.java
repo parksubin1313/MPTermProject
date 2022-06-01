@@ -41,9 +41,9 @@ public class CommunityActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         ETDate = findViewById(R.id.ETDate);
 
-        name.setText("상품 이름 가져와라");
-        loc.setText("위치 이름 가져와라");
-        detail.setText("상세정보 가져와라");
+        name.setText("샐러드");
+        loc.setText("가천대학교");
+        detail.setText("서브웨이 쉬림프 샐러드");
 
 //        Button btn = findViewById(R.id.uploadBtn);
 //

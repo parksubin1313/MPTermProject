@@ -134,29 +134,6 @@ public class NotificationsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        NotificationsViewModel notificationsViewModel =
-//                new ViewModelProvider(this).get(NotificationsViewModel.class);
-//
-//        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
-
-
-
-//        /*유통기한 날짜 선택하면 뜨는 DatePicker*/
-//        DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
-//                //Date Picker 에서 선택한 날짜를 TextView에 설정.
-//                ETDate = (TextView) findViewById(R.id.ETDate_upload);
-//                ETDate.setText(String.format("%d-%d-%d", yy, mm + 1, dd));
-//            }
-//        };
-//
-//        /*유통기한 클릭시 실행 함수*/
-//        public void mOnClick_DatePick(View v){
-//            Calendar cal = Calendar.getInstance();
-//            new DatePickerDialog(this, mDateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE)).show();
-//        }
 
         Log.d("HomeFragment", "들어옴");
         rootView= (ViewGroup) inflater.inflate(R.layout.fragment_notifications , container, false);
@@ -169,9 +146,10 @@ public class NotificationsFragment extends Fragment {
 //        listView.setAdapter(AFadapter);
         listView.setAdapter(adapter);
 
+        String food[] = {"Salad", "Pork", "Strawberry", "Mango", "Watermelon", "Cherry", "Cake", "Water", "Milk", "Egg", "Coke", "Cheese", "Apple", "Kimchi", "Sausage"};
+
         for(int i=0; i<15; i++){
-            String fName = "Community "+(i+1);
-            data.add(fName);
+            data.add(food[i].toString());
         }
 //        이걸 해줘야 add 가 반영됨
         adapter.notifyDataSetChanged();
@@ -179,7 +157,6 @@ public class NotificationsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
-                Toast.makeText(getActivity(), index+1 + "th is clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), CommunityActivity.class);
                 startActivity(intent);
             }
@@ -208,8 +185,4 @@ public class NotificationsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-
 }
