@@ -58,7 +58,7 @@ public class FridgeAddActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
 
-                    StartToast("그룹이 생성되었습니다.");
+//                    StartToast("그룹이 생성되었습니다.");
                     //이부분을 꼭 해줘야 하나? 일단 주석 처리 함
 //                    StartActivity(HomeActivity.class);
                 }
@@ -80,7 +80,7 @@ public class FridgeAddActivity extends AppCompatActivity {
     }
 
     private void StartToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     private void StartActivity(Class c) {

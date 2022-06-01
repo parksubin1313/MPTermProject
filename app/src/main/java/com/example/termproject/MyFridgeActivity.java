@@ -35,7 +35,7 @@ public class MyFridgeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getApplicationContext(), "food add clicked", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "food add clicked", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), AddFoodActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);

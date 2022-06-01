@@ -25,6 +25,12 @@ package="com.example.termproject">
             </intent-filter>
         </activity>
         <activity
+            android:name=".ChoiceFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChoiceFridgeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeletePopup"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
         <activity
@@ -73,10 +79,10 @@ package="com.example.termproject">
             android:label="@string/app_name"
             android:theme="@style/Theme.TermProject.NoActionBar">
 
-        <!-- 세로로 코드 -->
+            <!-- 세로로 코드 -->
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>

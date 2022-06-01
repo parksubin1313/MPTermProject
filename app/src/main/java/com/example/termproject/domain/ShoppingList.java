@@ -14,7 +14,7 @@ public class ShoppingList implements Serializable {
         this.checked = checked;
     }
 
-    public String getfName() {
+    public String getName() {
         return fName;
     }
 

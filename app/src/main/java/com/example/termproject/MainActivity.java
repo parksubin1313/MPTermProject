@@ -216,11 +216,11 @@ public class MainActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
         if(TextUtils.isEmpty(password)){
-            Toast.makeText(this, "password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         if(task.isSuccessful()) {
                             access=email;
-                            Toast.makeText(getApplicationContext(), "로그인 성공",Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getApplicationContext(), "로그인 성공",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, BottomNavigation.class);
 //                            Intent intent = new Intent(MainActivity.this, ListRF.class);
 //                            Intent intent = new Intent(MainActivity.this, AddFoodActivity.class);
