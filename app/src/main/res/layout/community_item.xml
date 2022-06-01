@@ -20,12 +20,12 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="170dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="113dp"
                 android:layout_marginEnd="109dp"
-                tools:srcCompat="@drawable/ic_img_upload" />
+                android:src="@drawable/salad"/>
 
             <TextView
                 android:id="@+id/TVName"
