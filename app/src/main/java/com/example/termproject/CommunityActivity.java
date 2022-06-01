@@ -1,7 +1,11 @@
 package com.example.termproject;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,11 +20,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class CommunityActivity extends AppCompatActivity {
     private EditText name;
     private EditText loc;
-    private EditText tag;
     private EditText detail;
     private ImageView imageView;
     private TextView ETDate;
@@ -28,12 +32,11 @@ public class CommunityActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.community_upload);
+        setContentView(R.layout.community_item);
         Log.d("CommunityActivity ", "들어옴");
 
         name = findViewById(R.id.ETName);
         loc = findViewById(R.id.ETLoc);
-        tag = findViewById(R.id.ETTag);
         detail = findViewById(R.id.ETDetail);
         imageView = findViewById(R.id.imageView);
         ETDate = findViewById(R.id.ETDate);
@@ -53,9 +56,8 @@ public class CommunityActivity extends AppCompatActivity {
         ETDate = findViewById(R.id.ETDate);
         Calendar cal = Calendar.getInstance();
         ETDate.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DATE));
-
-
     }
+
 
     /*유통기한 날짜 선택하면 뜨는 DatePicker*/
     DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {

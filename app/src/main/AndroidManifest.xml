@@ -70,8 +70,7 @@
             </intent-filter>
         </activity> <!-- <activity android:name=".GroceryListActivity" /> -->
         <activity
-            android:name=".AddFoodActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+            android:name=".AddFoodActivity" />
     </application>
 
 </manifest>

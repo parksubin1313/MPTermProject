@@ -1,6 +1,10 @@
 package com.example.termproject.ui.notifications;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -30,6 +36,7 @@ import com.example.termproject.databinding.FragmentNotificationsBinding;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class NotificationsFragment extends Fragment {
 
@@ -50,9 +57,52 @@ public class NotificationsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getActivity(), CommunityActivity.class);
-        startActivity(intent);
+        //커스텀 dialog 로 바꿈
+        CustomDialog dlg = new CustomDialog(getActivity());
+        dlg.show();
         return super.onOptionsItemSelected(item);
+    }
+
+    class CustomDialog extends Dialog {
+
+        private Context mContext;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.community_upload);
+
+            // 다이얼로그의 배경을 투명으로 만든다.
+            Objects.requireNonNull(getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            // 커스텀 다이얼로그의 각 위젯들을 정의한다.
+            Button saveButton = findViewById(R.id.uploadBtn);
+            EditText name = findViewById(R.id.ETName);
+            TextView date = findViewById(R.id.ETDate);
+            EditText loc = findViewById(R.id.ETLoc);
+            EditText detail = findViewById(R.id.ETDetail);
+
+
+            // 버튼 리스너 설정
+            saveButton.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // '확인' 버튼 클릭시
+                    // ...코드..
+                    //TODO: DB 에 올리기
+                    Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
+                    // Custom Dialog 종료
+                    dismiss();
+                }
+            });
+
+        }
+
+        public CustomDialog(Context mContext) {
+            super(mContext);
+            this.mContext = mContext;
+        }
+
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,

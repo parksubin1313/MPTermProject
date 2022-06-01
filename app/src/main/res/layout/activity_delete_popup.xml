@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#fff"
     android:orientation="vertical"
-    android:layout_width="300dp"
+    android:layout_width="370dp"
     android:layout_height="wrap_content">
 
     <!-- 타이틀바 -->
@@ -12,12 +12,12 @@
         android:layout_height="wrap_content">
         <TextView
             android:text="데이터를 삭제하시겠습니까?"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:textColor="#fff"
             android:gravity="center"
-            android:background="#17215d"
+            android:background="@color/ggreen"
             android:layout_width="match_parent"
-            android:fontFamily="@font/applesdgothicneol"
+            android:fontFamily="@font/bmdohyeon"
             android:layout_height="80dp" />
     </LinearLayout>
     <!-- //end 타이틀바 -->
@@ -39,12 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#00000000"
-                android:fontFamily="@font/applesdgothicneol"
+                android:fontFamily="@font/bmdohyeon"
                 android:gravity="center"
-                android:padding="16dp"
                 android:text="삭제하기"
-                android:textColor="#17215d"
-                android:textSize="10dp" />
+                android:textColor="@color/ggreen"
+                android:textSize="15dp" />
 
         </RelativeLayout>
         <RelativeLayout
@@ -58,12 +57,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#00000000"
-                android:fontFamily="@font/applesdgothicneol"
+                android:fontFamily="@font/bmdohyeon"
                 android:gravity="center"
-                android:padding="16dp"
                 android:text="취소"
-                android:textColor="#17215d"
-                android:textSize="10dp" />
+                android:textColor="@color/ggreen"
+                android:textSize="15dp" />
         </RelativeLayout>
     </LinearLayout>
 
