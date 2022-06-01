@@ -39,7 +39,7 @@
                 android:textColor="@color/ggreen"
                 android:textSize="30dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ETName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,12 +49,27 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/TVName"
-                android:fontFamily="@font/bmdohyeon"
-                android:hint="음식명"
-                android:maxLength="10"
-                android:minHeight="48dp"
+                android:text="음식"
+                android:textSize="20dp"
                 android:textColor="@color/dark_orange"
                 android:textColorHint="@color/gold" />
+<!--EditText말고 다 TextView여야 함.-->
+<!--            <EditText-->
+<!--                android:id="@+id/ETName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/imageView"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginStart="30dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_toEndOf="@+id/TVName"-->
+<!--                android:fontFamily="@font/bmdohyeon"-->
+<!--                android:hint="음식명"-->
+<!--                android:maxLength="10"-->
+<!--                android:minHeight="48dp"-->
+<!--                android:textColor="@color/dark_orange"-->
+<!--                android:textColorHint="@color/gold" />-->
 
             <TextView
                 android:id="@+id/TVDate"
@@ -174,10 +189,10 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/fill_round_green"
+                android:fontFamily="@font/bmdohyeon"
                 android:onClick="Upload"
                 android:text="완료"
-                android:fontFamily="@font/bmdohyeon"
-                android:textSize="17sp"/>
+                android:textSize="17sp" />
         </RelativeLayout>
     </FrameLayout>
 

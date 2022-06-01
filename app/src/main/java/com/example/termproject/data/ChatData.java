@@ -1,17 +1,17 @@
 package com.example.termproject.data;
 
-public class ChattingItem {
+public class ChatData {
     private String nickname;
     private String msg;
     private String time;
 
-    public ChattingItem(String name, String message, String time) {
+    public ChatData(String name, String message, String time) {
         this.nickname = name;
         this.msg = message;
         this.time = time;
     }
 
-    public ChattingItem(){
+    public ChatData(){
 
     }
 

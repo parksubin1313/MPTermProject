@@ -18,12 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
 public class CommunityActivity extends AppCompatActivity {
-    private EditText name;
+    private TextView name;
     private EditText loc;
     private EditText tag;
     private EditText detail;
     private ImageView imageView;
     private TextView ETDate;
+    private Button uploadBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,17 +38,19 @@ public class CommunityActivity extends AppCompatActivity {
         detail = findViewById(R.id.ETDetail);
         imageView = findViewById(R.id.imageView);
         ETDate = findViewById(R.id.ETDate);
+        uploadBtn = findViewById(R.id.uploadBtn);
 
-//        Button btn = findViewById(R.id.uploadBtn);
-//
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getApplicationContext(), AddFridgeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        uploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                intent.putExtra("food", name.getText().toString());
+
+
+                startActivity(intent);
+            }
+        });
 
         /*유통기한-디폴트 값으로 오늘 날짜 설정*/
         ETDate = findViewById(R.id.ETDate);
