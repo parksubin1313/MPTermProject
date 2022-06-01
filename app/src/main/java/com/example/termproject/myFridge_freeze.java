@@ -56,6 +56,19 @@ public class myFridge_freeze extends Fragment{
         // Inflate the layout for this fragment
 
         view = inflater.inflate(R.layout.fragment_my_fridge_freeze, container, false);
+        btnInvite = view.findViewById(R.id.button);
+
+        btnInvite = (Button) view.findViewById(R.id.button);
+
+        btnInvite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), InviteUser.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 //        List<String> data = new ArrayList<>();

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class myFridge_cool extends Fragment {
     private View view;
 
     String frName = fName;
+    Button btnInvite;
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
@@ -54,6 +56,18 @@ public class myFridge_cool extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_my_fridge_cool, container, false);
+
+        btnInvite = view.findViewById(R.id.button);
+
+        btnInvite = (Button) view.findViewById(R.id.button);
+
+        btnInvite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), InviteUser.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
