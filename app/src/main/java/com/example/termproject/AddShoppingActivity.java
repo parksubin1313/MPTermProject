@@ -54,10 +54,10 @@ public class AddShoppingActivity extends AppCompatActivity {
 
                 if (!(isStringEmpty(shoppingName.getText().toString()))) {
                     save();
-                    Toast.makeText(getApplicationContext(), shoppingName.getText().toString() + " is added", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), shoppingName.getText().toString() + " is added", Toast.LENGTH_SHORT).show();
                     shoppingName.setText(null);
                 } else {
-                    Toast.makeText(getApplicationContext(), shoppingName.getText().toString() + "식품명을 입력해주세요.", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), shoppingName.getText().toString() + "식품명을 입력해주세요.", Toast.LENGTH_SHORT).show();
                     shoppingName.setText(null);
                 }
             }

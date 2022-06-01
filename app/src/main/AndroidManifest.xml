@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TermProject">
         <activity
+            android:name=".ChoiceFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChoiceFridgeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeletePopup"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
         <activity
@@ -70,7 +76,8 @@
             </intent-filter>
         </activity> <!-- <activity android:name=".GroceryListActivity" /> -->
         <activity
-            android:name=".AddFoodActivity" />
+            android:name=".AddFoodActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
     </application>
 
 </manifest>

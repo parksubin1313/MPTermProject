@@ -12,6 +12,7 @@
         android:textSize="20dp"
         android:layout_marginLeft="30dp"
         android:layout_gravity="center"
+        android:textColor = "@color/black"
         />
     <TextView
         android:id="@+id/dueDate"
@@ -21,5 +22,6 @@
         android:textSize="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor = "@color/black"/>
 </LinearLayout>

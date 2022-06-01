@@ -190,11 +190,11 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
         String password = editTextPassword.getText().toString().trim();
         //email과 password가 비었는지 아닌지를 체크 한다.
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
         }
 
         //email과 password가 제대로 입력되어 있다면 계속 진행된다.
@@ -209,7 +209,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                         if(task.isSuccessful()){
 //                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
                             user = firebaseAuth.getCurrentUser();
-                            Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             String uid = user != null ? user.getUid() : null;

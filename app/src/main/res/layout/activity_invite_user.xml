@@ -5,7 +5,8 @@
     android:layout_width="300dp"
     android:orientation="vertical"
     android:layout_height="wrap_content"
-    tools:context=".InviteUser">
+    tools:context=".InviteUser"
+    android:layout_gravity="center">
 
     <TextView
         android:layout_width="match_parent"
