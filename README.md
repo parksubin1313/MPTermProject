@@ -77,13 +77,12 @@
 <br><br>
 
 ### 3. Share
-* **_Share the refrigerator with people_**
-![3_친구uid입력](https://user-images.githubusercontent.com/96913056/173336183-8b88c285-f3e2-4786-8799-59e09e90c676.png)
-![4_초대완료](https://user-images.githubusercontent.com/96913056/173336214-5a9d55ee-cd93-4303-a94a-f397d2d66844.png)
+* **_Share the refrigerator with people_** <br><br>
+![친구추가](https://user-images.githubusercontent.com/96913056/173344366-79fa4046-72db-481b-adce-9fed5193d68b.png)
 <br><br>
 
-* **_Get your Uid_**
-![2_본인uid복사가능](https://user-images.githubusercontent.com/96913056/173336206-fd8e3268-e8b2-47d9-bb3d-717f5a89d87a.png)
+* **_Get your Uid_** <br>
+![내 uid](https://user-images.githubusercontent.com/96913056/173344359-54295815-949b-41cb-96a9-8aa6702b541d.png) <br><br>
 
 ### 4. Community
 * **_Community Product list_**
