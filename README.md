@@ -1,5 +1,5 @@
 # 음식 싹싹 Frigge 🥙
-Mobile Programming Term Project TeamC <br><br>
+**_Mobile Programming Term Project TeamC_** <br><br>
 ![Logo](https://user-images.githubusercontent.com/96913056/173311744-a3eb35f7-8fc3-44ea-a5a5-6f82a70f83cd.png) <br>
 
 * 201935046 박수빈 <br>
@@ -9,8 +9,12 @@ Mobile Programming Term Project TeamC <br><br>
 
 ## Motivation
 It is said that the energy wasted by food waste is very high. <br>
-I found that the proportion of food thrown away after the expiration date was high among food waste, and my group thought it would be good to create a service that manages the expiration date of products in the refrigerator. <br>
+We found that the proportion of food thrown away after the expiration date was high among food waste, and my group thought it would be good to create a service that manages the expiration date of products in the refrigerator. <br>
 Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
+
+## Our Goal
+**Minimize food waste** from home through refrigerator management 
+In particular, we would like to help **a person living alone** who have difficulty in managing food through the food sharing function
 
 ## Contents
 ### 1. Refrigerator
@@ -25,23 +29,6 @@ Through this service function, not only food waste can be reduced but also ineff
 # Demo Video
 
 
-***
-# 냉장고민하지마
-
-로고 사진
-
-**냉장고민하지마** is the application developed in Android studio.<br><br>
-It is a **_Mobile Progrmming Term-Project of department of Software of Gachon university._**<br>
-***
-# Description
-
-* Motivation
-
-The rate of depression in their 20s is rising sharply. So we investigated the causes of depression among young people in their 20s. According to experts, the main reason is that stress caused by social factors such as employment difficulties is concentrated on young people. In particular, in the case of people in their 20s, they could see that they were worried that they were falling behind due to comparison, evaluation, and trauma of failure with others.
-
-* Our goal
-
-**냉장고민하지마** is the application that help people in their 20s who live with a lot of worries to gain the will and confidence to solve their own problems.<br><br>
 
 * Functions
 
