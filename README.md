@@ -2,10 +2,11 @@
 **_Mobile Programming Term Project TeamC_** <br><br>
 ![Logo](https://user-images.githubusercontent.com/96913056/173311744-a3eb35f7-8fc3-44ea-a5a5-6f82a70f83cd.png) <br>
 
-* 201935046 박수빈 <br>
-* 201935080 오채영 <br>
-* 201935121 임혜균 <br>
-* 201935142 최  선 <br>
+### Information
+* Gachon University Software Department 201935046 박수빈 wlqkr001113@gmail.com <br>
+* Gachon University Software Department 201935080 오채영 oco6029@naver.com <br>
+* Gachon University Software Department 201935121 임혜균 hgyim00@naver.com <br>
+* Gachon University Software Department 201935142 최  선 sun4194@gachon.ac.kr <br>
 
 ## Motivation
 It is said that the energy wasted by food waste is very high. <br>
@@ -22,6 +23,10 @@ In particular, we would like to help **_a person living alone_** who have diffic
 * Can **_share_** your fridge with family
 * **_Less_** left over food
 
+### Difference
+* **_Share food_** with people based on your fridge
+* **_Easily_** make grocery market list
+
 ## Contents
 ### 1. Refrigerator
 
@@ -31,8 +36,9 @@ In particular, we would like to help **_a person living alone_** who have diffic
 
 ### 4. Community
 
+## Implemetation & Technologies
 
-# Demo Video
+## Demo Video
 
 
 
