@@ -9,9 +9,9 @@
 * Gachon University Software Department 201935142 최  선 sun4194@gachon.ac.kr <br>
 
 ## Motivation
-It is said that the energy wasted by food waste is very high. <br>
-We found that the proportion of food thrown away after the expiration date was high among food waste, and my group thought it would be good to create a service that manages the expiration date of products in the refrigerator. <br>
-Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
+* It is said that the energy wasted by food waste is very high. <br>
+* We found that the proportion of food thrown away after the expiration date was high among food waste, and my group thought it would be good to create a service that manages the expiration date of products in the refrigerator. <br>
+* Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
 
 ## Our Goal
 **_Minimize food waste_** from home through refrigerator management. <br> 
