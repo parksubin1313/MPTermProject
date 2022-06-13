@@ -90,6 +90,12 @@
 * **_Get your Uid_** <br>
 ![내 uid](https://user-images.githubusercontent.com/96913056/173344359-54295815-949b-41cb-96a9-8aa6702b541d.png) <br><br>
 
+* **_List of shared refrigerators_**
+ * **_Add to "모프 냉장고" each add to account_** <br><br>
+![새로운 냉장고리스트](https://user-images.githubusercontent.com/96913056/173347168-b8038393-cab8-4e35-93de-c5a4e6c367f3.png)
+![이거는 혜균 냉장고 리스트](https://user-images.githubusercontent.com/96913056/173347217-08b646e2-17b8-4723-aed4-3145767604c4.png)
+<br><br>
+ 
 ### 4. Community
 * **_Community Product list_**
 <br><br>
