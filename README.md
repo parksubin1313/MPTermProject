@@ -29,79 +29,79 @@
 
 ## Contents
 ### 1. Sign up & Login
-* Sign up <br>
+* **_Sign up_** <br>
 ![signupupup](https://user-images.githubusercontent.com/96913056/173339374-45f38d0b-23df-4114-b002-ec4ba05ee83f.png)
-* Login (Automatic login functionality)<br>
+* **_Login_** (Automatic login functionality)<br>
 ![Logininin](https://user-images.githubusercontent.com/96913056/173339380-95cc93ff-b8bb-463f-a0d5-c1a656cefa97.png)
 
 ### 2. Refrigerator
-* Refrigerator list <br>
+* **_Refrigerator list_** <br>
 ![1_기존냉장고 리스트](https://user-images.githubusercontent.com/96913056/173332748-d9ea1683-5b95-4a59-bc7a-d05c7f163be5.png)
 <br><br>
-* Add Refrigerator
+* **_Add Refrigerator_**
 ![4_이름입력](https://user-images.githubusercontent.com/96913056/173332767-2780f142-f038-46a2-8688-63b1d2be0002.png) 
 ![5_추가된냉장고리스트](https://user-images.githubusercontent.com/96913056/173332780-6c44bea8-6ffd-428d-8fd5-c27304a88b08.png) 
 <br><br>
-* Delete Refrigerator
+* **_Delete Refrigerator_**
 ![6_아이템롱클릭하면삭제팝업](https://user-images.githubusercontent.com/96913056/173332791-e67ca63f-4f4d-4f4d-8d33-9ddcbd8db610.png)
 <br><br>
-* Two types
+* **_Two types_**
 ![1_냉장리스트](https://user-images.githubusercontent.com/96913056/173334032-34dcbfcc-f47b-4a95-9237-cc5307f695c3.png)
 ![2_냉동리스트](https://user-images.githubusercontent.com/96913056/173334039-2b3fe1f3-0da5-4c1d-a857-e491e9676157.png)
 <br><br>
-* Add product to refriegerator
+* **_Add product to refriegerator_**
 ![6_입력한 식품추가창](https://user-images.githubusercontent.com/96913056/173335941-38317d67-6408-467f-989b-92ab0346174e.png)
 ![5_식품추가_유통기한](https://user-images.githubusercontent.com/96913056/173335944-8bde65ff-b89c-4b09-9f0d-dfea01525f81.png)
 ![7_추가된 식품리스트](https://user-images.githubusercontent.com/96913056/173335952-f43660fe-36c7-46ff-abbb-60c766f18b16.png)
 <br><br>
-* Take Barcode and connect API
-* Add product in Refrigerator list
+* **_Take Barcode and connect API_**
+* **_Add product in Refrigerator list_**
 
 ### 2. Grocery Shopping
-* Check list from the refrigerator
+* **_Check list from the refrigerator_**
 ![1_장보기리스트화면](https://user-images.githubusercontent.com/96913056/173336492-516e4673-0333-4fac-bc5f-f10bd759798a.png)
 <br><br>
-* Add new product
+* **_Add new product_**
 ![3_입력](https://user-images.githubusercontent.com/96913056/173336550-732264a4-8e47-453f-90ae-520114cdfbca.png)
 ![4_추가된 화면](https://user-images.githubusercontent.com/96913056/173336553-ab24b320-5973-4a7b-a2d1-823be1106508.png)
 <br><br>
-* Choose refrigerator to add product
+* **_Choose refrigerator to add product_**
 ![5_아이템클릭하면어느냉장고에추가할지뜸](https://user-images.githubusercontent.com/96913056/173336599-bd53581c-a7a9-46d4-a9da-10017bc328c0.png)
 ![6_냉장고를선택하면식품정보입력하는창이뜸(이름은자동으로넘어옴)](https://user-images.githubusercontent.com/96913056/173336604-9645cdf5-4daf-4fdc-80fe-080943fbda37.png)
 <br><br>
-* Delte, Add product in Grocery Shopping
+* **_Delte, Add product in Grocery Shopping_**
 ![7_추가하면장보기리스트에서는 사라지고](https://user-images.githubusercontent.com/96913056/173336649-f3ad7dfb-b232-4ebd-8981-c5ed065ab939.png)
 ![8_선택한냉장고에 추가됨](https://user-images.githubusercontent.com/96913056/173336654-d53898a5-e280-44c9-a81e-a216a078d3f1.png)
 <br><br>
 
 ### 3. Share
-* Share the refrigerator with people
+* **_Share the refrigerator with people_**
 ![3_친구uid입력](https://user-images.githubusercontent.com/96913056/173336183-8b88c285-f3e2-4786-8799-59e09e90c676.png)
 ![4_초대완료](https://user-images.githubusercontent.com/96913056/173336214-5a9d55ee-cd93-4303-a94a-f397d2d66844.png)
 <br><br>
 
-* Get your Uid
+* **_Get your Uid_**
 ![2_본인uid복사가능](https://user-images.githubusercontent.com/96913056/173336206-fd8e3268-e8b2-47d9-bb3d-717f5a89d87a.png)
 
 ### 4. Community
-* Community Product list
+* **_Community Product list_**
 <br><br>
 ![커뮤니티 리스트](https://user-images.githubusercontent.com/96913056/173339398-c8555a93-d944-46ce-a0b8-9ebced0df852.png)
 <br><br>
-* Search product in community
+* **_Search product in community_**
 <br><br>
 ![search](https://user-images.githubusercontent.com/96913056/173339626-83e19d39-a4c7-4467-81ca-8540d5115db9.png)
 .png)
 <br><br>
-* Product upload
+* **_Product upload_**
 <br><br>
 ![addfood](https://user-images.githubusercontent.com/96913056/173339405-26f06e48-923c-4a2d-85ee-a035b19eb5dc.png)
 <br><br>
-* Product detail
+* **_Product detail_**
 <br><br>
 ![community_상세정보](https://user-images.githubusercontent.com/96913056/173338242-5d9150ed-1185-4d46-910e-031f00d7b0cf.png)
 <br><br>
-* Chatting
+* **_Chatting_**
 <br><br>
 ![chatting](https://user-images.githubusercontent.com/96913056/173339754-52fb5156-8637-4f3c-8f0f-cbcacaf863a3.png)
 
