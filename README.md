@@ -30,9 +30,9 @@
 ## Contents
 ### 1. Sign up & Login
 * Sign up <br>
-![Signup](https://user-images.githubusercontent.com/96913056/173331693-f06742e5-1bb9-43d5-994c-a1ae90e98bdb.png)
+![signupupup](https://user-images.githubusercontent.com/96913056/173339374-45f38d0b-23df-4114-b002-ec4ba05ee83f.png)
 * Login (Automatic login functionality)<br>
-![Login](https://user-images.githubusercontent.com/96913056/173331682-5f4406cb-cf5b-4296-8749-522b1f56c2dd.png)
+![Logininin](https://user-images.githubusercontent.com/96913056/173339380-95cc93ff-b8bb-463f-a0d5-c1a656cefa97.png)
 
 ### 2. Refrigerator
 * Refrigerator list <br>
@@ -85,12 +85,20 @@
 
 ### 4. Community
 * Community Product list
+![커뮤니티 리스트](https://user-images.githubusercontent.com/96913056/173339398-c8555a93-d944-46ce-a0b8-9ebced0df852.png)
+<br><br>
 * Search product in community
+![search](https://user-images.githubusercontent.com/96913056/173339626-83e19d39-a4c7-4467-81ca-8540d5115db9.png)
+.png)
+<br><br>
 * Product upload
+![addfood](https://user-images.githubusercontent.com/96913056/173339405-26f06e48-923c-4a2d-85ee-a035b19eb5dc.png)
+<br><br>
 * Product detail
 ![community_상세정보](https://user-images.githubusercontent.com/96913056/173338242-5d9150ed-1185-4d46-910e-031f00d7b0cf.png)
 <br><br>
 * Chatting
+![chatting](https://user-images.githubusercontent.com/96913056/173339754-52fb5156-8637-4f3c-8f0f-cbcacaf863a3.png)
 
 ## Implemetation & Technologies
 ### Firebase
