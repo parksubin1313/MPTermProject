@@ -29,12 +29,15 @@
 
 ## Contents
 ### 1. Sign up & Login
-* Sign up
-* Login
-* Automatic Login
+* Sign up <br>
+![Signup](https://user-images.githubusercontent.com/96913056/173331693-f06742e5-1bb9-43d5-994c-a1ae90e98bdb.png)
+* Login <br>
+![Login](https://user-images.githubusercontent.com/96913056/173331682-5f4406cb-cf5b-4296-8749-522b1f56c2dd.png)
+* Automatic Login 
 
 ### 2. Refrigerator
 * Refrigerator list
+
 * Add Refrigerator
 * Delete Refrigerator
 * Tow types
