@@ -32,7 +32,7 @@
 * Sign up
 * Login
 * Automatic Login
-* 
+
 ### 2. Refrigerator
 * Refrigerator list
 * Add Refrigerator
