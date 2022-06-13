@@ -66,7 +66,7 @@
 ### Use ZXing Library
 
 ### Github Repository
-[MP_TermProject Team C] (https://github.com/parksubin1313/MPTermProject)
+[MP_TermProject Team C](https://github.com/parksubin1313/MPTermProject)
 
 ## Frigge (PPT)
 [Frigge.pptx](https://github.com/parksubin1313/MPTermProject/files/8889503/Frigge.pptx)
@@ -74,11 +74,6 @@
 ## Demo Video
 
 
-
-
-# About Share The Worry (PPT)
-
-[About_ShareTheWorry.pptx](https://github.com/parksubin1313/STW/files/8784262/About_ShareTheWorry.pptx)
 
 
 
