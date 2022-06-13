@@ -73,7 +73,7 @@
   * **_Delete Grocery List '라면'_** <br>
 ![장보기 리스트에서는 지워짐](https://user-images.githubusercontent.com/96913056/173343403-4238d616-17ae-42bb-a90e-d4fc72153bf8.png)
   * **_Add Rfrigerator List '라면'_** <br>
-![8_선택한냉장고에 추가됨](https://user-images.githubusercontent.com/96913056/173336654-d53898a5-e280-44c9-a81e-a216a078d3f1.png)
+![냉장고에는 추가됨](https://user-images.githubusercontent.com/96913056/173343399-7c07394a-ae54-4f99-8ba0-2af02d625dc5.png)
 <br><br>
 
 ### 3. Share
