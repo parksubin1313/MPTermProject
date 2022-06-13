@@ -36,15 +36,15 @@
 
 ### 2. Refrigerator
 * **_Refrigerator list_** <br>
-![1_기존냉장고 리스트](https://user-images.githubusercontent.com/96913056/173332748-d9ea1683-5b95-4a59-bc7a-d05c7f163be5.png)
+![냉장고 리스트](https://user-images.githubusercontent.com/96913056/173341978-06654a31-1fcf-4110-878b-92c041442b97.png)
 <br><br>
 * **_Add Refrigerator_**
-![4_이름입력](https://user-images.githubusercontent.com/96913056/173332767-2780f142-f038-46a2-8688-63b1d2be0002.png) 
-![5_추가된냉장고리스트](https://user-images.githubusercontent.com/96913056/173332780-6c44bea8-6ffd-428d-8fd5-c27304a88b08.png) 
+![냉장고 추가](https://user-images.githubusercontent.com/96913056/173341986-2a5d8a4e-5950-4968-ae7b-a6752ee8eb19.png)
 <br><br>
 * **_Delete Refrigerator_**
-![6_아이템롱클릭하면삭제팝업](https://user-images.githubusercontent.com/96913056/173332791-e67ca63f-4f4d-4f4d-8d33-9ddcbd8db610.png)
-<br><br>
+![delete냉장고](https://user-images.githubusercontent.com/96913056/173342194-52edbeb2-bf15-4c50-a4e5-c1796b10fc90.png)
+
+<br><br><br>
 * **_Two types_**
 ![1_냉장리스트](https://user-images.githubusercontent.com/96913056/173334032-34dcbfcc-f47b-4a95-9237-cc5307f695c3.png)
 ![2_냉동리스트](https://user-images.githubusercontent.com/96913056/173334039-2b3fe1f3-0da5-4c1d-a857-e491e9676157.png)
