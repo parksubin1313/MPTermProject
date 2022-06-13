@@ -1,6 +1,7 @@
 # 음식 싹싹 Frigge 🥙
+Mobile Programming Term Project TeamC <br><br>
 ![Logo](https://user-images.githubusercontent.com/96913056/173311744-a3eb35f7-8fc3-44ea-a5a5-6f82a70f83cd.png) <br>
-Mobile Programming Term Project TeamC <br>
+
 * 201935046 박수빈 <br>
 * 201935080 오채영 <br>
 * 201935121 임혜균 <br>
