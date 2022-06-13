@@ -54,8 +54,14 @@
 ![5_식품추가_유통기한](https://user-images.githubusercontent.com/96913056/173335944-8bde65ff-b89c-4b09-9f0d-dfea01525f81.png)
 ![7_추가된 식품리스트](https://user-images.githubusercontent.com/96913056/173335952-f43660fe-36c7-46ff-abbb-60c766f18b16.png)
 <br><br>
-* **_Take Barcode and connect API_**
-* **_Add product in Refrigerator list_**
+* **_Take Barcode and connect API_** <br>
+ * **_BarCode_** <br>
+ ![바코드 사진 찍기](https://user-images.githubusercontent.com/96913056/173344940-aee158fd-ab30-464a-8284-1021e1b3683b.png) <br>
+ * **_Connect API_** <br>
+ ![바코드로 음식 등록된거](https://user-images.githubusercontent.com/96913056/173344934-d3a31e90-58f8-426b-9baf-c1ebe9af2908.png) <br><br>
+
+* **_Add product in Refrigerator list_** <br>
+![리스트에 추가 됨](https://user-images.githubusercontent.com/96913056/173344929-b12a8fca-a3cf-4350-834f-f4de63a9a251.png) <br><br>
 
 ### 2. Grocery Shopping
 * **_Check list from the refrigerator_**<br>
@@ -92,7 +98,6 @@
 * **_Search product in community_**
 <br><br>
 ![search](https://user-images.githubusercontent.com/96913056/173339626-83e19d39-a4c7-4467-81ca-8540d5115db9.png)
-.png)
 <br><br>
 * **_Product upload_**
 <br><br>
