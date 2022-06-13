@@ -100,7 +100,6 @@ public class HomeFragment extends Fragment {
                         }
                     }
                     else{
-                        break;
                     }
                 }
 

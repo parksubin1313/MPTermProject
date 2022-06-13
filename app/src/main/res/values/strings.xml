@@ -76,4 +76,15 @@
 
     <!--장보기 리스트-->
     <string name="itemToBuy">장볼 것</string>
+
+    <!--Cummunity/chatting-->
+    <string name="chat_foodname">식품명</string>
+    <string name="chat_wantmsg">살래요!</string>
+    <string name="chat_sendbtn">보내기</string>
+    <string name="chat_myname">내 이름</string>
+    <string name="chat_mymsg">내 메세지</string>
+    <string name="chat_othername">상대 이름</string>
+    <string name="chat_othermsg">상대 메세지</string>
+    <string name="chat_time">00:00</string>
+
 </resources>
