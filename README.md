@@ -55,9 +55,9 @@
 <br><br>
 
 * **_Take Barcode and connect API_** <br>
- * **_BarCode_** <br>
+  * **_BarCode_** <br>
  ![바코드 사진 찍기](https://user-images.githubusercontent.com/96913056/173344940-aee158fd-ab30-464a-8284-1021e1b3683b.png) <br>
- * **_Connect API_** <br>
+  * **_Connect API_** <br>
  ![바코드로 음식 등록된거](https://user-images.githubusercontent.com/96913056/173344934-d3a31e90-58f8-426b-9baf-c1ebe9af2908.png) <br><br>
 
 * **_Add product in Refrigerator list_** <br>
@@ -76,9 +76,9 @@
 ![식품상세정보 등록](https://user-images.githubusercontent.com/96913056/173343406-c29e99bf-f7fc-49e9-a578-b4d723e6cb19.png)
 <br><br>
 * **_Delte, Add product in Grocery Shopping_** <br>
-  * **_Delete Grocery List '라면'_** <br>
+   * **_Delete Grocery List '라면'_** <br>
 ![장보기 리스트에서는 지워짐](https://user-images.githubusercontent.com/96913056/173343403-4238d616-17ae-42bb-a90e-d4fc72153bf8.png)
-  * **_Add Rfrigerator List '라면'_** <br>
+   * **_Add Rfrigerator List '라면'_** <br>
 ![냉장고에는 추가됨](https://user-images.githubusercontent.com/96913056/173343399-7c07394a-ae54-4f99-8ba0-2af02d625dc5.png)
 <br><br>
 
@@ -91,7 +91,7 @@
 ![내 uid](https://user-images.githubusercontent.com/96913056/173344359-54295815-949b-41cb-96a9-8aa6702b541d.png) <br><br>
 
 * **_List of shared refrigerators_**
-  * **_Add to "모프 냉장고" each account_** <br><br>
+   * **_Add to "모프 냉장고" each account_** <br><br>
 ![최종 냉장고리스트](https://user-images.githubusercontent.com/96913056/173347504-e2ce484c-dbae-4301-88c5-d5b2d102ef45.png)
 ![이거는 혜균 냉장고 리스트](https://user-images.githubusercontent.com/96913056/173347217-08b646e2-17b8-4723-aed4-3145767604c4.png)
 <br><br>
