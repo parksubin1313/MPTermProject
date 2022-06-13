@@ -41,7 +41,7 @@
 <br><br>
   * Add Refrigerator
 ![4_이름입력](https://user-images.githubusercontent.com/96913056/173332767-2780f142-f038-46a2-8688-63b1d2be0002.png) 
-<br>
+
 ![5_추가된냉장고리스트](https://user-images.githubusercontent.com/96913056/173332780-6c44bea8-6ffd-428d-8fd5-c27304a88b08.png) 
 <br><br>
 
