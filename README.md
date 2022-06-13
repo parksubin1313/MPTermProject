@@ -85,19 +85,24 @@
 
 ### 4. Community
 * Community Product list
+<br><br>
 ![커뮤니티 리스트](https://user-images.githubusercontent.com/96913056/173339398-c8555a93-d944-46ce-a0b8-9ebced0df852.png)
 <br><br>
 * Search product in community
+<br><br>
 ![search](https://user-images.githubusercontent.com/96913056/173339626-83e19d39-a4c7-4467-81ca-8540d5115db9.png)
 .png)
 <br><br>
 * Product upload
+<br><br>
 ![addfood](https://user-images.githubusercontent.com/96913056/173339405-26f06e48-923c-4a2d-85ee-a035b19eb5dc.png)
 <br><br>
 * Product detail
+<br><br>
 ![community_상세정보](https://user-images.githubusercontent.com/96913056/173338242-5d9150ed-1185-4d46-910e-031f00d7b0cf.png)
 <br><br>
 * Chatting
+<br><br>
 ![chatting](https://user-images.githubusercontent.com/96913056/173339754-52fb5156-8637-4f3c-8f0f-cbcacaf863a3.png)
 
 ## Implemetation & Technologies
