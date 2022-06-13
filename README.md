@@ -62,11 +62,12 @@
 ### Firebase
 
 ### Use ZXing Library
-* [journeyapps/zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)
+* [journeyapps/zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)<br><br>
+* Code
 ![Zxing_gradle](https://user-images.githubusercontent.com/96913056/173329208-93d56f7c-c6ac-429c-89f7-6b449df2d767.png)
 
 ### Connect Barcode and API
-* The barcode API was approved by applying for **_the barcode Open API in "식품안전나라"_**, and the food can be registered when the barcode is stamped.
+* The barcode API was approved by applying for **_the barcode Open API in "식품안전나라"_**, and the food can be registered when the barcode is stamped.<br><br>
 ![API_DB](https://user-images.githubusercontent.com/96913056/173329461-a3ed9e16-458b-486e-b2f0-8e4afb4329df.png)
 
 
