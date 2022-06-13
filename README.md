@@ -68,8 +68,7 @@
 
 ### Connect Barcode and API
 * The barcode API was approved by applying for **_the barcode Open API in "식품안전나라"_**, and the food can be registered when the barcode is stamped.<br><br>
-![API_DB](https://user-images.githubusercontent.com/96913056/173329461-a3ed9e16-458b-486e-b2f0-8e4afb4329df.png)
-
+![API](https://user-images.githubusercontent.com/96913056/173330717-76b581a6-1699-405b-9da6-e8a0b2ab2e88.png)
 
 ### Github Repository
 [MP_TermProject Team C](https://github.com/parksubin1313/MPTermProject)
