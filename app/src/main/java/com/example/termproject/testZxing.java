@@ -48,7 +48,7 @@ public class testZxing extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         String result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data).getContents().toString();
-        //String result = "8807617070554"; //고구마전분맛
+        //String result = "8801056175870";
 
         if(result != null) {
             if(result == null) {
@@ -91,6 +91,7 @@ public class testZxing extends AppCompatActivity {
                                             Intent myIntent = new Intent(getApplicationContext(), AddFoodActivity.class);
                                             myIntent.putExtra("PRDname", PRDname);
                                             startActivity(myIntent);
+                                            finish();
                                             break;
                                         }
                                     }
@@ -110,6 +111,7 @@ public class testZxing extends AppCompatActivity {
                         Intent myIntent = new Intent(getApplicationContext(), AddFoodActivity.class);
                         myIntent.putExtra("PRDname", "");
                         startActivity(myIntent);
+                        finish();
                         break;
                     }
 

@@ -7,11 +7,28 @@
         <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/activity_delete_popup.xml" value="0.264" />
         <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/add_fridge.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/add_shopping.xml" value="0.12132725430597771" />
-        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/community_item.xml" value="0.2" />
-        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.16" />
-        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.13385416666666666" />
-        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/menu/menu_add_community.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/community_item.xml" value="0.176" />
+        <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.176" />
         <entry key="..\:/Users/sun56/MPTermProject/app/src/main/res/menu/menu_add_shopping.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/drawable/chatting_back_mymsgbox.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/drawable/chatting_back_othermsgbox.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_chat.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_choice_food.xml" value="0.23385416666666667" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_choice_fridge.xml" value="0.1453125" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/add_fridge.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/community_item.xml" value="0.24320652173913043" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/community_upload.xml" value="0.24320652173913043" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_chatting_mymsgbox.xml" value="0.1875" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_chatting_othermsgbox.xml" value="0.1875" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_row_chat.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/detail_fridge.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/wlqkr/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/single_shoppinglist_item.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>

@@ -167,7 +167,7 @@
                 android:gravity="center_vertical" />
 
             <Button
-                android:id="@+id/uploadBtn"
+                android:id="@+id/chatBtn"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ETDetail"

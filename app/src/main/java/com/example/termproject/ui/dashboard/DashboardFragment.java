@@ -17,8 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.termproject.AddFoodActivity;
 import com.example.termproject.AddShoppingActivity;
+import com.example.termproject.ChoiceFridgeActivity;
 import com.example.termproject.DeletePopup;
 import com.example.termproject.R;
 import com.example.termproject.databinding.FragmentDashboardBinding;
@@ -44,7 +44,10 @@ public class DashboardFragment extends Fragment {
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
+    private DatabaseReference reference = mDatabase.getReference();
     String uid = curUser != null ? curUser.getUid() : null;
+
+    public static String foodName;
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -93,7 +96,6 @@ public class DashboardFragment extends Fragment {
                         }
                     }
                     else{
-                        break;
                     }
                 }
 
@@ -120,11 +122,13 @@ public class DashboardFragment extends Fragment {
 
                                 if(key.equals("productName")){
                                     String pName = "" + dataSnapshot.getValue().toString();
+                                    foodName = pName;
                                     Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
                                     Log.e("gg", pName);
-                                    //Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
-                                    //intent.putExtra("fName",name);
-                                    //startActivity(intent);
+                                    reference.child("USER").child(uid).child("shoppingList").child(Integer.toString(index+1)).removeValue();
+                                    Intent intent = new Intent(getActivity(), ChoiceFridgeActivity.class);
+                                    intent.putExtra("fName",pName);
+                                    startActivity(intent);
                                 }
                             }
                         }

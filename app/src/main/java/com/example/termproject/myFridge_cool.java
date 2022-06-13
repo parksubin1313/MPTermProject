@@ -2,6 +2,7 @@ package com.example.termproject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -78,6 +79,9 @@ public class myFridge_cool extends Fragment {
 
         ListView listView = (ListView) view.findViewById(R.id.myFridge_cool_listView);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("Users");
+
         mReference.child("RFList").child(frName).child("food").child("냉장").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -109,7 +113,6 @@ public class myFridge_cool extends Fragment {
                         }
                         food.add(new foodItem("냉동", pName, dd));
                     } else {
-                        break;
                     }
                 }
                 adapter = new foodAdapter(getContext(), food);
@@ -205,7 +208,6 @@ public class myFridge_cool extends Fragment {
             if(convertView == null){
                 LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
                 convertView = layoutInflater.inflate(R.layout.food_item, parent, false);
-
             }
 
             viewHolder = new ViewHolder();
@@ -215,6 +217,21 @@ public class myFridge_cool extends Fragment {
             final foodItem food = (foodItem) list.get(position);
             viewHolder.foodName.setText(food.getName());
             viewHolder.dueDate.setText(food.getDD());
+
+            if(food.getDD().equals("D-1")||food.getDD().equals("D-2")||food.getDD().equals("D-3"))
+            {
+                viewHolder.dueDate.setTextColor(Color.BLUE);
+            }
+
+            if(food.getDD().compareTo("D-Day")==0)
+            {
+                viewHolder.dueDate.setTextColor(Color.RED);
+            }
+
+            if(food.getDD().compareTo("D+4")<2)
+            {
+                viewHolder.dueDate.setTextColor(Color.RED);
+            }
 
             return convertView;
         }

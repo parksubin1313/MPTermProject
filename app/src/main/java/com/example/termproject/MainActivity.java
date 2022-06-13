@@ -140,9 +140,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-
-
-
     private FirebaseAuth mAuth = null;
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
