@@ -14,8 +14,8 @@
 * Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
 
 ## Our Goal
-**_Minimize food waste_** from home through refrigerator management. <br> 
-In particular, we would like to help **_a person living alone_** who have difficulty in managing food through the food sharing function.
+* **_Minimize food waste_** from home through refrigerator management. <br> 
+* In particular, we would like to help **_a person living alone_** who have difficulty in managing food through the food sharing function.
 
 ## Key Features
 ### Adavantage
@@ -28,13 +28,35 @@ In particular, we would like to help **_a person living alone_** who have diffic
 * **_Easily_** make grocery market list
 
 ## Contents
-### 1. Refrigerator
+### 1. Sign up & Login
+* Sign up
+* Login
+* Automatic Login
+* 
+### 2. Refrigerator
+* Refrigerator list
+* Add Refrigerator
+* Delete Refrigerator
+* Tow types
+* Add product to refriegerator
+* Take Barcode and connect API
+* Add product in Refrigerator list
 
 ### 2. Grocery Shopping
+* Check list from the refrigerator
+* Add new product
+* Choose refrigerator to add product
+* Delte, Add product in Grocery Shopping
 
 ### 3. Share
+* Share the refrigerator with people
+* Get your Uid
 
 ### 4. Community
+* Product detail
+* Search product in community
+* Product upload
+* Chatting
 
 ## Implemetation & Technologies
 ### Firebase
@@ -44,6 +66,7 @@ In particular, we would like to help **_a person living alone_** who have diffic
 ### Use ZXing Library
 
 ### Github Repository
+[MP_TermProject Team C] (https://github.com/parksubin1313/MPTermProject)
 
 ## Frigge (PPT)
 [Frigge.pptx](https://github.com/parksubin1313/MPTermProject/files/8889503/Frigge.pptx)
