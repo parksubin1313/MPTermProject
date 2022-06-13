@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getActivity(), "fridge add clicked", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "fridge add clicked", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), AddFridgeActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment {
                                 if(key.equals("name")){
                                     String name = "" + dataSnapshot.getValue().toString();
                                     Log.e("gg", name);
-                                    Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
                                     intent.putExtra("fName",name);
                                     startActivity(intent);

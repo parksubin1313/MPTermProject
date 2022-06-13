@@ -88,7 +88,7 @@ public class NotificationsFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
         //커스텀 dialog 로 바꿈
         CustomDialog dlg = new CustomDialog(getActivity());
         dlg.show();
@@ -148,6 +148,8 @@ public class NotificationsFragment extends Fragment {
                     //TODO: DB 에 올리기
                     save();
                     Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
+
+//                    Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
                     // Custom Dialog 종료
                     dismiss();
                 }

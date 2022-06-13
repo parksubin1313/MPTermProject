@@ -58,11 +58,11 @@ public class AddFridgeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!(isStringEmpty(fridgeName.getText().toString()))) {
                     save();
-                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + " is added", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + " is added", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                     finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + "식품명을 입력해주세요.", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + "식품명을 입력해주세요.", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                 }
             }

@@ -106,6 +106,51 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                     if (TextUtils.isEmpty(nickName)) {
                         Toast.makeText(getApplicationContext(), "NickName를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                         return;
+
+        //email과 password가 비었는지 아닌지를 체크 한다.
+        if (TextUtils.isEmpty(email)) {
+//            Toast.makeText(this, "Email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+//            Toast.makeText(this, "Password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+        }
+
+        //email과 password가 제대로 입력되어 있다면 계속 진행된다.
+        progressDialog.setMessage("등록중입니다. 기다려 주세요...");
+        progressDialog.show();
+
+//        creating a new user
+        firebaseAuth.createUserWithEmailAndPassword(email, password) //회원가입
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+//                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); // Get information of logged in user
+                            user = firebaseAuth.getCurrentUser();
+//                            Toast.makeText(getApplicationContext(), "회원가입 성공",Toast.LENGTH_SHORT).show();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            String uid = user != null ? user.getUid() : null;
+                            /*
+                            String nickname = editTextNickname.getText().toString();
+
+                            if(uid != null){
+                                //userData userInfo = new userData();
+                                //userInfo.setUid(uid);
+                                //userInfo.setNickname(nickname);
+                                //mReference.child("/USER/").child(nickname).push().setValue(uid);
+
+
+                            }
+
+                             */
+                        }
+                        else {
+                            //에러발생시
+                            Toast.makeText(signup.this, "회원가입 에러!", Toast.LENGTH_SHORT).show();
+                        }
+                        progressDialog.dismiss();
                     }
 
                     FirebaseUser user = firebaseAuth.getCurrentUser();

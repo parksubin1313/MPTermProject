@@ -87,7 +87,7 @@ public class testZxing extends AppCompatActivity {
                                         {
                                             PRDname = ""+dataSnapshot.getValue();
                                             //Log.e("key", PRDname);
-                                            Toast.makeText(getApplicationContext(), PRDname, Toast.LENGTH_LONG).show();
+//                                            Toast.makeText(getApplicationContext(), PRDname, Toast.LENGTH_LONG).show();
                                             Intent myIntent = new Intent(getApplicationContext(), AddFoodActivity.class);
                                             myIntent.putExtra("PRDname", PRDname);
                                             startActivity(myIntent);

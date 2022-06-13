@@ -58,7 +58,7 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), AddShoppingActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
@@ -124,6 +124,8 @@ public class DashboardFragment extends Fragment {
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     foodName = pName;
                                     Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
+
+//                                    Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
                                     Log.e("gg", pName);
                                     reference.child("USER").child(uid).child("shoppingList").child(Integer.toString(index+1)).removeValue();
                                     Intent intent = new Intent(getActivity(), ChoiceFridgeActivity.class);

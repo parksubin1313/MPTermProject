@@ -144,7 +144,7 @@ public class myFridge_cool extends Fragment {
                                 if(key.equals("productName")){
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     Log.e("gg", pName);
-                                    Toast.makeText(getActivity(), pName + " 클릭", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(getActivity(), pName + " 클릭", Toast.LENGTH_SHORT).show();
                                     //Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
                                     //intent.putExtra("fName",name);
                                     //startActivity(intent);
@@ -186,7 +186,7 @@ public class myFridge_cool extends Fragment {
 
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
         }
 
         class ViewHolder{

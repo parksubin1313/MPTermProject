@@ -39,6 +39,10 @@ public class InviteUser extends AppCompatActivity {
     String uid = user != null ? user.getUid() : null;
     String inviteUser;
 
+    String uid = user != null ? user.getUid() : null;
+
+    String inveiteUid;
+
     String countString;
     int count=1, countNum;
     public static int cnt=1;
@@ -46,6 +50,13 @@ public class InviteUser extends AppCompatActivity {
     EditText textInviteUid;
     Button invite;
     TextView textUid;
+
+    //String frName = fName;
+    String frName = fName;
+
+    String userUid;
+
+    EditText textInviteUid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +67,10 @@ public class InviteUser extends AppCompatActivity {
         invite = findViewById(R.id.button);
         textUid = findViewById(R.id.textUid);
 
+
+        textInviteUid = findViewById(R.id.user);
+        String userUid = textInviteUid.getText().toString();
+
         textUid.setText(uid);
 
         if(textInviteUid.getText().toString()!=null)
@@ -63,6 +78,10 @@ public class InviteUser extends AppCompatActivity {
             zero_save();
         }
 
+
+        //zero_save();
+
+        Button invite = findViewById(R.id.button);
         invite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +89,20 @@ public class InviteUser extends AppCompatActivity {
                 save();
                 Toast.makeText(getApplicationContext(), frName+"에 초대완료", Toast.LENGTH_LONG).show();
                 finish();
+                //zero_save();
+                save();
+//                Toast.makeText(getApplicationContext(), frName+"에 초대완료", Toast.LENGTH_LONG).show();
+                finish();
+/*
+                if(userUid!=null)
+                {
+                    zero_save();
+                    save();
+                    Toast.makeText(getApplicationContext(), frName+"에 초대완료", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+
+ */
 
             }
         });
@@ -78,6 +111,10 @@ public class InviteUser extends AppCompatActivity {
     public int countDB(){
 
         mReference.child("USER").child(inviteUser).child("RFList").addValueEventListener(new ValueEventListener() {
+
+        textInviteUid = findViewById(R.id.user);
+        String userUid = textInviteUid.getText().toString();
+        mReference.child("USER").child(userUid).child("RFList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -116,13 +153,18 @@ public class InviteUser extends AppCompatActivity {
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {
-            FirebasePost post = new FirebasePost(frName);
+            FirebasePost post = new FirebasePost(fName);
             postValues = post.toMap();
         }
 
         cnt = countDB();
 
         childUpdates.put("/USER/" + inviteUser + "/RFList/" + cnt + "/", postValues);
+
+        textInviteUid = findViewById(R.id.user);
+        String userUid = textInviteUid.getText().toString();
+
+        childUpdates.put("/USER/" + userUid + "/RFList/" + 3 + "/", postValues);
         mReference.updateChildren(childUpdates);
     }
 
@@ -132,12 +174,19 @@ public class InviteUser extends AppCompatActivity {
         inviteUser = textInviteUid.getText().toString();
         frName = "";
         postFirebaseDataBase(true);
+
+        frName = "";
+        postFirebaseDataBase(true);
+        return true;
     }
 
     // Save to Firebase
     public void save() {
 
         inviteUser = textInviteUid.getText().toString();
+
+        textInviteUid = findViewById(R.id.user);
+        String userUid = textInviteUid.getText().toString();
         frName = fName;
         postFirebaseDataBase(true);
     }
