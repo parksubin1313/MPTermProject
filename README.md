@@ -45,15 +45,15 @@
 ![delete냉장고](https://user-images.githubusercontent.com/96913056/173342194-52edbeb2-bf15-4c50-a4e5-c1796b10fc90.png)
 
 <br><br><br>
-* **_Two types Refrigerator list_**
-![1_냉장리스트](https://user-images.githubusercontent.com/96913056/173334032-34dcbfcc-f47b-4a95-9237-cc5307f695c3.png)
-![2_냉동리스트](https://user-images.githubusercontent.com/96913056/173334039-2b3fe1f3-0da5-4c1d-a857-e491e9676157.png)
+* **_Two types Refrigerator list_** <br>
+![냉장 리스트_찐](https://user-images.githubusercontent.com/96913056/173346136-c2a308a6-553f-473e-9903-2106d3fb6b03.png)
+![냉동리스트](https://user-images.githubusercontent.com/96913056/173346131-c3accc97-32ec-41f2-81c9-c015eedb17b5.png)
 <br><br>
-* **_Add product to refriegerator_**
-![6_입력한 식품추가창](https://user-images.githubusercontent.com/96913056/173335941-38317d67-6408-467f-989b-92ab0346174e.png)
-![5_식품추가_유통기한](https://user-images.githubusercontent.com/96913056/173335944-8bde65ff-b89c-4b09-9f0d-dfea01525f81.png)
-![7_추가된 식품리스트](https://user-images.githubusercontent.com/96913056/173335952-f43660fe-36c7-46ff-abbb-60c766f18b16.png)
+
+* **_Add product to refriegerator_** <br>
+![냉장고에 식품 추가하기](https://user-images.githubusercontent.com/96913056/173346437-ffb16e0f-7095-4e96-9dc9-0c719e55d82e.png)
 <br><br>
+
 * **_Take Barcode and connect API_** <br>
  * **_BarCode_** <br>
  ![바코드 사진 찍기](https://user-images.githubusercontent.com/96913056/173344940-aee158fd-ab30-464a-8284-1021e1b3683b.png) <br>
