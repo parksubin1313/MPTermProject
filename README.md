@@ -45,6 +45,9 @@ In particular, we would like to help **_a person living alone_** who have diffic
 
 ### Github Repository
 
+## Frigge (PPT)
+[Frigge.pptx](https://github.com/parksubin1313/MPTermProject/files/8889503/Frigge.pptx)
+
 ## Demo Video
 
 
@@ -54,14 +57,6 @@ In particular, we would like to help **_a person living alone_** who have diffic
 
 [About_ShareTheWorry.pptx](https://github.com/parksubin1313/STW/files/8784262/About_ShareTheWorry.pptx)
 
-***
-# Project Video
 
-https://www.youtube.com/watch?v=-BhmJwwwsHk
-
-***
-# 개인정보 처리 방침
-
-[개인정보처리방침.txt](https://github.com/parksubin1313/STW/files/8784279/default.txt)
 
 
