@@ -65,11 +65,14 @@
 ![장바구니 식품 추가](https://user-images.githubusercontent.com/96913056/173343009-4feaf9fb-9b47-40c3-8861-d503795baf1b.png)
 <br><br>
 * **_Choose refrigerator to add product_** <br>
-![5_아이템클릭하면어느냉장고에추가할지뜸](https://user-images.githubusercontent.com/96913056/173336599-bd53581c-a7a9-46d4-a9da-10017bc328c0.png)
-![6_냉장고를선택하면식품정보입력하는창이뜸(이름은자동으로넘어옴)](https://user-images.githubusercontent.com/96913056/173336604-9645cdf5-4daf-4fdc-80fe-080943fbda37.png)
+![냉장고에 추가하기](https://user-images.githubusercontent.com/96913056/173343407-bfa175cc-6fa0-4ba4-bd79-f4c4efb4cd24.png)
 <br><br>
-* **_Delte, Add product in Grocery Shopping_**
-![7_추가하면장보기리스트에서는 사라지고](https://user-images.githubusercontent.com/96913056/173336649-f3ad7dfb-b232-4ebd-8981-c5ed065ab939.png)
+![식품상세정보 등록](https://user-images.githubusercontent.com/96913056/173343406-c29e99bf-f7fc-49e9-a578-b4d723e6cb19.png)
+<br><br>
+* **_Delte, Add product in Grocery Shopping_** <br>
+  * **_Delete Grocery List '라면'_** <br>
+![장보기 리스트에서는 지워짐](https://user-images.githubusercontent.com/96913056/173343403-4238d616-17ae-42bb-a90e-d4fc72153bf8.png)
+  * **_Add Rfrigerator List '라면'_** <br>
 ![8_선택한냉장고에 추가됨](https://user-images.githubusercontent.com/96913056/173336654-d53898a5-e280-44c9-a81e-a216a078d3f1.png)
 <br><br>
 
