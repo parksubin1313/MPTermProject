@@ -2,6 +2,7 @@ package com.example.termproject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class myFridge_freeze extends Fragment{
 
@@ -131,7 +133,7 @@ public class myFridge_freeze extends Fragment{
                         }
                         food.add(new foodItem("냉동", pName, dd));
                     } else {
-                        break;
+
                     }
                 }
                 adapter = new foodAdapter(getContext(), food);
@@ -248,6 +250,31 @@ public class myFridge_freeze extends Fragment{
             final foodItem food = (foodItem) list.get(position);
             viewHolder.foodName.setText(food.getName());
             viewHolder.dueDate.setText(food.getDD());
+            //viewHolder.dueDate.setTextColor(Color.RED);
+
+//            if(food.getDD().compareTo("D-4")>0)
+//            {
+//                viewHolder.dueDate.setTextColor(Color.BLUE);
+//            }
+//
+//            if(food.getDD().compareTo("D-Day")>=0)
+//            {
+//                viewHolder.dueDate.setTextColor(Color.RED);
+//            }
+            if(food.getDD().equals("D-1")||food.getDD().equals("D-2")||food.getDD().equals("D-3"))
+            {
+                viewHolder.dueDate.setTextColor(Color.BLUE);
+            }
+
+            if(food.getDD().compareTo("D-Day")==0)
+            {
+                viewHolder.dueDate.setTextColor(Color.RED);
+            }
+
+            if(food.getDD().compareTo("D+4")<2)
+            {
+                viewHolder.dueDate.setTextColor(Color.RED);
+            }
 
             return convertView;
         }

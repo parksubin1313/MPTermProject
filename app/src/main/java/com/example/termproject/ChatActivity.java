@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -35,13 +36,22 @@ import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
 
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    //private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private ListView listView;
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mReference = mDatabase.getReference();
+
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    FirebaseUser user = firebaseAuth.getCurrentUser();
+    String uid = user != null ? user.getUid() : null;
 
     private TextView food;
     private ArrayList<ChatData> chatList = new ArrayList<>();
     private ChatAdapter adapter;
-    String uid;
+    //String uid;
+    String nick="";
+    String nickname;
 
     private EditText EditText_chat;
     private Button Button_send;
@@ -50,14 +60,50 @@ public class ChatActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
 
     //'chat'노드의 참조객체 참조변수
-    private DatabaseReference myRef;
+    private DatabaseReference myRef, myRef2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cum_chatting);
 
-        uid = user.getUid();
+        //uid = user.getUid();
+
+        /*닉네임으로 띄우기*/
+        //nick = user.getDisplayName();
+        //nick=getNick();
+
+        mReference.child("Users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Log.e("hehehe", "uid 있음 - 1");
+
+                if (snapshot.hasChild(uid)) {
+
+                    Log.e("hehehe", "uid 있음");
+
+                    for (DataSnapshot dataSnapshot : snapshot.child(uid).getChildren()) {
+                        String key = dataSnapshot.getKey();
+
+                        if (key.equals("nickName")) {
+                            nickname = "" + dataSnapshot.getValue().toString();
+                            //chat.setNickname(nickname);
+                            Log.e("hehehe", nickname);
+                        }
+
+                    }
+                } else {
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -77,6 +123,7 @@ public class ChatActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
 //        myRef = firebaseDatabase.getReference("Chat").child(uid).child(foodname);
         myRef = firebaseDatabase.getReference("Chat").child(foodname);
+        myRef2 = firebaseDatabase.getReference();
 
         //firebaseDB에서 채팅 메세지들 실시간 읽어오기..
         //'chat'노드에 저장되어 있는 데이터들을 읽어오기
@@ -123,12 +170,53 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String msg = EditText_chat.getText().toString(); //msg
+                Log.e("hehehe", "버튼눌림");
                 EditText_chat.setText(null);
                 //널이 아닐때만 값전송하게
                 if (msg != null) {
+                    Log.e("hehehe", "널아님");
+                    Log.e("hehehe", "uid is "+uid);
+
                     ChatData chat = new ChatData();
-                    chat.setNickname(uid);
+
+                    mReference.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            Log.e("hehehe", "uid 있음 - 1");
+
+                            if (snapshot.hasChild("0")) {
+
+                                Log.e("hehehe", "uid 있음");
+
+                                for (DataSnapshot dataSnapshot : snapshot.child(uid).getChildren()) {
+                                    String key = dataSnapshot.getKey();
+
+                                    if (key.equals("nickName")) {
+                                        nickname = "" + dataSnapshot.getValue().toString();
+                                        chat.setNickname(nickname);
+                                        Log.e("hehehe", nickname);
+                                    }
+
+                                }
+                            } else {
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    /*닉네임으로 띄우기*/
+//                    chat.setNickname(uid);
+                    chat.setNickname(getNick());
+
                     chat.setMsg(msg);
+
+                    chat.setUid(uid);
 
                     //메세지 작성 시간 문자열로..
                     Calendar calendar = Calendar.getInstance(); //현재 시간을 가지고 있는 객체
@@ -137,13 +225,43 @@ public class ChatActivity extends AppCompatActivity {
 
                     myRef.push().setValue(chat);
                 }
+            }
+        });
+    }
+
+    public String getNick()
+    {
+        mReference.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Log.e("hehehe", "uid 있음 - 1");
+
+                if (snapshot.hasChild("0")) {
+
+                    Log.e("hehehe", "uid 있음");
+
+                    for (DataSnapshot dataSnapshot : snapshot.child(uid).getChildren()) {
+                        String key = dataSnapshot.getKey();
+
+                        if (key.equals("nickName")) {
+                            nickname = "" + dataSnapshot.getValue().toString();
+                            //chat.setNickname(nickname);
+                            Log.e("hehehe", nickname);
+                        }
+
+                    }
+                } else {
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
-
+        return nickname;
     }
-
-
 }
-

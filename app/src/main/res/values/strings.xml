@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TermProject</string>
+    <string name="app_name">프리지</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -86,4 +86,5 @@
     <string name="chat_othername">상대 이름</string>
     <string name="chat_othermsg">상대 메세지</string>
     <string name="chat_time">00:00</string>
+
 </resources>

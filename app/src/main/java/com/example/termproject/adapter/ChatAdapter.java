@@ -57,16 +57,20 @@ public class ChatAdapter extends BaseAdapter {
         View itemView = null;
 
         //메세지가 내 메세지인지??
-        if (data.getNickname().equals(this.uid)) {//TODO: 닉네임 비교
+        if (data.getUid().equals(this.uid)) {//TODO: 닉네임 비교
             itemView = layoutInflater.inflate(R.layout.cum_chatting_mymsgbox, parent, false);
 
             TextView nickname = itemView.findViewById(R.id.tv_name);
             TextView msg = itemView.findViewById(R.id.tv_msg);
             TextView time = itemView.findViewById(R.id.tv_time);
 
+
+            /*닉네임으로 띄우기*/
+            //String user1 = "이매";
+            //nickname.setText(user1);
             nickname.setText(data.getNickname());
-            String user1 = "이매";
-            nickname.setText(user1);
+//            String user1 = user.getDisplayName();
+
             msg.setText(data.getMsg());
             time.setText(data.getTime());
         } else {
@@ -76,9 +80,11 @@ public class ChatAdapter extends BaseAdapter {
             TextView msg = itemView.findViewById(R.id.tv_msg);
             TextView time = itemView.findViewById(R.id.tv_time);
 
+            /*닉네임으로 띄우기*/
+            //String user2 = "쵯";
+            //nickname.setText(user2);
             nickname.setText(data.getNickname());
-            String user2 = "쵯";
-            nickname.setText(user2);
+
             msg.setText(data.getMsg());
             time.setText(data.getTime());
         }

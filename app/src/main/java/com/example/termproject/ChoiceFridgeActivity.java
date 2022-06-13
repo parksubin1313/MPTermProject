@@ -1,12 +1,12 @@
 package com.example.termproject;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import static com.example.termproject.MyFridgeActivity.fName;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class InviteUser extends AppCompatActivity {
+public class ChoiceFridgeActivity extends AppCompatActivity {
     //HomeFragment 에서 + 버트 눌렀을 때 오는 곳
     //냉장고 리스트에 새로운 냉장고 추가하기
     //R.id.add_fridge
@@ -35,62 +35,64 @@ public class InviteUser extends AppCompatActivity {
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
 
-    String frName;
+    public static String fName;
+    public static String pName;
     String uid = user != null ? user.getUid() : null;
-    String inviteUser;
 
     String countString;
-    int count=1, countNum;
-    public static int cnt=1;
+    int count = 1, countNum;
+    public static int cnt = 1;
 
-    EditText textInviteUid;
-    Button invite;
-    TextView textUid;
+    EditText fridgeName;
+    Button fridgeAddBtn;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_invite_user);
+        setContentView(R.layout.activity_choice_fridge);
 
-        textInviteUid = findViewById(R.id.user);
-        invite = findViewById(R.id.button);
-        textUid = findViewById(R.id.textUid);
+        fridgeName = findViewById(R.id.fridgeName_editText);
+        fridgeAddBtn = findViewById(R.id.fridgeList_register_btn);
 
-        textUid.setText(uid);
 
-        if(textInviteUid.getText().toString()!=null)
-        {
-            zero_save();
-        }
+        zero_save();
 
-        invite.setOnClickListener(new View.OnClickListener() {
+        fridgeAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                save();
-                Toast.makeText(getApplicationContext(), frName+"에 초대완료", Toast.LENGTH_LONG).show();
-                finish();
-
+                if (!(isStringEmpty(fridgeName.getText().toString()))) {
+                    //save();
+                    fName = fridgeName.getText().toString();
+//                    Toast.makeText(getApplicationContext(), fName + " is choiced", Toast.LENGTH_SHORT).show();
+                    fridgeName.setText(null);
+                    Intent intent = new Intent(ChoiceFridgeActivity.this, ChoiceFoodActivity.class);
+                    intent.putExtra("fName", fName);
+                    startActivity(intent);
+                    finish();
+                } else {
+//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + "냉장고의 이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    fridgeName.setText(null);
+                }
             }
         });
     }
 
-    public int countDB(){
+    public int countDB() {
 
-        mReference.child("USER").child(inviteUser).child("RFList").addValueEventListener(new ValueEventListener() {
+        mReference.child("USER").child(uid).child("RFList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //String count;
 
-                for(int i=1; i<100; i++){
+                for (int i = 1; i < 100; i++) {
 
                     countString = Integer.toString(i);
 
-                    if(!snapshot.hasChild(countString)){
+                    if (!snapshot.hasChild(countString)) {
                         break;
-                    }
-                    else{
+                    } else {
                     }
 
 
@@ -116,50 +118,47 @@ public class InviteUser extends AppCompatActivity {
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {
-            FirebasePost post = new FirebasePost(frName);
+            FirebasePost post = new FirebasePost(fName);
             postValues = post.toMap();
         }
 
         cnt = countDB();
 
-        childUpdates.put("/USER/" + inviteUser + "/RFList/" + cnt + "/", postValues);
+        childUpdates.put("/USER/" + uid + "/RFList/" + cnt + "/", postValues);
         mReference.updateChildren(childUpdates);
     }
 
     // 파이어베이스에 0이 자꾸 이상하게 담겨서....
     public void zero_save() {
 
-        inviteUser = textInviteUid.getText().toString();
-        frName = "";
+        fName = "";
         postFirebaseDataBase(true);
     }
 
     // Save to Firebase
     public void save() {
 
-        inviteUser = textInviteUid.getText().toString();
-        frName = fName;
+        fName = fridgeName.getText().toString();
         postFirebaseDataBase(true);
     }
 
     public class FirebasePost {
 
-        public String frName;
+        public String fName;
 
-        public FirebasePost(String frName) {
-            this.frName = frName;
+        public FirebasePost(String fName) {
+            this.fName = fName;
         }
 
         public Map<String, Object> toMap() {
             HashMap<String, Object> result = new HashMap<>();
-            result.put("name", frName);
+            result.put("name", fName);
             return result;
         }
     }
 
     //문자열 null인지 확인
-    static boolean isStringEmpty(String str)
-    {
+    static boolean isStringEmpty(String str) {
         return str == null || str.trim().isEmpty();
     }
 }

@@ -1,0 +1,192 @@
+Index: app/src/main/java/com/example/termproject/ui/home/HomeFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.termproject.ui.home;\r\n\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.Menu;\r\nimport android.view.MenuInflater;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.ListView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport com.example.termproject.AddFridgeActivity;\r\nimport com.example.termproject.MyFridgeActivity;\r\nimport com.example.termproject.R;\r\nimport com.example.termproject.databinding.FragmentHomeBinding;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.firestore.FirebaseFirestore;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class HomeFragment extends Fragment {\r\n\r\n    String TAG = \"HomeFragment\";\r\n\r\n    private FirebaseUser curUser = FirebaseAuth.getInstance().getCurrentUser();\r\n    final FirebaseFirestore db = FirebaseFirestore.getInstance();\r\n    private ListView listView;\r\n\r\n    private FragmentHomeBinding binding;\r\n\r\n    public HomeFragment(){}\r\n\r\n    @Override\r\n    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {\r\n        super.onCreateOptionsMenu(menu, inflater);\r\n        MenuInflater inflater1 = getActivity().getMenuInflater();\r\n        inflater1.inflate(R.menu.menu_add_fridge, menu);\r\n    }\r\n\r\n    @Override\r\n    public boolean onOptionsItemSelected(@NonNull MenuItem item) {\r\n        Toast.makeText(getActivity(), \"fridge add clicked\", Toast.LENGTH_SHORT).show();\r\n        Intent intent = new Intent(getActivity(), AddFridgeActivity.class);\r\n        startActivity(intent);\r\n        return super.onOptionsItemSelected(item);\r\n    }\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n//        HomeViewModel homeViewModel =\r\n//                new ViewModelProvider(this).get(HomeViewModel.class);\r\n//\r\n//        binding = FragmentHomeBinding.inflate(inflater, container, false);\r\n//        View root = binding.getRoot();\r\n//\r\n//        return root;\r\n        Log.d(\"HomeFragment\", \"들어옴\");\r\n        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_home , container, false);\r\n//        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.my_fridge , container, false);\r\n//        setContentView(R.layout.my_fridge);\r\n\r\n//        TabLayout tabLayout = rootView.findViewById(R.id.myFridge_tabLayout);\r\n//        ViewPager viewPager = rootView.findViewById(R.id.myFridge_viewPager);\r\n//\r\n//        tabLayout.setupWithViewPager(viewPager);\r\n//\r\n//        vpAdapter = new VPAdapter(getParentFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);\r\n//        vpAdapter.addFragment(new myFridge_cool(), \"냉장\");\r\n//        vpAdapter.addFragment(new myFridge_freeze(), \"냉동\");\r\n\r\n\r\n\r\n\r\n        listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);\r\n\r\n//        AFadapter = new AllFridgeAdapter();\r\n        List<String> data = new ArrayList<>();\r\n        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);\r\n//        listView.setAdapter(AFadapter);\r\n        listView.setAdapter(adapter);\r\n\r\n        for(int i=0; i<15; i++){\r\n            String fName = \"RF\"+(i+1);\r\n            data.add(fName);\r\n        }\r\n//        이걸 해줘야 add 가 반영됨\r\n        adapter.notifyDataSetChanged();\r\n\r\n\r\n//          TODO: DB 는 따로 혜균이 오면 손보자\r\n//        db.collection(\"All_Fridge\").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {\r\n//            @Override\r\n//            public void onComplete(@NonNull Task<QuerySnapshot> task) {\r\n//                if(task.isSuccessful()) {\r\n//                    for (QueryDocumentSnapshot document : task.getResult()) {\r\n//                        //추가될 AllFridge\r\n//                        DetailFridge tempContent = document.toObject(DetailFridge.class);\r\n//                        //User -> 내 냉장고 list 불러와서\r\n//                        if(MyFridgeCheck(tempContent.getUserList())) {\r\n//                            //냉장고가 되어야 함\r\n////                            TODO: 해결해야 함\r\n////                            AFadapter.addItem(tempContent);\r\n//                        }\r\n//                    }\r\n////                    AFadapter.notifyDataSetChanged();\r\n//                }\r\n//            }\r\n//        });\r\n\r\n        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {\r\n            @Override\r\n            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {\r\n                //내 냉장고로 이동\r\n                Intent intent = new Intent(getActivity(), MyFridgeActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n//        //냉장고 등록하기 버튼\r\n//        Button add = (Button) rootView.findViewById(R.id.fridgeList_add_btn);\r\n//        add.setOnClickListener(new View.OnClickListener() {\r\n//            @Override\r\n//            public void onClick(View view) {\r\n//                //TODO: 냉장고 추가하기 activity 로 이동\r\n//                Intent intent = new Intent(getActivity(), AddFridgeActivity.class);\r\n//                startActivity(intent);\r\n//            }\r\n//        });\r\n\r\n        setHasOptionsMenu(true);\r\n\r\n        return rootView;\r\n\r\n    }\r\n\r\n    @Override\r\n    public void onResume() {\r\n//        TODO: 이거 왜 오류남? 없어도 되냐?\r\n//        AFadapter.notifyDataSetChanged();\r\n//        Log.e(TAG, \" : \" + AFadapter.getCount());\r\n        super.onResume();\r\n    }\r\n\r\n    @Override\r\n    public void onDestroyView() {\r\n        super.onDestroyView();\r\n        binding = null;\r\n    }\r\n\r\n    public boolean MyFridgeCheck(ArrayList<String> userList){\r\n        String myUid = curUser.getUid();\r\n        for(String memberUid : userList){\r\n            if(myUid.equals(memberUid))\r\n                //내 냉장고임\r\n                return true;\r\n        }\r\n        return false;\r\n    }\r\n    \r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/termproject/ui/home/HomeFragment.java b/app/src/main/java/com/example/termproject/ui/home/HomeFragment.java
+--- a/app/src/main/java/com/example/termproject/ui/home/HomeFragment.java	
++++ b/app/src/main/java/com/example/termproject/ui/home/HomeFragment.java	
+@@ -166,5 +166,5 @@
+         }
+         return false;
+     }
+-    
++
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n\r\n<!--    <TextView-->\r\n<!--        android:id=\"@+id/fridgeList_textView\"-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:text=\"@string/fridgeList\"-->\r\n<!--        android:gravity=\"center\"-->\r\n<!--        android:layout_alignParentTop=\"true\"/>-->\r\n\r\n    <ListView\r\n        android:id=\"@+id/fridgeList_listView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"  />\r\n<!--        android:layout_below=\"@id/fridgeList_textView\"/>-->\r\n\r\n<!--    <Button-->\r\n<!--        android:id=\"@+id/fridgeList_add_btn\"-->\r\n<!--        android:layout_width=\"50dp\"-->\r\n<!--        android:layout_height=\"50dp\"-->\r\n<!--        android:text=\"@string/plus\"-->\r\n<!--        android:layout_alignParentRight=\"true\"-->\r\n<!--        android:layout_alignParentBottom=\"true\"-->\r\n<!--        android:layout_marginRight=\"10dp\"-->\r\n<!--        android:layout_marginBottom=\"10dp\"/>-->\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home.xml b/app/src/main/res/layout/fragment_home.xml
+--- a/app/src/main/res/layout/fragment_home.xml	
++++ b/app/src/main/res/layout/fragment_home.xml	
+@@ -1,33 +1,12 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+ 
+-
+-<!--    <TextView-->
+-<!--        android:id="@+id/fridgeList_textView"-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:text="@string/fridgeList"-->
+-<!--        android:gravity="center"-->
+-<!--        android:layout_alignParentTop="true"/>-->
+-
+     <ListView
+         android:id="@+id/fridgeList_listView"
+         android:layout_width="match_parent"
+-        android:layout_height="match_parent"  />
+-<!--        android:layout_below="@id/fridgeList_textView"/>-->
+-
+-<!--    <Button-->
+-<!--        android:id="@+id/fridgeList_add_btn"-->
+-<!--        android:layout_width="50dp"-->
+-<!--        android:layout_height="50dp"-->
+-<!--        android:text="@string/plus"-->
+-<!--        android:layout_alignParentRight="true"-->
+-<!--        android:layout_alignParentBottom="true"-->
+-<!--        android:layout_marginRight="10dp"-->
+-<!--        android:layout_marginBottom="10dp"/>-->
++        android:layout_height="match_parent"
++        android:layout_margin="10dp"/>
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Frigge</string>\r\n    <string name=\"action_settings\">Settings</string>\r\n    <!-- Strings used for fragments for navigation -->\r\n    <string name=\"first_fragment_label\">First Fragment</string>\r\n    <string name=\"second_fragment_label\">Second Fragment</string>\r\n    <string name=\"next\">Next</string>\r\n    <string name=\"previous\">Previous</string>\r\n\r\n    <string name=\"hello_first_fragment\">Hello first fragment</string>\r\n    <string name=\"hello_second_fragment\">Hello second fragment. Arg: %1$s</string>\r\n\r\n    <!--New-->\r\n    <!--리스트 이름-->\r\n    <string name=\"fridgeList\">냉장고 리스트</string>\r\n    <string name=\"myFridge\">내 냉장고</string>\r\n    <string name=\"shoppingList\">장보기 리스트</string>\r\n    <string name=\"communityList\">커뮤니티</string>\r\n\r\n    <!--식품-->\r\n    <string name=\"foodName\">식품 이름</string>\r\n    <string name=\"foodDate\">유통 기한</string>\r\n\r\n    <!--냉장고 목록-->\r\n    <string name=\"myFridgeList\">냉장고 이름</string>\r\n\r\n    <!--내 냉장고-->\r\n    <string name=\"cool\">냉장</string>\r\n    <string name=\"freeze\">냉동</string>\r\n\r\n    <!--회원가입/로그인-->\r\n    <string name=\"signUp\">회원가입</string>\r\n    <string name=\"signIn\">로그인</string>\r\n    <string name=\"moveToSignUp\">회원가입 하기</string>\r\n\r\n    <!--추가하기-->\r\n    <string name=\"fridgeList_add\">냉장고 등록하기</string>\r\n    <string name=\"add\">추가하기</string>\r\n    <string name=\"myFridge_Add\">식품 등록하기</string>\r\n    <string name=\"plus\">+</string>\r\n    <string name=\"shopping_add\">체크리스트 추가하기</string>\r\n\r\n    <!--안내문-->\r\n    <string name=\"fridgeList_add_info\">냉장고의 이름을 적어주세요</string>\r\n    <string name=\"shoppingList_add_info\">사야할 식품을 적어주세요</string>\r\n    <!---->\r\n\r\n\r\n    <!--식품-->\r\n    <string name=\"groceryList\">장보기 리스트</string>\r\n    <string name=\"addFood\">식품추가</string>\r\n\r\n    <!--식품 추가-->\r\n    <string name=\"fridgeWay_cool\">냉장</string>\r\n    <string name=\"fridgeWay_freeze\">냉동</string>\r\n    <string name=\"fridgeWay_etc\">기타</string>\r\n    <!--    <string name=\"foodName\">식품명</string>-->\r\n    <string name=\"exDate\">유통기한</string>\r\n    <string name=\"quantity\">수량</string>\r\n\r\n\r\n    <!--버튼-->\r\n    <string name=\"submit\">확인</string>\r\n    <string name=\"cancel\">취소</string>\r\n    <string name=\"barcode\">바코드 인식</string>\r\n    <string name=\"memo\">메모작성</string>\r\n    <string name=\"title_activity_bottom_navigation\">BottomNavigation</string>\r\n    <string name=\"title_home\">Home</string>\r\n    <string name=\"title_dashboard\">List</string>\r\n    <string name=\"title_notifications\">Community</string>\r\n\r\n    <!--장바구니-->\r\n    <string name=\"itemToBuy\">살 것</string>\r\n    <string name=\"shoppingList_title\">사야할 것</string>\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	
+@@ -10,7 +10,6 @@
+     <string name="hello_first_fragment">Hello first fragment</string>
+     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+ 
+-    <!--New-->
+     <!--리스트 이름-->
+     <string name="fridgeList">냉장고 리스트</string>
+     <string name="myFridge">내 냉장고</string>
+@@ -43,6 +42,7 @@
+     <!--안내문-->
+     <string name="fridgeList_add_info">냉장고의 이름을 적어주세요</string>
+     <string name="shoppingList_add_info">사야할 식품을 적어주세요</string>
++    <string name="community_search_info">검색어를 입력하세요</string>
+     <!---->
+ 
+ 
+@@ -65,13 +65,12 @@
+     <string name="barcode">바코드 인식</string>
+     <string name="memo">메모작성</string>
+     <string name="title_activity_bottom_navigation">BottomNavigation</string>
+-    <string name="title_home">Home</string>
+-    <string name="title_dashboard">List</string>
+-    <string name="title_notifications">Community</string>
+-
+-    <!--장바구니-->
+-    <string name="itemToBuy">살 것</string>
+-    <string name="shoppingList_title">사야할 것</string>
++    <string name="title_home">냉장고 리스트</string>
++    <string name="title_dashboard">장보기 리스트</string>
++    <string name="title_notifications">커뮤니티</string>
+     <!-- TODO: Remove or change this placeholder text -->
+     <string name="hello_blank_fragment">Hello blank fragment</string>
++
++    <!--장보기 리스트 페이지-->
++    <string name="itemToBuy">장볼 것</string>
+ </resources>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_add_food.xml\" value=\"0.3578125\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_invite_user.xml\" value=\"0.11277173913043478\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_list_rf.xml\" value=\"0.3061594202898551\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_main.xml\" value=\"0.18645833333333334\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml\" value=\"0.3061594202898551\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/activity_test_zxing.xml\" value=\"0.18645833333333334\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/community_upload.xml\" value=\"0.2796875\" />\r\n        <entry key=\"..\\:/Users/oco60/AndroidStudioProjects/MPTermProject/app/src/main/res/layout/cum_item_detail.xml\" value=\"0.2796875\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_share.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_shopping_cart.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_home_black_24dp.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rf.xml\" value=\"0.11296296296296296\" />\r\n        <entry key=\"..\\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chat_item.xml\" value=\"0.12708333333333333\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chatbot.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_list_rf.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_list_rfitem.xml\" value=\"0.12708333333333333\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_main.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_main2.xml\" value=\"0.12708333333333333\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_setting_rf.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_signup.xml\" value=\"0.12\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test.xml\" value=\"0.178125\" />\r\n        <entry key=\"..\\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test_zxing.xml\" value=\"0.1125\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml\" value=\"0.176\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml\" value=\"0.24427083333333333\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_main.xml\" value=\"0.24427083333333333\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/activity_signup.xml\" value=\"0.24427083333333333\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/layout/food_item.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/tool/MPTermProject/app/src/main/res/menu/menu_main.xml\" value=\"0.25885416666666666\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -17,9 +17,7 @@
+         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_baseline_shopping_cart.xml" value="0.1" />
+         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
+         <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.264" />
+-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.11296296296296296" />
+-        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.2" />
++        <entry key="..\:/Users/sun56/workspace/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.1" />
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chat_item.xml" value="0.12708333333333333" />
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_chatbot.xml" value="0.1" />
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.264" />
+@@ -30,15 +28,40 @@
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_signup.xml" value="0.12" />
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test.xml" value="0.178125" />
+         <entry key="..\:/Users/wlqkr/AndroidStudioProjects/TermProject/app/src/main/res/layout/activity_test_zxing.xml" value="0.1125" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable-v24/back_et_othermsgbox.xml" value="0.1265" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/back_et_mymsgbox.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank.xml" value="0.1725" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.1725" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_frigge.xml" value="0.1725" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_friggelogo.xml" value="0.1265" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_additembtn.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/drawable/shopping_checkbox.xml" value="0.1385" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_add_food.xml" value="0.1" />
+-        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1953125" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_grocery_list.xml" value="0.128" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rf.xml" value="0.176" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_list_rfitem.xml" value="0.24427083333333333" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_setting_rf.xml" value="0.1" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/activity_signup.xml" value="0.24427083333333333" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/back_et_mymsgbox.xml" value="0.1" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_mine.xml" value="0.264" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/cum_chatting_other.xml" value="0.16" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/food_item.xml" value="0.2" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.1816123188405797" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_home.xml" value="0.15520833333333334" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/fragment_notifications.xml" value="0.15520833333333334" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/setting_my_community.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/setting_my_communityitem.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/shopping_checkbox.xml" value="0.1953125" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/layout/single_shoppinglist_item.xml" value="0.144" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_community.xml" value="0.1" />
++        <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_add_shopping.xml" value="0.4" />
+         <entry key="..\:/tool/MPTermProject/app/src/main/res/menu/menu_main.xml" value="0.25885416666666666" />
+       </map>
+     </option>
+Index: app/src/main/res/menu/menu_add_shopping.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\">\r\n    <item\r\n        android:id=\"@+id/shopping_add_menu\"\r\n        android:title=\"@string/shopping_add\"\r\n        app:showAsAction=\"never\"/>\r\n</menu>
+===================================================================
+diff --git a/app/src/main/res/menu/menu_add_shopping.xml b/app/src/main/res/menu/menu_add_shopping.xml
+--- a/app/src/main/res/menu/menu_add_shopping.xml	
++++ b/app/src/main/res/menu/menu_add_shopping.xml	
+@@ -4,5 +4,6 @@
+     <item
+         android:id="@+id/shopping_add_menu"
+         android:title="@string/shopping_add"
+-        app:showAsAction="never"/>
++        app:showAsAction="always"
++        android:icon="@drawable/shopping_add_itembtn_clicked"/>
+ </menu>
+\ No newline at end of file

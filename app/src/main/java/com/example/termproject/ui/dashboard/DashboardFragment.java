@@ -96,7 +96,6 @@ public class DashboardFragment extends Fragment {
                         }
                     }
                     else{
-                        break;
                     }
                 }
 
@@ -124,6 +123,8 @@ public class DashboardFragment extends Fragment {
                                 if(key.equals("productName")){
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     foodName = pName;
+                                    Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
+
 //                                    Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
                                     Log.e("gg", pName);
                                     reference.child("USER").child(uid).child("shoppingList").child(Integer.toString(index+1)).removeValue();

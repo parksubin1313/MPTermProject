@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-package="com.example.termproject">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.termproject">
 
-<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,12 @@ package="com.example.termproject">
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_friggelogo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TermProject">
+        android:theme="@style/Theme.TermProject">88
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait"
             android:exported="true"
-            >
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +42,9 @@ package="com.example.termproject">
         <activity
             android:name=".CommunityActivity"
             android:exported="true" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
         <activity
             android:name=".testZxing"
             android:exported="true" />
@@ -84,14 +86,12 @@ package="com.example.termproject">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <!--        <activity android:name=".GroceryListActivity" />-->
-    <activity
-        android:name=".AddFoodActivity"
-        android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
-    <!--        <activity android:name=".ChatActivity" />-->
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- <activity android:name=".GroceryListActivity" /> -->
+        <activity
+            android:name=".AddFoodActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+    </application>
 
 </manifest>
