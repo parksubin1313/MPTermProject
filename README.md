@@ -1,9 +1,12 @@
 # 음식 싹싹 Frigge 🥙
-Mobile Programming Term Project Team C <br>
+Mobile Programming Term Project TeamC <br>
 * 201935046 박수빈 <br>
 * 201935080 오채영 <br>
 * 201935121 임혜균 <br>
 * 201935142 최  선 <br>
+
+![졸업작품_p18](https://user-images.githubusercontent.com/96913056/173311597-936a781d-bd05-454d-a455-97fb7420332b.png)
+
 
 ## Contents
 ### 1. Refrigerator
