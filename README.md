@@ -2,8 +2,6 @@
 **_Mobile Programming Term Project TeamC_** <br><br>
 ![Logo](https://user-images.githubusercontent.com/96913056/173311744-a3eb35f7-8fc3-44ea-a5a5-6f82a70f83cd.png) <br>
 
-![그림2](https://user-images.githubusercontent.com/96913056/173336820-1005f46d-1c1e-4cd2-9e74-560a2d1c9b6e.gif)
-
 ### Information
 * Gachon University Software Department 201935046 박수빈 wlqkr001113@gmail.com <br>
 * Gachon University Software Department 201935080 오채영 oco6029@naver.com <br>
@@ -86,9 +84,12 @@
 ![2_본인uid복사가능](https://user-images.githubusercontent.com/96913056/173336206-fd8e3268-e8b2-47d9-bb3d-717f5a89d87a.png)
 
 ### 4. Community
-* Product detail
+* Community Product list
 * Search product in community
 * Product upload
+* Product detail
+![community_상세정보](https://user-images.githubusercontent.com/96913056/173338242-5d9150ed-1185-4d46-910e-031f00d7b0cf.png)
+<br><br>
 * Chatting
 
 ## Implemetation & Technologies
