@@ -5,7 +5,7 @@ Mobile Programming Term Project TeamC <br>
 * 201935121 임혜균 <br>
 * 201935142 최  선 <br>
 
-![졸업작품_p18](https://user-images.githubusercontent.com/96913056/173311597-936a781d-bd05-454d-a455-97fb7420332b.png)
+![Logo](https://user-images.githubusercontent.com/96913056/173311744-a3eb35f7-8fc3-44ea-a5a5-6f82a70f83cd.png)
 
 
 ## Contents
