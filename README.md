@@ -60,6 +60,9 @@
 
 ## Implemetation & Technologies
 ### Firebase
+* Use **_Real Time Database_**
+* Store user information, refrigerator information, food information, chat messages, etc. <br><br>
+![Firebase](https://user-images.githubusercontent.com/96913056/173331198-2bf1bccb-d3d1-45d1-86f0-fcd86d7d592d.png)
 
 ### Use ZXing Library
 * [journeyapps/zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)<br><br>
