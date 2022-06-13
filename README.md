@@ -45,7 +45,7 @@
 ![delete냉장고](https://user-images.githubusercontent.com/96913056/173342194-52edbeb2-bf15-4c50-a4e5-c1796b10fc90.png)
 
 <br><br><br>
-* **_Two types_**
+* **_Two types Refrigerator list_**
 ![1_냉장리스트](https://user-images.githubusercontent.com/96913056/173334032-34dcbfcc-f47b-4a95-9237-cc5307f695c3.png)
 ![2_냉동리스트](https://user-images.githubusercontent.com/96913056/173334039-2b3fe1f3-0da5-4c1d-a857-e491e9676157.png)
 <br><br>
@@ -58,14 +58,13 @@
 * **_Add product in Refrigerator list_**
 
 ### 2. Grocery Shopping
-* **_Check list from the refrigerator_**
-![1_장보기리스트화면](https://user-images.githubusercontent.com/96913056/173336492-516e4673-0333-4fac-bc5f-f10bd759798a.png)
+* **_Check list from the refrigerator_**<br>
+![장바구니 리스트](https://user-images.githubusercontent.com/96913056/173343003-31d1c124-0301-43a9-b75e-6e19724632b2.png)
 <br><br>
-* **_Add new product_**
-![3_입력](https://user-images.githubusercontent.com/96913056/173336550-732264a4-8e47-453f-90ae-520114cdfbca.png)
-![4_추가된 화면](https://user-images.githubusercontent.com/96913056/173336553-ab24b320-5973-4a7b-a2d1-823be1106508.png)
+* **_Add new product_** <br>
+![장바구니 식품 추가](https://user-images.githubusercontent.com/96913056/173343009-4feaf9fb-9b47-40c3-8861-d503795baf1b.png)
 <br><br>
-* **_Choose refrigerator to add product_**
+* **_Choose refrigerator to add product_** <br>
 ![5_아이템클릭하면어느냉장고에추가할지뜸](https://user-images.githubusercontent.com/96913056/173336599-bd53581c-a7a9-46d4-a9da-10017bc328c0.png)
 ![6_냉장고를선택하면식품정보입력하는창이뜸(이름은자동으로넘어옴)](https://user-images.githubusercontent.com/96913056/173336604-9645cdf5-4daf-4fdc-80fe-080943fbda37.png)
 <br><br>
