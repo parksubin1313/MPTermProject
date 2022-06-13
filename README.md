@@ -59,9 +59,20 @@
 
 ### 2. Grocery Shopping
 * Check list from the refrigerator
+![1_장보기리스트화면](https://user-images.githubusercontent.com/96913056/173336492-516e4673-0333-4fac-bc5f-f10bd759798a.png)
+<br><br>
 * Add new product
+![3_입력](https://user-images.githubusercontent.com/96913056/173336550-732264a4-8e47-453f-90ae-520114cdfbca.png)
+![4_추가된 화면](https://user-images.githubusercontent.com/96913056/173336553-ab24b320-5973-4a7b-a2d1-823be1106508.png)
+<br><br>
 * Choose refrigerator to add product
+![5_아이템클릭하면어느냉장고에추가할지뜸](https://user-images.githubusercontent.com/96913056/173336599-bd53581c-a7a9-46d4-a9da-10017bc328c0.png)
+![6_냉장고를선택하면식품정보입력하는창이뜸(이름은자동으로넘어옴)](https://user-images.githubusercontent.com/96913056/173336604-9645cdf5-4daf-4fdc-80fe-080943fbda37.png)
+<br><br>
 * Delte, Add product in Grocery Shopping
+![7_추가하면장보기리스트에서는 사라지고](https://user-images.githubusercontent.com/96913056/173336649-f3ad7dfb-b232-4ebd-8981-c5ed065ab939.png)
+![8_선택한냉장고에 추가됨](https://user-images.githubusercontent.com/96913056/173336654-d53898a5-e280-44c9-a81e-a216a078d3f1.png)
+<br><br>
 
 ### 3. Share
 * Share the refrigerator with people
@@ -100,9 +111,4 @@
 [Frigge.pptx](https://github.com/parksubin1313/MPTermProject/files/8889503/Frigge.pptx)
 
 ## Demo Video
-
-
-
-
-
 
