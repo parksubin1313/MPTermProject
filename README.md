@@ -6,7 +6,7 @@
 * Gachon University Software Department 201935046 박수빈 wlqkr001113@gmail.com <br>
 * Gachon University Software Department 201935080 오채영 oco6029@naver.com <br>
 * Gachon University Software Department 201935121 임혜균 hgyim00@naver.com <br>
-* Gachon University Software Department 201935142 최   선 sun4194@gachon.ac.kr <br>
+* Gachon University Software Department 201935142 최  선 sun4194@gachon.ac.kr <br>
 
 ## Motivation
 * It is said that the energy wasted by food waste is very high. <br>
