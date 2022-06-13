@@ -7,6 +7,11 @@ Mobile Programming Term Project TeamC <br><br>
 * 201935121 임혜균 <br>
 * 201935142 최  선 <br>
 
+## Motivation
+It is said that the energy wasted by food waste is very high. <br>
+I found that the proportion of food thrown away after the expiration date was high among food waste, and my group thought it would be good to create a service that manages the expiration date of products in the refrigerator. <br>
+Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
+
 ## Contents
 ### 1. Refrigerator
 
