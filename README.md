@@ -38,10 +38,10 @@
 * **_Refrigerator list_** <br>
 ![냉장고 리스트](https://user-images.githubusercontent.com/96913056/173341978-06654a31-1fcf-4110-878b-92c041442b97.png)
 <br><br>
-* **_Add Refrigerator_**
+* **_Add Refrigerator_** <br>
 ![냉장고 추가](https://user-images.githubusercontent.com/96913056/173341986-2a5d8a4e-5950-4968-ae7b-a6752ee8eb19.png)
 <br><br>
-* **_Delete Refrigerator_**
+* **_Delete Refrigerator_** <br>
 ![delete냉장고](https://user-images.githubusercontent.com/96913056/173342194-52edbeb2-bf15-4c50-a4e5-c1796b10fc90.png)
 
 <br><br><br>
