@@ -13,8 +13,14 @@ We found that the proportion of food thrown away after the expiration date was h
 Through this service function, not only food waste can be reduced but also inefficient product consumption can be reduced through expiration date management.
 
 ## Our Goal
-**Minimize food waste** from home through refrigerator management 
-In particular, we would like to help **a person living alone** who have difficulty in managing food through the food sharing function
+**_Minimize food waste_** from home through refrigerator management. <br> 
+In particular, we would like to help **_a person living alone_** who have difficulty in managing food through the food sharing function.
+
+## Key Features
+### Adavantage
+* Checking the **_expiration date_** and the product
+* Can **_share_** your fridge with family
+* **_Less_** left over food
 
 ## Contents
 ### 1. Refrigerator
