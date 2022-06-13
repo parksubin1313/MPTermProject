@@ -63,7 +63,7 @@
 
 ### Use ZXing Library
 * [journeyapps/zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)<br><br>
-* Code
+* Code (build.gradle)<br><br>
 ![Zxing_gradle](https://user-images.githubusercontent.com/96913056/173329208-93d56f7c-c6ac-429c-89f7-6b449df2d767.png)
 
 ### Connect Barcode and API
