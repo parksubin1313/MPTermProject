@@ -77,7 +77,7 @@ public class DashboardFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 List<String> data = new ArrayList<>();
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_multiple_choice, data);
                 listView.setAdapter(adapter);
 
                 for(int i=1; i<100; i++)
