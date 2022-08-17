@@ -12,10 +12,10 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="175dp"
-        android:gravity="center"
-        android:layout_centerInParent="true">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="300dp"
@@ -67,29 +67,11 @@
             android:background="@null"
             android:backgroundTint="#A5A5A5"
             android:hint="비밀번호"
+            android:inputType="textPassword"
             android:textColor="#172F57"
             android:textColorHint="#172F57"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:inputType="textPassword"/>
-
-
-<!--        <ImageView-->
-<!--            android:id="@+id/buttonLogin"-->
-<!--            android:layout_width="280dp"-->
-<!--            android:layout_height="85dp"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="230dp"-->
-<!--            android:src="@drawable/btnsignin"></ImageView>-->
-
-
-<!--        <ImageView-->
-<!--            android:id="@+id/btnSignup"-->
-<!--            android:layout_width="280dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="300dp"-->
-<!--            android:src="@drawable/gosignup"></ImageView>-->
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/SignInButton"
@@ -97,8 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="230dp"
-            android:text="@string/signIn"
-            android:fontFamily="@font/bmdohyeon"/>
+            android:fontFamily="@font/bmdohyeon"
+            android:text="@string/signIn" />
 
         <Button
             android:id="@+id/MoveToSignUpButton"
@@ -106,8 +88,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="300dp"
-            android:text="@string/moveToSignUp"
-            android:fontFamily="@font/bmdohyeon"/>
+            android:fontFamily="@font/bmdohyeon"
+            android:text="@string/moveToSignUp" />
+
+        <Button
+            android:id="@+id/btnSignupforGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="390dp"
+            android:fontFamily="@font/bmdohyeon"
+            android:text="@string/signUpforGoogle" />
+
+        <ImageButton
+            android:id="@+id/btnSignupforKakao"
+            android:layout_width="212dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="450dp"
+            android:src="@drawable/kakao_login_large_wide" />
 
 
     </FrameLayout>

@@ -98,45 +98,8 @@ public class CommunityActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
                 intent.putExtra("food", name.getText().toString());
                 startActivity(intent);
-
-
-//        Button btn = findViewById(R.id.uploadBtn);
-//
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getApplicationContext(), AddFridgeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
             }
         });
     }
-
-    //name.setText("샐러드");
-    //loc.setText("가천대학교");
-    //detail.setText("서브웨이 쉬림프 샐러드");
-
-//        Button btn = findViewById(R.id.uploadBtn);
-//
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(getApplicationContext(), name.getText().toString(), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getApplicationContext(), AddFridgeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-    /*유통기한-디폴트 값으로 오늘 날짜 설정*/
-        /*
-        ETDate = findViewById(R.id.ETDate);
-        Calendar cal = Calendar.getInstance();
-        ETDate.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 2) + "-" + cal.get(Calendar.DATE));
-    }
-    */
 
 }

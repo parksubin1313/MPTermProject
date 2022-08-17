@@ -58,7 +58,7 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "checked!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), AddShoppingActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
@@ -72,6 +72,7 @@ public class DashboardFragment extends Fragment {
 
         listView= (ListView) rootView.findViewById(R.id.shoppingList_listView);
 
+        //쇼핑리스트 보이게
         mReference.child("USER").child(uid).child("shoppingList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -99,7 +100,6 @@ public class DashboardFragment extends Fragment {
                     }
                 }
 
-
             }
 
             @Override
@@ -108,6 +108,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        //클릭하면 냉장고에 저장하게
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
@@ -124,8 +125,6 @@ public class DashboardFragment extends Fragment {
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     foodName = pName;
                                     Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
-
-//                                    Toast.makeText(getActivity(), pName + " checked!", Toast.LENGTH_SHORT).show();
                                     Log.e("gg", pName);
                                     reference.child("USER").child(uid).child("shoppingList").child(Integer.toString(index+1)).removeValue();
                                     Intent intent = new Intent(getActivity(), ChoiceFridgeActivity.class);
@@ -145,6 +144,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        //길게 클릭하면 삭제
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -162,7 +162,6 @@ public class DashboardFragment extends Fragment {
 
         return rootView;
     }
-
 
     @Override
     public void onDestroyView() {

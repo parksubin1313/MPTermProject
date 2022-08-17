@@ -2,14 +2,10 @@ package com.example.termproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,9 +16,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.termproject.adapter.PagerAdapter;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MyFridgeActivity extends AppCompatActivity {
 
@@ -35,7 +28,6 @@ public class MyFridgeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        Toast.makeText(getApplicationContext(), "food add clicked", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), AddFoodActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
@@ -58,7 +50,6 @@ public class MyFridgeActivity extends AppCompatActivity {
         //뷰페이저 세팅
         ViewPager viewPager = findViewById(R.id.myFridge_viewPager);
         fragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        //fragmentPagerAdapter.setName("hi");
 
         TabLayout tabLayout = findViewById(R.id.myFridge_tabLayout);
         viewPager.setAdapter(fragmentPagerAdapter);

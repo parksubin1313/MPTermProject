@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,16 +50,11 @@ public class FridgeAddActivity extends AppCompatActivity {
         String FN = fridgeName.getText().toString();
         if(CheckCondition(FN)) {
             userList.add(user.getUid());
-            //TODO: 이것도 아직
             fridgeInfo = new MyFridge();
             db.collection("Fridge").document(user.getUid()).collection("My_Fridge").document(FN)
                     .set(fridgeInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-
-//                    StartToast("그룹이 생성되었습니다.");
-                    //이부분을 꼭 해줘야 하나? 일단 주석 처리 함
-//                    StartActivity(HomeActivity.class);
                 }
             });
         }
@@ -80,7 +74,6 @@ public class FridgeAddActivity extends AppCompatActivity {
     }
 
     private void StartToast(String msg) {
-//        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     private void StartActivity(Class c) {

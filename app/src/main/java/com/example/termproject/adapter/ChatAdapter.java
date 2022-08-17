@@ -64,12 +64,7 @@ public class ChatAdapter extends BaseAdapter {
             TextView msg = itemView.findViewById(R.id.tv_msg);
             TextView time = itemView.findViewById(R.id.tv_time);
 
-
-            /*닉네임으로 띄우기*/
-            //String user1 = "이매";
-            //nickname.setText(user1);
             nickname.setText(data.getNickname());
-//            String user1 = user.getDisplayName();
 
             msg.setText(data.getMsg());
             time.setText(data.getTime());
@@ -79,17 +74,12 @@ public class ChatAdapter extends BaseAdapter {
             TextView nickname = itemView.findViewById(R.id.tv_name);
             TextView msg = itemView.findViewById(R.id.tv_msg);
             TextView time = itemView.findViewById(R.id.tv_time);
-
-            /*닉네임으로 띄우기*/
-            //String user2 = "쵯";
-            //nickname.setText(user2);
+            
             nickname.setText(data.getNickname());
 
             msg.setText(data.getMsg());
             time.setText(data.getTime());
         }
-
-
         return itemView;
     }
 }

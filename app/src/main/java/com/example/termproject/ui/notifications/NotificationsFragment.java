@@ -85,10 +85,9 @@ public class NotificationsFragment extends Fragment {
         inflater1.inflate(R.menu.menu_add_community, menu);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "community upload clicked", Toast.LENGTH_SHORT).show();
         //커스텀 dialog 로 바꿈
         CustomDialog dlg = new CustomDialog(getActivity());
         dlg.show();
@@ -118,8 +117,6 @@ public class NotificationsFragment extends Fragment {
             Calendar cal = Calendar.getInstance();
             ETDate_upload.setText(cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DATE));
 
-//            zero_save();
-
             DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
                 public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
@@ -146,10 +143,9 @@ public class NotificationsFragment extends Fragment {
                     // '확인' 버튼 클릭시
                     // ...코드..
                     //TODO: DB 에 올리기
+                    zero_save();
                     save();
                     Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
-
-//                    Toast.makeText(getActivity(), "saved", Toast.LENGTH_SHORT).show();
                     // Custom Dialog 종료
                     dismiss();
                 }
@@ -206,23 +202,6 @@ public class NotificationsFragment extends Fragment {
 
             }
         });
-
-/*
-//        AFadapter = new AllFridgeAdapter();
-        List<String> data = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
-//        listView.setAdapter(AFadapter);
-        listView.setAdapter(adapter);
-
-        String food[] = {"샐러드", "Pork", "Strawberry", "Mango", "Watermelon", "Cherry", "Cake", "Water", "Milk", "Egg", "Coke", "Cheese", "Apple", "Kimchi", "Sausage"};
-
-        for(int i=0; i<15; i++){
-            data.add(food[i].toString());
-        }
-//        이걸 해줘야 add 가 반영됨
-        adapter.notifyDataSetChanged();
-
- */
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -315,7 +294,16 @@ public class NotificationsFragment extends Fragment {
         date="";
         location="";
         description="";
-        postFirebaseDataBase(true);
+        //reference = FirebaseDatabase.getInstance().getReference();
+
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+
+        FirebasePost post = new FirebasePost(uid,fname, date, location, description);
+        postValues = post.toMap();
+
+        childUpdates.put("/Community List/"+ "0", postValues);
+        mReference.updateChildren(childUpdates);
     }
 
     // Save to Firebase
@@ -349,12 +337,6 @@ public class NotificationsFragment extends Fragment {
             result.put("description", description);
             return result;
         }
-    }
-
-    //문자열 null인지 확인
-    static boolean isStringEmpty(String str)
-    {
-        return str == null || str.trim().isEmpty();
     }
 
 }

@@ -40,7 +40,7 @@ public class ChoiceFridgeActivity extends AppCompatActivity {
     String uid = user != null ? user.getUid() : null;
 
     String countString;
-    int count = 1, countNum;
+    int countNum;
     public static int cnt = 1;
 
     EditText fridgeName;
@@ -55,23 +55,19 @@ public class ChoiceFridgeActivity extends AppCompatActivity {
         fridgeName = findViewById(R.id.fridgeName_editText);
         fridgeAddBtn = findViewById(R.id.fridgeList_register_btn);
 
-
         zero_save();
 
         fridgeAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!(isStringEmpty(fridgeName.getText().toString()))) {
-                    //save();
                     fName = fridgeName.getText().toString();
-//                    Toast.makeText(getApplicationContext(), fName + " is choiced", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                     Intent intent = new Intent(ChoiceFridgeActivity.this, ChoiceFoodActivity.class);
                     intent.putExtra("fName", fName);
                     startActivity(intent);
                     finish();
                 } else {
-//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + "냉장고의 이름을 입력해주세요.", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                 }
             }
@@ -83,23 +79,15 @@ public class ChoiceFridgeActivity extends AppCompatActivity {
         mReference.child("USER").child(uid).child("RFList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //String count;
-
                 for (int i = 1; i < 100; i++) {
 
                     countString = Integer.toString(i);
-
                     if (!snapshot.hasChild(countString)) {
                         break;
                     } else {
                     }
-
-
                 }
-
                 countNum = Integer.parseInt(countString);
-
             }
 
             @Override
@@ -113,8 +101,6 @@ public class ChoiceFridgeActivity extends AppCompatActivity {
 
     // Data storage and modification method
     public void postFirebaseDataBase(boolean add) {
-
-        //reference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {
@@ -137,7 +123,6 @@ public class ChoiceFridgeActivity extends AppCompatActivity {
 
     // Save to Firebase
     public void save() {
-
         fName = fridgeName.getText().toString();
         postFirebaseDataBase(true);
     }

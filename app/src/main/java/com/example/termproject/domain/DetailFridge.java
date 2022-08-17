@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DetailFridge {
     String pName, pDate;
     public ArrayList<String> userList;
-    public ArrayList<Food> fFoodlist;
+    public ArrayList<Food> foodList;
 
     public DetailFridge(String pName, String pDate) {
         this.pName = pName;
@@ -38,11 +38,11 @@ public class DetailFridge {
         this.userList = userList;
     }
 
-    public ArrayList<Food> getfFoodlist() {
-        return fFoodlist;
+    public ArrayList<Food> getFoodList() {
+        return foodList;
     }
 
-    public void setfFoodlist(ArrayList<Food> fFoodlist) {
-        this.fFoodlist = fFoodlist;
+    public void setFoodList(ArrayList<Food> foodList) {
+        this.foodList = foodList;
     }
 }

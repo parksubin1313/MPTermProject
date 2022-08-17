@@ -1,11 +1,15 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+//        google()
+//        mavenCentral()
+//        jcenter() // Warning: this repository is going to shut down soon
+//
+//        /* imae-카카오 추가 */
+////        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+//        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+//    }
+//}
 
 rootProject.name = "TermProject"
 include ':app'

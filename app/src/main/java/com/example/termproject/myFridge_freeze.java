@@ -33,7 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class myFridge_freeze extends Fragment{
 
@@ -69,28 +68,6 @@ public class myFridge_freeze extends Fragment{
                 startActivity(intent);
             }
         });
-
-
-
-
-//        List<String> data = new ArrayList<>();
-//        if(listView != null){
-//            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, data);
-//            listView.setAdapter(adapter);
-//
-//            for(int i=0; i<15; i++){
-//                String fName = "freeze : " +(i+1);
-//                data.add(fName);
-//            }
-////        이걸 해줘야 add 가 반영됨
-//            adapter.notifyDataSetChanged();
-//        }
-//        else{
-//            Log.d("myFridge_freeze.java", "null 임");
-//        }
-////        listView.setAdapter(AFadapter);
-//
-
 
         return view;
     }
@@ -163,10 +140,8 @@ public class myFridge_freeze extends Fragment{
                                 if (key.equals("productName")) {
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     Log.e("gg", pName);
-//                                    Toast.makeText(getActivity(), pName + " 클릭", Toast.LENGTH_SHORT).show();
-                                    //Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
-                                    //intent.putExtra("fName",name);
-                                    //startActivity(intent);
+                                    Toast.makeText(getActivity(), pName + " 클릭", Toast.LENGTH_SHORT).show();
+
                                 }
                             }
                         }
@@ -195,19 +170,6 @@ public class myFridge_freeze extends Fragment{
             }
         });
 
-        /*
-        btnInvite = (Button) view.findViewById(R.id.button);
-
-        btnInvite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), InviteUser.class);
-                startActivity(intent);
-            }
-        });
-
-         */
-
     }
 
     //어댑터
@@ -218,7 +180,7 @@ public class myFridge_freeze extends Fragment{
 
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
         }
 
         class ViewHolder{
@@ -250,17 +212,7 @@ public class myFridge_freeze extends Fragment{
             final foodItem food = (foodItem) list.get(position);
             viewHolder.foodName.setText(food.getName());
             viewHolder.dueDate.setText(food.getDD());
-            //viewHolder.dueDate.setTextColor(Color.RED);
 
-//            if(food.getDD().compareTo("D-4")>0)
-//            {
-//                viewHolder.dueDate.setTextColor(Color.BLUE);
-//            }
-//
-//            if(food.getDD().compareTo("D-Day")>=0)
-//            {
-//                viewHolder.dueDate.setTextColor(Color.RED);
-//            }
             if(food.getDD().equals("D-1")||food.getDD().equals("D-2")||food.getDD().equals("D-3"))
             {
                 viewHolder.dueDate.setTextColor(Color.BLUE);
@@ -311,6 +263,5 @@ public class myFridge_freeze extends Fragment{
 
         return result;
     }
-
 
 }

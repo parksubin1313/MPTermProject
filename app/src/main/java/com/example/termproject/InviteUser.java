@@ -31,7 +31,6 @@ public class InviteUser extends AppCompatActivity {
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     FirebaseUser user = firebaseAuth.getCurrentUser();
 
-    DatabaseReference reference;
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
 
@@ -40,7 +39,7 @@ public class InviteUser extends AppCompatActivity {
     String inviteUser;
 
     String countString;
-    int count=1, countNum;
+    int countNum;
     public static int cnt=1;
 
     EditText textInviteUid;
@@ -80,13 +79,8 @@ public class InviteUser extends AppCompatActivity {
         mReference.child("USER").child(inviteUser).child("RFList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //String count;
-
                 for(int i=1; i<100; i++){
-
                     countString = Integer.toString(i);
-
                     if(!snapshot.hasChild(countString)){
                         break;
                     }
@@ -111,8 +105,6 @@ public class InviteUser extends AppCompatActivity {
 
     // Data storage and modification method
     public void postFirebaseDataBase(boolean add) {
-
-        //reference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {

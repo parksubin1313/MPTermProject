@@ -26,22 +26,20 @@ public class AddFridgeActivity extends AppCompatActivity {
     //냉장고 리스트에 새로운 냉장고 추가하기
     //R.id.add_fridge
 
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    FirebaseUser user = firebaseAuth.getCurrentUser();
-
-    DatabaseReference reference;
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    private FirebaseUser user = firebaseAuth.getCurrentUser();
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();
 
-    String fName;
-    String uid = user != null ? user.getUid() : null;
+    private String fName;
+    private String uid = user != null ? user.getUid() : null;
 
-    String countString;
-    int count=1, countNum;
+    private String countString;
+    int countNum;
     public static int cnt=1;
 
-    EditText fridgeName;
-    Button fridgeAddBtn;
+    private EditText fridgeName;
+    private Button fridgeAddBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,11 +56,9 @@ public class AddFridgeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!(isStringEmpty(fridgeName.getText().toString()))) {
                     save();
-//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + " is added", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                     finish();
                 } else {
-//                    Toast.makeText(getApplicationContext(), fridgeName.getText().toString() + "식품명을 입력해주세요.", Toast.LENGTH_SHORT).show();
                     fridgeName.setText(null);
                 }
             }
@@ -75,23 +71,14 @@ public class AddFridgeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //String count;
-
                 for(int i=1; i<100; i++){
-
                     countString = Integer.toString(i);
 
                     if(!snapshot.hasChild(countString)){
                         break;
                     }
-                    else{
-                    }
-
-
                 }
-
                 countNum = Integer.parseInt(countString);
-
             }
 
             @Override
@@ -106,7 +93,6 @@ public class AddFridgeActivity extends AppCompatActivity {
     // Data storage and modification method
     public void postFirebaseDataBase(boolean add) {
 
-        //reference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {
@@ -122,20 +108,17 @@ public class AddFridgeActivity extends AppCompatActivity {
 
     // 파이어베이스에 0이 자꾸 이상하게 담겨서....
     public void zero_save() {
-
         fName = "";
         postFirebaseDataBase(true);
     }
 
     // Save to Firebase
     public void save() {
-
         fName = fridgeName.getText().toString();
         postFirebaseDataBase(true);
     }
 
     public class FirebasePost {
-
         public String fName;
 
         public FirebasePost(String fName) {

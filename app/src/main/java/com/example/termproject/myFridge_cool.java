@@ -144,10 +144,6 @@ public class myFridge_cool extends Fragment {
                                 if(key.equals("productName")){
                                     String pName = "" + dataSnapshot.getValue().toString();
                                     Log.e("gg", pName);
-//                                    Toast.makeText(getActivity(), pName + " 클릭", Toast.LENGTH_SHORT).show();
-                                    //Intent intent = new Intent(getActivity(), MyFridgeActivity.class);
-                                    //intent.putExtra("fName",name);
-                                    //startActivity(intent);
                                 }
                             }
                         }
@@ -186,7 +182,6 @@ public class myFridge_cool extends Fragment {
 
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
         }
 
         class ViewHolder{
@@ -246,8 +241,6 @@ public class myFridge_cool extends Fragment {
         SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
 
         long diffSec = (dueDay.getTime() - curDate.getTime()) / 1000; //초 차이
-        //long diffMin = (dueDay.getTime() - curDate.getTime()) / 60000; //분 차이
-        //long diffHor = (dueDay.getTime() - curDate.getTime()) / 3600000; //시 차이
         long diffDays = diffSec / (24*60*60); //일자수 차이
 
         String result="";

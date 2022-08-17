@@ -26,14 +26,7 @@ public class DeletePopup extends Activity {
 
     private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private final FirebaseUser user = firebaseAuth.getCurrentUser();
-    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    String rfName = fName;
-    String option, pName, date;
     String uid = user != null ? user.getUid() : null;
-
-    String coolCountString, freezeCountString, countString;
-    int cnt=1, coolCountNum, freezeCountNum, countNum;
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference mReference = mDatabase.getReference();

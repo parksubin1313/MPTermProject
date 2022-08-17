@@ -76,6 +76,7 @@ public class HomeFragment extends Fragment {
 
         listView= (ListView) rootView.findViewById(R.id.fridgeList_listView);
 
+        //냉장고 리스트 보이게
         mReference.child("USER").child(uid).child("RFList").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -112,6 +113,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //선택하면 해당 냉장고로 이동
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
@@ -145,6 +147,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //길게 클릭하면 삭제
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {

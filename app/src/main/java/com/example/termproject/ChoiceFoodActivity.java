@@ -45,7 +45,6 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
     private EditText foodNameEdit;
     private TextView foodDate_dateView;
     public static int count = 0;
-    //    TODO: 이거 코드 받아서 해결하기!!!!!!!
     private Date foodDate;
     private RadioGroup storageWayRadioGroup;
     private RadioButton storageWayRadio;
@@ -99,11 +98,9 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             if(i == R.id.fridgeWay_cool_radioBtn){
-//                Toast.makeText(getApplicationContext(), "냉장선택", Toast.LENGTH_SHORT).show();
                 storageWayInt = 1;
             }
             else if(i == R.id.fridgeWay_freeze_radioBtn){
-//                Toast.makeText(getApplicationContext(), "냉동선택", Toast.LENGTH_SHORT).show();
                 storageWayInt = 2;
             }
         }
@@ -134,29 +131,20 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
 
     /*바코드인식 버튼 클릭시 실행 함수*/
     public void mOnBarcode(View v){
-        //TODO: 바코드인식 버튼 클릭시 실행 함수 구현
-
-//        Toast.makeText(getApplicationContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(ChoiceFoodActivity.this, testZxing.class);
         startActivity(intent);
         finish();
-//        Intent intent = new Intent(getApplicationContext(), testZxing.class);
-//
-//        startActivity(intent);
     }
 
     /*확인 버튼 클릭시 실행 함수*/
     public void mOnSubmit(View v){
-        //TODO: 확인버튼 클릭시 실행 함수 구현
         save();
-//        Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
         //엑티비티 팝업 닫기
         finish();
     }
 
     /*취소 버튼 클릭시 실행 함수*/
     public void mOnClose(View v){
-//        Toast.makeText(getApplicationContext(), "취소 버튼 클릭", Toast.LENGTH_SHORT).show();
         finish();
 
     }
@@ -177,8 +165,6 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
         return;
     }
 
-
-
     @Override
     public void onClick(View view) {
         switch(view.getId()){
@@ -190,30 +176,11 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-
     public void setFoodName() {
-
-        count++;
-
-        String name;
-        Intent foodNameIntent = getIntent();
-        //String foodName = foodNameIntent.getStringExtra("PRDname");
         foodNameEdit.setText(foodName);
-        name = foodNameEdit.getText().toString();
-
-        if(count<2)
-        {
-            if(name.equals("null"))
-            {
-//                Toast.makeText(getApplicationContext(), "등록되지 않은 상품입니다.\n 상품명을 직접 입력해주세요.", Toast.LENGTH_LONG).show();
-            }
-        }
-        //Toast.makeText(getApplicationContext(), "hi: "+foodName, Toast.LENGTH_LONG).show();
-
     }
 
-    ///////파이어베이스에 올리기
-
+    ///////////파이어베이스에 올리기///////////////
     public int coolCountDB() {
 
         mReference.child("RFList").child(fName).child("food").child("냉장").addValueEventListener(new ValueEventListener() {
@@ -221,11 +188,8 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //String count;
-
                 for (int i = 1; i < 100; i++) {
-
                     coolCountString = Integer.toString(i);
-
                     if (!snapshot.hasChild(coolCountString)) {
                         break;
                     } else {
@@ -233,10 +197,8 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
                 }
                 coolCountNum = Integer.parseInt(coolCountString);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
@@ -250,11 +212,8 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //String count;
-
                 for (int i = 1; i < 100; i++) {
-
                     freezeCountString = Integer.toString(i);
-
                     if (!snapshot.hasChild(freezeCountString)) {
                         break;
                     } else {
@@ -274,8 +233,6 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
 
     // Data storage and modification method
     public void postFirebaseDataBase(boolean add) {
-
-        //reference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if (add) {
@@ -314,17 +271,13 @@ public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClic
 
     // Save to Firebase
     public void save() {
-
-        //fName = fridgeName.getText().toString();
         EditText foodNameEdit = findViewById(R.id.foodName_editView);
         pName = foodNameEdit.getText().toString();
         postFirebaseDataBase(true);
     }
 
     public class FirebasePost {
-
-        int storageWayInt;
-        String option, pName, date;
+        String pName, date;
 
         public FirebasePost(String pName, String date) {
             this.pName = pName;

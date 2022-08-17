@@ -6,30 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
-import static com.example.termproject.MyFridgeActivity.fName;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 public class testZxing extends AppCompatActivity {
 
-    DatabaseReference reference;
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://mobile-programming-91257-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private DatabaseReference apiReference = mDatabase.getReference();
     String bcd;
     String PRDname;
-    String rfName = fName;
-    String code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +39,11 @@ public class testZxing extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         String result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data).getContents().toString();
-        //String result = "8801056175870";
 
         if(result != null) {
             if(result == null) {
-                //Toast.makeText(this, "다시 한 번 바코드를 상자 안에 위치시켜주세요.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "다시 한 번 바코드를 상자 안에 위치시켜주세요.", Toast.LENGTH_LONG).show();
             } else {
-                //result.getContents 를 이용 데이터 재가공
-
-                //Toast.makeText(this, "Scanned: " + result, Toast.LENGTH_LONG).show();
 
                 //DB에서 코드에 맞는 상품명 찾기
                 for(int i=0; i<500; i++){
@@ -86,8 +73,7 @@ public class testZxing extends AppCompatActivity {
                                         if(key.equals("PRDLST_NM"))
                                         {
                                             PRDname = ""+dataSnapshot.getValue();
-                                            //Log.e("key", PRDname);
-//                                            Toast.makeText(getApplicationContext(), PRDname, Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), PRDname, Toast.LENGTH_LONG).show();
                                             Intent myIntent = new Intent(getApplicationContext(), AddFoodActivity.class);
                                             myIntent.putExtra("PRDname", PRDname);
                                             startActivity(myIntent);
@@ -107,7 +93,6 @@ public class testZxing extends AppCompatActivity {
 
                     if(n==499)
                     {
-                        //Toast.makeText(getApplicationContext(), "등록되지 않은 상품입니다.\n 상품명을 직접 입력해주세요.", Toast.LENGTH_LONG).show();
                         Intent myIntent = new Intent(getApplicationContext(), AddFoodActivity.class);
                         myIntent.putExtra("PRDname", "");
                         startActivity(myIntent);
@@ -121,6 +106,5 @@ public class testZxing extends AppCompatActivity {
         }
 
     }
-
 
 }
